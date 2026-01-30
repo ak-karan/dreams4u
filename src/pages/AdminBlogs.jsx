@@ -1,4 +1,5 @@
-const posts = import.meta.glob("../content/blogs/*.md", {
+// Admin dashboard for blogs
+const blogs = import.meta.glob("../content/blogs/*.md", {
   eager: true,
   query: "?raw",
   import: "default",
@@ -19,7 +20,7 @@ export default function AdminBlogs() {
         </thead>
 
         <tbody>
-          {Object.keys(posts).map((path) => {
+          {Object.keys(blogs).map((path) => {
             const slug = path.split("/").pop().replace(".md", "");
             return (
               <tr key={slug} className="border-t">

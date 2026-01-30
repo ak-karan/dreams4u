@@ -1,7 +1,6 @@
-// src/utils/getBlogs.js
 import matter from "gray-matter";
 
-// Import all markdown files as raw text (Vite v7 compatible)
+// Import all markdown files (Vite v7 compatible)
 const blogFiles = import.meta.glob("../blogs/*.md", {
   eager: true,
   query: "?raw",

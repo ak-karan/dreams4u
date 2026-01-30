@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import { Helmet } from "react-helmet-async";
 
+// Vite v7 compatible import
 const blogs = import.meta.glob("../content/blogs/*.md", {
   eager: true,
   query: "?raw",
