@@ -1,51 +1,51 @@
-// import jainhydraulicsgroup from "../assets/images/jain-hydraulics.png";
-// import inflame from "../assets/images/inflame.png";
-// import khatrijewellersandsons from "../assets/images/khatrijewellersandsons.png";
-// import khatrishyamgems from "../assets/images/khatrishyamgems.png";
-// import mahadevtourandtravels from "../assets/images/mahadevtourandtravels.png";
-// import nutcrackergroup from "../assets/images/nut-cracker.png";
-// import oillubesystems from "../assets/images/oillubesystems.png";
-// import rodsmedia from "../assets/images/rodsmedia.png";
+import jainhydraulicsgroup from "../../public/images/jain-hydraulics.png";
+import inflame from "../../public/images/inflame.png";
+import khatrijewellersandsons from "../../public/images/khatrijewellersandsons.png";
+import khatrishyamgems from "../../public/images/khatrishyamgems.png";
+import mahadevtourandtravels from "../../public/images/mahadevtourandtravels.png";
+import nutcrackergroup from "../../public/images/nut-cracker.png";
+import oillubesystems from "../../public/images/oillubesystems.png";
+import rodsmedia from "../../public/images/rodsmedia.png";
 
 export const portfolioList = [
   {
     title: "Jain Hydraulics Group",
     urls: "https://jainhydraulicsgroup.com/",
-    imageurl: "/images/jain-hydraulics.png",
+    imageurl: jainhydraulicsgroup,
   },
   {
     title: "Inflame India",
     urls: "https://inflameindia.com/",
-    imageurl: "/images/inflame.png",
+    imageurl: inflame,
   },
   {
     title: "Khatri Jewellers and Sons",
     urls: "https://khatrijewellersandsons.in/",
-    imageurl: "/images/khatrijewellersandsons.png",
+    imageurl: khatrijewellersandsons,
   },
   {
     title: "Khatri Shyam Gems",
     urls: "https://khatrishyamgems.com/",
-    imageurl: "/images/khatrishyamgems.png",
+    imageurl: khatrishyamgems,
   },
   {
     title: "Mahadev Tour and Travels",
     urls: "https://mahadevtourandtravels.in/",
-    imageurl: "/images/mahadevtourandtravels.png",
+    imageurl: mahadevtourandtravels,
   },
   {
     title: "Nut Cracker",
     urls: "https://nutcrackergroup.com/",
-    imageurl: "/images/nut-cracker.png",
+    imageurl: nutcrackergroup,
   },
   {
     title: "Oil Lube Systems",
     urls: "https://www.oillubesystems.com/",
-    imageurl: "/images/oillubesystems.png",
+    imageurl: oillubesystems,
   },
   {
     title: "Rods Media",
     urls: "https://rodsmedia.com/",
-    imageurl: "/images/rodsmedia.png",
+    imageurl: rodsmedia,
   },
 ];
