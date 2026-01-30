@@ -1,27 +1,12 @@
-const fs = require("fs");
-const { blogPosts } = require("../src/blogData");
+// Vite v7 compatible glob
+const pages = import.meta.glob("../src/content/blogs/*.md", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
 
-const baseUrl = "https://www.yourwebsite.com";
-
-const staticPages = ["/", "/about", "/contact"];
-const blogPages = blogPosts.map((post) => `/blog/${post.slug}`);
-
-const urls = [...staticPages, ...blogPages];
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${urls
-    .map(
-      (url) => `
-    <url>
-      <loc>${baseUrl}${url}</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  `,
-    )
-    .join("")}
-</urlset>`;
-
-fs.writeFileSync("./public/sitemap.xml", sitemap);
-console.log("Sitemap generated!");
+export function getBlogSlugs() {
+  return Object.keys(pages).map((path) =>
+    path.split("/").pop().replace(".md", ""),
+  );
+}

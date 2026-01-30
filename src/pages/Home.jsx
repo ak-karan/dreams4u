@@ -1,5 +1,5 @@
 import React from "react";
-import homeImage from "../assets/images/Website-design-company.JPG";
+import homeImage from "../assets/images/Website-design-company.jpg";
 import bulbHome from "../assets/images/bulb.png";
 import lap1Home from "../assets/images/lap1Home.png";
 import lap2Home from "../assets/images/lap2Home.png";

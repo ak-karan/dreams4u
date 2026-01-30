@@ -5,7 +5,8 @@ import { Helmet } from "react-helmet-async";
 
 const blogs = import.meta.glob("../content/blogs/*.md", {
   eager: true,
-  as: "raw",
+  query: "?raw",
+  import: "default",
 });
 
 export default function BlogDetail() {
@@ -18,7 +19,6 @@ export default function BlogDetail() {
 
   return (
     <article className="max-w-3xl mx-auto px-4 py-16">
-      {/* Helmet inside the function so `data` exists */}
       <Helmet>
         <title>{data.title}</title>
         <meta name="description" content={data.description} />

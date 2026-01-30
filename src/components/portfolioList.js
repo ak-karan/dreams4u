@@ -1,9 +1,9 @@
 import jainhydraulicsgroup from "../assets/images/jain-hydraulics.png";
-import inflame from "../assets/images/inflame.PNG";
+import inflame from "../assets/images/inflame.png";
 import khatrijewellersandsons from "../assets/images/khatrijewellersandsons.png";
 import khatrishyamgems from "../assets/images/khatrishyamgems.png";
 import mahadevtourandtravels from "../assets/images/mahadevtourandtravels.png";
-import nutcrackergroup from "../assets/images/nut-cracker.PNG";
+import nutcrackergroup from "../assets/images/nut-cracker.png";
 import oillubesystems from "../assets/images/oillubesystems.png";
 import rodsmedia from "../assets/images/rodsmedia.png";
 

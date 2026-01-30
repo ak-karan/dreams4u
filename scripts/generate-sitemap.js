@@ -1,20 +1,21 @@
 import fs from "fs";
-import matter from "gray-matter";
+import path from "path";
 
-const SITE_URL = "https://dreams4u.in";
-const BLOG_DIR = "./src/blog";
-
-const staticPages = ["/", "/about", "/contact"];
-
-const blogFiles = fs.readdirSync(BLOG_DIR);
-
-const blogPages = blogFiles.map((file) => {
-  const content = fs.readFileSync(`${BLOG_DIR}/${file}`, "utf-8");
-  const { data } = matter(content);
-  return `/blog/${data.slug}`;
+// Load all markdown blogs as raw text (Vite v7 compatible)
+const blogFiles = import.meta.glob("../src/content/blogs/*.md", {
+  eager: true,
+  query: "?raw",
+  import: "default",
 });
 
-const urls = [...staticPages, ...blogPages];
+const baseUrl = "https://dreams4u.in";
+
+const urls = ["/", "/about", "/contact", "/blog"];
+
+Object.keys(blogFiles).forEach((filePath) => {
+  const slug = filePath.split("/").pop().replace(".md", "");
+  urls.push(`/blog/${slug}`);
+});
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -22,14 +23,12 @@ ${urls
   .map(
     (url) => `
   <url>
-    <loc>${SITE_URL}${url}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`,
+    <loc>${baseUrl}${url}</loc>
+  </url>
+`,
   )
   .join("")}
-</urlset>
-`;
+</urlset>`;
 
-fs.writeFileSync("./public/sitemap.xml", sitemap);
+fs.writeFileSync(path.resolve("public/sitemap.xml"), sitemap);
 console.log("✅ sitemap.xml generated");
