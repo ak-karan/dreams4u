@@ -1,51 +1,42 @@
-import jainhydraulicsgroup from "/public/images/jain-hydraulics.png";
-import inflame from "/public/images/inflame.png";
-import khatrijewellersandsons from "/public/images/khatrijewellersandsons.png";
-import khatrishyamgems from "/public/images/khatrishyamgems.png";
-import mahadevtourandtravels from "/public/images/mahadevtourandtravels.png";
-import nutcrackergroup from "/public/images/nut-cracker.png";
-import oillubesystems from "/public/images/oillubesystems.png";
-import rodsmedia from "/public/images/rodsmedia.png";
-
 export const portfolioList = [
   {
     title: "Jain Hydraulics Group",
     urls: "https://jainhydraulicsgroup.com/",
-    imageurl: jainhydraulicsgroup,
+    imageurl: "/images/jain-hydraulics.png",
   },
   {
     title: "Inflame India",
     urls: "https://inflameindia.com/",
-    imageurl: inflame,
+    imageurl: "/images/inflame.png",
   },
   {
     title: "Khatri Jewellers and Sons",
     urls: "https://khatrijewellersandsons.in/",
-    imageurl: khatrijewellersandsons,
+    imageurl: "/images/khatrijewellersandsons.png",
   },
   {
     title: "Khatri Shyam Gems",
     urls: "https://khatrishyamgems.com/",
-    imageurl: khatrishyamgems,
+    imageurl: "/images/khatrishyamgems.png",
   },
   {
     title: "Mahadev Tour and Travels",
     urls: "https://mahadevtourandtravels.in/",
-    imageurl: mahadevtourandtravels,
+    imageurl: "/images/mahadevtourandtravels.png",
   },
   {
     title: "Nut Cracker",
     urls: "https://nutcrackergroup.com/",
-    imageurl: nutcrackergroup,
+    imageurl: "/images/nut-cracker.png",
   },
   {
     title: "Oil Lube Systems",
     urls: "https://www.oillubesystems.com/",
-    imageurl: oillubesystems,
+    imageurl: "/images/oillubesystems.png",
   },
   {
     title: "Rods Media",
     urls: "https://rodsmedia.com/",
-    imageurl: rodsmedia,
+    imageurl: "/images/rodsmedia.png",
   },
 ];
