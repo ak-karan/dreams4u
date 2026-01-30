@@ -9,6 +9,7 @@ import {
   ChartBarIcon,
   ShieldCheckIcon,
   BoltIcon,
+  CheckCircleIcon,
 } from "@heroicons/react/24/outline";
 
 function WebsiteDesign() {
