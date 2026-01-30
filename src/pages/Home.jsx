@@ -1,5 +1,5 @@
 import React from "react";
-import homeImage from "../../public/images/Website-design-company.jpg";
+// import homeImage from "../../public/images/Website-design-company.jpg";
 // import bulbHome from "../assets/images/bulb.png";
 // import lap1Home from "../assets/images/lap1Home.png";
 // import lap2Home from "../assets/images/lap2Home.png";
@@ -20,6 +20,7 @@ export default function Home() {
   const websiteUrl = "https://dreams4u.in";
   const phoneNumber = "+919667316333";
   const location = "Faridabad, Haryana";
+  const ogpost = "/images/dreams4u.jpg";
 
   const pageTitle = `Best Website Design Company in Faridabad | ${companyName}`;
   const pageDescription = `${companyName} - Top-rated website design company in Faridabad offering affordable website design, SEO, digital marketing, e-commerce solutions & mobile-responsive development services. Call ${phoneNumber}`;
@@ -44,7 +45,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={`${websiteUrl}${homeImage}`} />
+        <meta property="og:image" content={`${websiteUrl}${ogpost}`} />
         <meta property="og:url" content={websiteUrl} />
         <meta property="og:site_name" content={companyName} />
         <meta property="og:locale" content="en_IN" />
@@ -53,7 +54,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={`${websiteUrl}${homeImage}`} />
+        <meta name="twitter:image" content={`${websiteUrl}${ogpost}`} />
         <meta name="twitter:site" content="@Dreams4uIndia" />{" "}
         {/* Add if you have Twitter */}
         <meta name="twitter:creator" content="@Dreams4uIndia" />{" "}
@@ -72,7 +73,7 @@ export default function Home() {
             name: pageTitle,
             description: pageDescription,
             url: websiteUrl,
-            image: `${websiteUrl}${homeImage}`,
+            image: `${websiteUrl}${ogpost}`,
             author: {
               "@type": "Organization",
               name: companyName,
