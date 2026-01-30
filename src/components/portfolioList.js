@@ -1,11 +1,11 @@
-import jainhydraulicsgroup from "../../public/images/jain-hydraulics.png";
-import inflame from "../../public/images/inflame.png";
-import khatrijewellersandsons from "../../public/images/khatrijewellersandsons.png";
-import khatrishyamgems from "../../public/images/khatrishyamgems.png";
-import mahadevtourandtravels from "../../public/images/mahadevtourandtravels.png";
-import nutcrackergroup from "../../public/images/nut-cracker.png";
-import oillubesystems from "../../public/images/oillubesystems.png";
-import rodsmedia from "../../public/images/rodsmedia.png";
+import jainhydraulicsgroup from "/public/images/jain-hydraulics.png";
+import inflame from "/public/images/inflame.png";
+import khatrijewellersandsons from "/public/images/khatrijewellersandsons.png";
+import khatrishyamgems from "/public/images/khatrishyamgems.png";
+import mahadevtourandtravels from "/public/images/mahadevtourandtravels.png";
+import nutcrackergroup from "/public/images/nut-cracker.png";
+import oillubesystems from "/public/images/oillubesystems.png";
+import rodsmedia from "/public/images/rodsmedia.png";
 
 export const portfolioList = [
   {
