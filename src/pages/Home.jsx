@@ -1,9 +1,9 @@
 import React from "react";
-import homeImage from "../assets/images/Website-design-company.jpg";
-import bulbHome from "../assets/images/bulb.png";
-import lap1Home from "../assets/images/lap1Home.png";
-import lap2Home from "../assets/images/lap2Home.png";
-import lap3Home from "../assets/images/lap3Home.png";
+import homeImage from "../../public/images/Website-design-company.jpg";
+// import bulbHome from "../assets/images/bulb.png";
+// import lap1Home from "../assets/images/lap1Home.png";
+// import lap2Home from "../assets/images/lap2Home.png";
+// import lap3Home from "../assets/images/lap3Home.png";
 import Services from "../service/Services";
 import WhyChooseUs from "./WhyChooseUs";
 import Reviews from "../reviews/Reviews";
@@ -110,7 +110,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden bg-gray-100">
         {/* BACKGROUND IMAGE */}
         <img
-          src={homeImage}
+          src="/images/Website-design-company.jpg"
           alt="Professional Website Design Company in Faridabad - Dreams4u"
           className="w-full h-auto"
           loading="eager"
@@ -120,7 +120,7 @@ export default function Home() {
 
         {/* BULB */}
         <img
-          src={bulbHome}
+          src="/images/bulb.png"
           alt="Creative Web Solutions"
           className="absolute top-10 left-[47%] md:top-[29%] md:left-[47%] w-3 md:w-10 animate-swing"
           loading="lazy"
@@ -130,7 +130,7 @@ export default function Home() {
 
         {/* FLOATING IMAGES */}
         <img
-          src={lap1Home}
+          src="/images/lap1Home.png"
           alt="Web Design Services Faridabad"
           className="absolute w-12 md:w-44 animate-float delay-200 md:top-90 md:left-195 top-25 left-49"
           loading="lazy"
@@ -139,7 +139,7 @@ export default function Home() {
         />
 
         <img
-          src={lap2Home}
+          src="/images/lap2Home.png"
           alt="Website Development Company"
           className="absolute w-8 md:w-32 animate-float delay-500 md:top-52 md:left-175 top-15 left-48"
           loading="lazy"
@@ -148,7 +148,7 @@ export default function Home() {
         />
 
         <img
-          src={lap3Home}
+          src="/images/lap3Home.png"
           alt="Digital Marketing Services Faridabad"
           className="absolute w-7 md:w-28 animate-float delay-700 md:top-14 md:left-214 top-5 left-53"
           loading="lazy"
