@@ -61,136 +61,91 @@
     
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "LocalBusiness",
+      "@id": "https://dreams4u.in/#business",
+      "name": "Dreams4U",
+      "url": "https://dreams4u.in/",
+      "logo": "https://dreams4u.in/logo.png",
+      "image": "https://dreams4u.in/logo.png",
+      "telephone": "+91-9667316333",
+      "email": "info@dreams4u.in",
+      "priceRange": "₹8999 - ₹49999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1361 Bhagat Singh Colony, Ballabgarh",
+        "addressLocality": "Faridabad",
+        "addressRegion": "Haryana",
+        "postalCode": "121004",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.4089",
+        "longitude": "77.3178"
+      },
+      "openingHoursSpecification": [
         {
-          "@type": "LocalBusiness",
-          "@id": "https://dreams4u.in/#business",
-          "name": "Dreams4u",
-          "image": "https://dreams4u.in/images/logo.png",
-          "url": "https://dreams4u.in",
-          "telephone": "+919667316333",
-          "email": "info@dreams4u.in",
-          "priceRange": "₹ 8999 - ₹ 49999",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1361 Bhaghat Singh Colony, Ballabgarh",
-            "addressLocality": "Faridabad",
-            "addressRegion": "Haryana",
-            "postalCode": "121004",
-            "addressCountry": "IN"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "28.4089",
-            "longitude": "77.3178"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-              "opens": "09:00",
-              "closes": "19:00"
-            }
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
           ],
-          "areaServed": {
-            "@type": "City",
-            "name": "Faridabad"
-          },
-          "sameAs": [
-            "https://www.facebook.com/dreams4U.in",
-            "https://www.instagram.com/dreams4U.in",            
-          ],
-          "makesOffer": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Website Design in Faridabad",
-                "description": "Professional website design and development services in Faridabad"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "SEO Services in Faridabad",
-                "description": "Search Engine Optimization services to rank your website higher"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "App Development Services in Faridabad",
-                "description": "Mobile and web application development services"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Digital Marketing in Faridabad",
-                "description": "Complete digital marketing solutions for businesses"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Graphic Design in Faridabad",
-                "description": "Creative graphic design services for branding and marketing"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "React JS Development",
-                "description": "Modern React JS web application development"
-              }
-            }
-          ]
-        },
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/dreams4U.in",
+        "https://www.instagram.com/dreams4U.in"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dreams4u.in/#website",
+      "url": "https://dreams4u.in/",
+      "name": "Dreams4U",
+      "description": "Website Design and Development Company in Faridabad",
+      "publisher": {
+        "@id": "https://dreams4u.in/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dreams4u.in/#homepage",
+      "url": "https://dreams4u.in/",
+      "name": "Dreams4U - Website Design Company in Faridabad",
+      "isPartOf": {
+        "@id": "https://dreams4u.in/#website"
+      },
+      "description": "Professional website design, development, SEO and digital marketing services in Faridabad",
+      "breadcrumb": {
+        "@id": "https://dreams4u.in/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dreams4u.in/#breadcrumb",
+      "itemListElement": [
         {
-          "@type": "WebSite",
-          "@id": "https://dreams4u.in/#website",
-          "url": "https://dreams4u.in",
-          "name": "Dreams4u",
-          "description": "Website Design and Development Company in Faridabad",
-          "publisher": {
-            "@id": "https://dreams4u.in/#business"
-          }
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://dreams4u.in/#homepage",
-          "url": "https://dreams4u.in",
-          "name": "Dreams4u - Website Design Company in Faridabad",
-          "isPartOf": {
-            "@id": "https://dreams4u.in/#website"
-          },
-          "description": "Professional website design, development, SEO and digital marketing services in Faridabad",
-          "breadcrumb": {
-            "@id": "https://dreams4u.in/#breadcrumb"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://dreams4u.in/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://dreams4u.in"
-            }
-          ]
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dreams4u.in/"
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
+
   </head>
   <body>
     <div id="root"></div>

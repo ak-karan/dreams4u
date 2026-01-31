@@ -14,6 +14,7 @@ import LocalBusinessSchema from "../faq/LocalBusinessSchema";
 import Portfolio from "../components/Portfolio";
 import ContactForm from "../components/ContactForm";
 import { Helmet } from "react-helmet-async";
+import homeSchema from "../seo/homeSchema";
 
 export default function Home() {
   const companyName = "Dreams4u";
@@ -31,81 +32,8 @@ export default function Home() {
       {/* ================= SEO META TAGS ================= */}
       <Helmet>
         <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={keywords} />
-        <meta name="author" content={companyName} />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        {/* Location & Business */}
-        <meta name="geo.region" content="IN-HR" />
-        <meta name="geo.placename" content="Faridabad" />
-        <meta name="geo.position" content="28.4089;77.3178" />
-        <meta name="ICBM" content="28.4089, 77.3178" />
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={`${websiteUrl}${ogpost}`} />
-        <meta property="og:url" content={websiteUrl} />
-        <meta property="og:site_name" content={companyName} />
-        <meta property="og:locale" content="en_IN" />
-        <meta property="og:phone_number" content={phoneNumber} />
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={`${websiteUrl}${ogpost}`} />
-        <meta name="twitter:site" content="@Dreams4uIndia" />{" "}
-        {/* Add if you have Twitter */}
-        <meta name="twitter:creator" content="@Dreams4uIndia" />{" "}
-        {/* Add if you have Twitter */}
-        {/* Canonical URL */}
-        <link rel="canonical" href={websiteUrl} />
-        {/* Alternate Language Versions (if applicable) */}
-        <link rel="alternate" href={websiteUrl} hreflang="en-in" />
-        <link rel="alternate" href={websiteUrl} hreflang="en" />
-        <link rel="alternate" href={websiteUrl} hreflang="x-default" />
-        {/* Schema.org markup for Google */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: pageTitle,
-            description: pageDescription,
-            url: websiteUrl,
-            image: `${websiteUrl}${ogpost}`,
-            author: {
-              "@type": "Organization",
-              name: companyName,
-              url: websiteUrl,
-              telephone: phoneNumber,
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Faridabad",
-                addressRegion: "Haryana",
-                addressCountry: "IN",
-              },
-            },
-            publisher: {
-              "@type": "Organization",
-              name: companyName,
-              url: websiteUrl,
-              logo: {
-                "@type": "ImageObject",
-                url: `${websiteUrl}/logo.png`,
-              },
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": websiteUrl,
-            },
-          })}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(homeSchema)}</script>
       </Helmet>
-
-      {/* ================= SCHEMA MARKUP ================= */}
-      <LocalBusinessSchema />
-      <FAQSchema faqs={homeFaqs} />
 
       {/* ================= HERO SECTION ================= */}
       <section className="relative w-full overflow-hidden bg-gray-100">
