@@ -98,11 +98,11 @@ function Footer() {
           <div className="space-y-6">
             <Link to="/" className="inline-block">
               <div className="flex items-center gap-3">
-                <img
+                {/* <img
                   src="/images/Logo.png"
                   alt="Dreams4U Logo"
                   className="h-12"
-                />
+                /> */}
                 <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   Dreams4U
                 </span>
