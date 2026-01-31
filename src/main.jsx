@@ -23,6 +23,7 @@ import UIUXPage from "./service/UIUXPage";
 import SecurityPage from "./service/SecurityPage";
 import MaintenancePage from "./service/MaintenancePage";
 import AppDevelopment from "./service/AppDevelopment";
+import CustomWebsiteDesign from "./service/CustomWebsiteDesign";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       { path: "services/ui-ux", element: <UIUXPage /> },
       { path: "services/website-security", element: <SecurityPage /> },
       { path: "services/annual-maintenance", element: <MaintenancePage /> },
+      {
+        path: "services/custom-website-design",
+        element: <CustomWebsiteDesign />,
+      },
 
       { path: "blog", element: <BlogList /> },
       { path: "blog/:slug", element: <BlogDetail /> },
