@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home -->
+  <url>
+    <loc>https://dreams4u.in/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Static Pages -->
+  <url><loc>https://dreams4u.in/about</loc></url>
+  <url><loc>https://dreams4u.in/contact</loc></url>
+  <url><loc>https://dreams4u.in/portfolio</loc></url>
+  <url><loc>https://dreams4u.in/privacy</loc></url>
+  <url><loc>https://dreams4u.in/terms</loc></url>
+  <url><loc>https://dreams4u.in/cookies</loc></url>
+
+  <!-- Services -->
+  <url><loc>https://dreams4u.in/services</loc></url>
+  <url><loc>https://dreams4u.in/services/web-development</loc></url>
+  <url><loc>https://dreams4u.in/services/website-design</loc></url>
+  <url><loc>https://dreams4u.in/services/digital-marketing</loc></url>
+  <url><loc>https://dreams4u.in/services/react-development</loc></url>
+  <url><loc>https://dreams4u.in/services/app-development</loc></url>
+  <url><loc>https://dreams4u.in/services/search-engine-optimization</loc></url>
+  <url><loc>https://dreams4u.in/services/ecommerce</loc></url>
+  <url><loc>https://dreams4u.in/services/mobile-responsive</loc></url>
+  <url><loc>https://dreams4u.in/services/business-website</loc></url>
+  <url><loc>https://dreams4u.in/services/ui-ux</loc></url>
+  <url><loc>https://dreams4u.in/services/website-security</loc></url>
+  <url><loc>https://dreams4u.in/services/annual-maintenance</loc></url>
+
+  <!-- Blog -->
+  <url><loc>https://dreams4u.in/blog</loc></url>
+
+  <!-- Blog detail pages (example – add more as you publish) -->
+  <!--
+  <url><loc>https://dreams4u.in/blog/your-blog-slug</loc></url>
+  -->
+
+</urlset>
