@@ -5,6 +5,11 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
+  // SPAM PROTECTION (HONEYPOT)
+  if (req.body.company) {
+    return res.status(400).json({ message: "Spam detected" });
+  }
+
   const { name, phone, service, message } = req.body;
 
   if (!name || !phone || !service) {

@@ -25,6 +25,7 @@ function ContactForm() {
     phone: "",
     service: "",
     message: "",
+    company: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -114,6 +115,16 @@ function ContactForm() {
               </AnimatePresence>
 
               <form onSubmit={handleSubmit} className="space-y-6 relative">
+                {/* 🔒 Honeypot Field (SPAM protection) */}
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company || ""}
+                  onChange={handleChange}
+                  className="hidden"
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
                 {/* NAME */}
                 <div className="relative">
                   <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-cyan-300" />
