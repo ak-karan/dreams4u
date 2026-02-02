@@ -7,7 +7,7 @@ const homeSchema = {
       name: "Dreams4u",
       url: "https://dreams4u.in/",
       logo: "https://dreams4u.in/logo.png",
-      image: "https://dreams4u.in/images/dreams4u.jpg",
+      image: "https://dreams4u.inhttps://dreams4u.in/images/dreams4u.jpeg",
       telephone: "+91-9667316333",
       email: "info@dreams4u.in",
       priceRange: "₹8999 - ₹49999",

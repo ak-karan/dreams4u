@@ -24,7 +24,7 @@ export default function BlogDetail() {
     "@type": "BlogPosting",
     headline: data.title,
     description: data.description,
-    image: data.image || "https://yourdomain.com/default-blog.jpg",
+    image: data.image || "https://dreams4u.in/images/dreams4u.jpeg",
     datePublished: data.date || new Date().toISOString(),
     dateModified: data.updated || new Date().toISOString(),
     author: {
@@ -36,7 +36,7 @@ export default function BlogDetail() {
       name: "Your Company",
       logo: {
         "@type": "ImageObject",
-        url: "https://yourdomain.com/logo.png",
+        url: "/images/logo.png",
       },
     },
   };
@@ -50,19 +50,19 @@ export default function BlogDetail() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://yourdomain.com",
+        item: "https://dreams4u.in",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://yourdomain.com/blog",
+        item: "https://dreams4u.in/blog",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: data.title,
-        item: `https://yourdomain.com/blog/${slug}`,
+        item: `https://dreams4u.in/blog/${slug}`,
       },
     ],
   };
@@ -76,15 +76,12 @@ export default function BlogDetail() {
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={`https://yourdomain.com/blog/${slug}`}
-        />
+        <meta property="og:url" content={`https://dreams4u.in/blog/${slug}`} />
         <meta property="og:image" content={data.image || "/default-og.jpg"} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data.title} />
         <meta name="twitter:description" content={data.description} />
-        <link rel="canonical" href={`https://yourdomain.com/blog/${slug}`} />
+        <link rel="canonical" href={`https://dreams4u.in/blog/${slug}`} />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>

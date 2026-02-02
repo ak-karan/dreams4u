@@ -7,10 +7,10 @@ import React from "react";
 import Services from "../service/Services";
 import WhyChooseUs from "./WhyChooseUs";
 import Reviews from "../reviews/Reviews";
-import FAQSchema from "../faq/FAQSchema";
+// import FAQSchema from "../faq/FAQSchema";
 import { homeFaqs } from "../faq/faq";
 import FAQSection from "../faq/FAQSection";
-import LocalBusinessSchema from "../faq/LocalBusinessSchema";
+// import LocalBusinessSchema from "../faq/LocalBusinessSchema";
 import Portfolio from "../components/Portfolio";
 import ContactForm from "../components/ContactForm";
 import { Helmet } from "react-helmet-async";
@@ -21,7 +21,7 @@ export default function Home() {
   const websiteUrl = "https://dreams4u.in";
   const phoneNumber = "+919667316333";
   const location = "Faridabad, Haryana";
-  const ogpost = "/images/dreams4u.jpg";
+  const ogpost = "https://dreams4u.in/images/dreams4u.jpeg";
 
   const pageTitle = `Best Website Design Company in Faridabad | ${companyName}`;
   const pageDescription = `${companyName} - Top-rated website design company in Faridabad offering affordable website design, SEO, digital marketing, e-commerce solutions & mobile-responsive development services. Call ${phoneNumber}`;

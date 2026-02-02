@@ -45,7 +45,7 @@ const About = () => {
             "@type": "Organization",
             name: "Dreams4u",
             url: "https://dreams4u.in/about",
-            logo: "/images/dreams4u.jpg",
+            logo: "https://dreams4u.in/images/dreams4u.jpeg",
             description:
               "Professional web design and development company in Faridabad",
             address: {
