@@ -27,6 +27,7 @@ import CustomWebsiteDesign from "./service/CustomWebsiteDesign";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
+import NotFound from "./pages/NotFound";
 
 import "./index.css";
 import { Buffer } from "buffer";
@@ -65,6 +66,7 @@ const router = createBrowserRouter([
       { path: "privacy", element: <Privacy /> },
       { path: "terms", element: <Terms /> },
       { path: "cookies", element: <Cookies /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
