@@ -1,0 +1,15 @@
+# robots.txt for https://dreams4u.in
+User-agent: *
+Allow: /
+Disallow: /debug-blogs
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://dreams4u.in/sitemap.xml
+Sitemap: https://dreams4u.in/sitemap-blog.xml
+
+# Crawl delay
+Crawl-delay: 2
+
+# Host
+Host: https://dreams4u.in
