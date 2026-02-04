@@ -1,193 +1,274 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import os from "os";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const blogsDir = "src/content/blogs";
 const baseUrl = "https://dreams4u.in";
+const EOL = "\n"; // Consistent line endings
 
-// Use LF line endings consistently
-const EOL = "\n";
+// All static pages from your React router
+const STATIC_PAGES = [
+  {
+    path: "/",
+    priority: "1.0",
+    changefreq: "daily",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/about",
+    priority: "0.9",
+    changefreq: "monthly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/portfolio",
+    priority: "0.8",
+    changefreq: "monthly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/contact",
+    priority: "0.8",
+    changefreq: "monthly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services",
+    priority: "0.9",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/web-development",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/website-design",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/digital-marketing",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/react-development",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/app-development",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/search-engine-optimization",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/ecommerce",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/mobile-responsive",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/business-website",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/ui-ux",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/website-security",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/annual-maintenance",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/services/custom-website-design",
+    priority: "0.8",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/privacy",
+    priority: "0.6",
+    changefreq: "yearly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/terms",
+    priority: "0.6",
+    changefreq: "yearly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/cookies",
+    priority: "0.6",
+    changefreq: "yearly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/blog",
+    priority: "0.8",
+    changefreq: "daily",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/debug-blogs",
+    priority: "0.3",
+    changefreq: "monthly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+];
 
-// Function to read all blog files and extract metadata
-function getAllBlogs() {
-  try {
-    if (!fs.existsSync(blogsDir)) {
-      console.log(`⚠️ Blogs directory not found: ${blogsDir}`);
-      return [];
-    }
+// Function to get all blog posts
+function getAllBlogPosts() {
+  console.log(`📁 Checking blogs directory: ${blogsDir}`);
 
-    const files = fs.readdirSync(blogsDir);
-    const blogFiles = files.filter((file) => file.endsWith(".md"));
-
-    const blogs = [];
-
-    blogFiles.forEach((file) => {
-      try {
-        const filePath = path.join(blogsDir, file);
-        const content = fs.readFileSync(filePath, "utf8");
-        const slug = file.replace(".md", "");
-
-        // Extract date from frontmatter
-        let dateFromFrontmatter = null;
-        const dateMatch = content.match(/date:\s*(\d{4}-\d{2}-\d{2})/);
-        if (dateMatch) {
-          dateFromFrontmatter = dateMatch[1];
-        }
-
-        // Get file stats for last modified
-        const stats = fs.statSync(filePath);
-        const lastmod =
-          dateFromFrontmatter || stats.mtime.toISOString().split("T")[0];
-
-        blogs.push({
-          slug: slug,
-          url: `${baseUrl}/blog/${slug}`,
-          lastmod: lastmod,
-          filePath: filePath,
-          fileStats: stats,
-        });
-      } catch (error) {
-        console.error(`❌ Error processing blog file ${file}:`, error.message);
-      }
-    });
-
-    console.log(`✅ Found ${blogs.length} blog files`);
-    return blogs;
-  } catch (error) {
-    console.error("❌ Error reading blog directory:", error);
+  if (!fs.existsSync(blogsDir)) {
+    console.log(`❌ Blogs directory not found: ${blogsDir}`);
+    console.log(`💡 Creating blogs directory...`);
+    fs.mkdirSync(blogsDir, { recursive: true });
     return [];
   }
-}
 
-// Function to get priority based on route
-function getPriority(route) {
-  if (route === "/") return "1.0";
-  if (route === "/about") return "0.9";
-  if (route === "/services") return "0.9";
-  if (route === "/contact") return "0.8";
-  if (route === "/blog") return "0.8";
-  if (route.startsWith("/blog/")) return "0.7";
-  if (route.startsWith("/services/")) return "0.8";
-  return "0.6";
-}
+  const files = fs.readdirSync(blogsDir);
+  const mdFiles = files.filter((file) => file.endsWith(".md"));
 
-// Function to get changefreq based on route
-function getChangeFreq(route) {
-  if (route === "/") return "daily";
-  if (route === "/blog") return "weekly";
-  if (route.startsWith("/blog/")) return "monthly";
-  if (route.startsWith("/services/")) return "weekly";
-  return "monthly";
+  console.log(`✅ Found ${mdFiles.length} blog files`);
+
+  const blogPosts = [];
+
+  mdFiles.forEach((file, index) => {
+    try {
+      const filePath = path.join(blogsDir, file);
+      const slug = file.replace(".md", "");
+      const stats = fs.statSync(filePath);
+
+      // Read file to extract date from frontmatter
+      const content = fs.readFileSync(filePath, "utf8");
+      let lastmod = stats.mtime.toISOString().split("T")[0];
+
+      // Try to extract date from frontmatter
+      const dateMatch = content.match(/date:\s*(\d{4}-\d{2}-\d{2})/);
+      if (dateMatch && dateMatch[1]) {
+        lastmod = dateMatch[1];
+      }
+
+      blogPosts.push({
+        path: `/blog/${slug}`,
+        priority: "0.7",
+        changefreq: "monthly",
+        lastmod: lastmod,
+        slug: slug,
+      });
+
+      if (index < 5) {
+        console.log(`   📄 ${file} -> /blog/${slug}`);
+      }
+    } catch (error) {
+      console.error(`❌ Error processing ${file}:`, error.message);
+    }
+  });
+
+  return blogPosts;
 }
 
 // Main function to generate sitemap
 function generateSitemap() {
-  console.log("🔍 Generating sitemap...");
-  console.log(`📁 Checking blogs directory: ${blogsDir}`);
+  console.log("🚀 Generating sitemap.xml...");
+  console.log(`🌐 Base URL: ${baseUrl}`);
 
-  // Get all blogs
-  const blogs = getAllBlogs();
+  // Get all URLs
+  const staticUrls = STATIC_PAGES;
+  const blogUrls = getAllBlogPosts();
 
-  // Define all static routes
-  const staticRoutes = [
-    "/",
-    "/about",
-    "/portfolio",
-    "/contact",
-    "/services",
-    "/services/web-development",
-    "/services/website-design",
-    "/services/digital-marketing",
-    "/services/react-development",
-    "/services/app-development",
-    "/services/search-engine-optimization",
-    "/services/ecommerce",
-    "/services/mobile-responsive",
-    "/services/business-website",
-    "/services/ui-ux",
-    "/services/website-security",
-    "/services/annual-maintenance",
-    "/services/custom-website-design",
-    "/privacy",
-    "/terms",
-    "/cookies",
-    "/blog",
-    "/debug-blogs",
-  ];
+  const allUrls = [...staticUrls, ...blogUrls];
 
-  console.log(`📊 Found ${staticRoutes.length} static routes`);
-  console.log(`📊 Found ${blogs.length} blog posts`);
+  console.log(`\n📊 URL Summary:`);
+  console.log(`   Static Pages: ${staticUrls.length}`);
+  console.log(`   Blog Posts: ${blogUrls.length}`);
+  console.log(`   Total URLs: ${allUrls.length}`);
 
-  // Prepare all URLs
-  const allUrls = [];
-
-  // Add static routes
-  staticRoutes.forEach((route) => {
-    allUrls.push({
-      loc: `${baseUrl}${route}`,
-      lastmod: new Date().toISOString().split("T")[0],
-      changefreq: getChangeFreq(route),
-      priority: getPriority(route),
-    });
-  });
-
-  // Add blog post URLs
-  blogs.forEach((blog) => {
-    allUrls.push({
-      loc: blog.url,
-      lastmod: blog.lastmod,
-      changefreq: "monthly",
-      priority: "0.7",
-    });
-  });
-
-  // Generate XML with consistent LF line endings
+  // Generate XML
   let xml = `<?xml version="1.0" encoding="UTF-8"?>${EOL}`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${EOL}`;
   xml += `        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"${EOL}`;
   xml += `        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9${EOL}`;
-  xml += `        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">${EOL}`;
+  xml += `        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">${EOL}${EOL}`;
 
-  allUrls.forEach((url) => {
+  // Add all URLs to sitemap
+  allUrls.forEach((url, index) => {
+    const fullUrl = `${baseUrl}${url.path}`;
+
     xml += `  <url>${EOL}`;
-    xml += `    <loc>${url.loc}</loc>${EOL}`;
+    xml += `    <loc>${fullUrl}</loc>${EOL}`;
     xml += `    <lastmod>${url.lastmod}</lastmod>${EOL}`;
     xml += `    <changefreq>${url.changefreq}</changefreq>${EOL}`;
     xml += `    <priority>${url.priority}</priority>${EOL}`;
     xml += `  </url>${EOL}`;
+
+    // Add extra line between groups for readability
+    if (index === staticUrls.length - 1) {
+      xml += `${EOL}`;
+    }
   });
 
   xml += `</urlset>`;
 
-  // Ensure public directory exists
+  // Create public directory if it doesn't exist
   const publicDir = path.join(__dirname, "public");
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
+    console.log(`📁 Created directory: ${publicDir}`);
   }
 
-  // Write sitemap file with LF line endings
+  // Write sitemap file
   const sitemapPath = path.join(publicDir, "sitemap.xml");
-  // Use {encoding: 'utf8'} to ensure proper encoding
   fs.writeFileSync(sitemapPath, xml, { encoding: "utf8" });
 
-  console.log(`✅ Sitemap generated at: ${sitemapPath}`);
-  console.log(`📈 Total URLs: ${allUrls.length}`);
+  console.log(`\n✅ SITEMAP GENERATED SUCCESSFULLY!`);
+  console.log(`📁 Location: ${sitemapPath}`);
+  console.log(`🔗 Access at: ${baseUrl}/sitemap.xml`);
 
-  // Display summary
-  console.log(`${EOL}📊 Sitemap Summary:`);
-  console.log(`   Static Pages: ${staticRoutes.length}`);
-  console.log(`   Blog Posts: ${blogs.length}`);
-  console.log(`   Total URLs: ${allUrls.length}`);
-
-  // Also generate robots.txt with LF line endings
+  // Generate robots.txt
   generateRobotsTxt();
+
+  // Show preview
+  showSitemapPreview(allUrls);
 }
 
-// Function to generate robots.txt with consistent line endings
+// Function to generate robots.txt
 function generateRobotsTxt() {
   const robotsTxt =
     `# robots.txt for ${baseUrl}${EOL}` +
@@ -196,81 +277,64 @@ function generateRobotsTxt() {
     `# Disallow certain paths${EOL}` +
     `Disallow: /debug-blogs${EOL}` +
     `Disallow: /admin/${EOL}` +
-    `Disallow: /private/${EOL}` +
-    `Disallow: /cgi-bin/${EOL}` +
-    `Disallow: /wp-admin/${EOL}` +
-    `Disallow: /wp-includes/${EOL}` +
-    `Disallow: /search/${EOL}${EOL}` +
-    `# Allow specific bots${EOL}` +
-    `User-agent: Googlebot${EOL}` +
-    `Allow: /${EOL}` +
-    `Crawl-delay: 1${EOL}${EOL}` +
-    `User-agent: Bingbot${EOL}` +
-    `Allow: /${EOL}` +
-    `Crawl-delay: 2${EOL}${EOL}` +
-    `User-agent: Applebot${EOL}` +
-    `Allow: /${EOL}` +
-    `Crawl-delay: 1${EOL}${EOL}` +
+    `Disallow: /private/${EOL}${EOL}` +
     `# Sitemap reference${EOL}` +
-    `Sitemap: ${baseUrl}/sitemap.xml${EOL}${EOL}` +
-    `# Additional sitemaps${EOL}` +
-    `# Sitemap: ${baseUrl}/sitemap-blog.xml${EOL}` +
-    `# Sitemap: ${baseUrl}/sitemap-pages.xml${EOL}${EOL}` +
-    `# Host directive${EOL}` +
-    `Host: ${baseUrl}${EOL}${EOL}` +
-    `# Contact information${EOL}` +
-    `# Contact: webmaster@dreams4u.in`;
+    `Sitemap: ${baseUrl}/sitemap.xml${EOL}`;
 
   const robotsPath = path.join(__dirname, "public", "robots.txt");
   fs.writeFileSync(robotsPath, robotsTxt, { encoding: "utf8" });
   console.log(`✅ robots.txt generated at: ${robotsPath}`);
+}
 
-  // Verify line endings
-  const content = fs.readFileSync(robotsPath, "utf8");
-  const crCount = (content.match(/\r/g) || []).length;
-  const lfCount = (content.match(/\n/g) || []).length;
-  const crlfCount = (content.match(/\r\n/g) || []).length;
+// Function to show sitemap preview
+function showSitemapPreview(allUrls) {
+  console.log(`\n📋 SITEMAP PREVIEW (First 10 URLs):`);
+  console.log(`═`.repeat(80));
 
-  console.log(`📊 Line endings check:`);
-  console.log(`   LF (\\n) count: ${lfCount}`);
-  console.log(`   CR (\\r) count: ${crCount}`);
-  console.log(`   CRLF (\\r\\n) count: ${crlfCount}`);
+  allUrls.slice(0, 10).forEach((url, index) => {
+    const indicator = url.path.startsWith("/blog/") ? "📄" : "🏠";
+    console.log(`${index + 1}. ${indicator} ${baseUrl}${url.path}`);
+    console.log(
+      `   📅 Lastmod: ${url.lastmod} | 🔄 Changefreq: ${url.changefreq} | ⭐ Priority: ${url.priority}`,
+    );
+    console.log(``);
+  });
+
+  if (allUrls.length > 10) {
+    console.log(`... and ${allUrls.length - 10} more URLs`);
+  }
+
+  console.log(`═`.repeat(80));
 }
 
 // Execute
-console.log("🚀 Starting sitemap generation...");
-console.log(`🌐 Base URL: ${baseUrl}`);
-console.log(`📁 Script location: ${__dirname}`);
-console.log(`💻 Platform: ${os.platform()}`);
-console.log(`📝 Line endings will use: LF (\\n)`);
+try {
+  generateSitemap();
+} catch (error) {
+  console.error("❌ ERROR generating sitemap:", error.message);
+  console.error(error.stack);
 
-// Check if blogs directory exists
-if (!fs.existsSync(blogsDir)) {
-  console.log(`❌ Blogs directory not found: ${blogsDir}`);
-  console.log(`📁 Current directory: ${process.cwd()}`);
+  // Create a basic sitemap as fallback
+  console.log("\n🔄 Creating basic sitemap as fallback...");
 
-  // Try alternative paths
-  const possiblePaths = [
-    path.join(__dirname, blogsDir),
-    path.join(process.cwd(), blogsDir),
-    path.join(__dirname, "..", blogsDir),
-    path.join(process.cwd(), "src", "content", "blogs"),
-  ];
+  let basicXml = `<?xml version="1.0" encoding="UTF-8"?>${EOL}`;
+  basicXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${EOL}`;
 
-  let foundPath = null;
-  for (const possiblePath of possiblePaths) {
-    if (fs.existsSync(possiblePath)) {
-      foundPath = possiblePath;
-      console.log(`✅ Found blogs at: ${foundPath}`);
-      break;
-    }
+  STATIC_PAGES.forEach((page) => {
+    basicXml += `  <url>${EOL}`;
+    basicXml += `    <loc>${baseUrl}${page.path}</loc>${EOL}`;
+    basicXml += `  </url>${EOL}`;
+  });
+
+  basicXml += `</urlset>`;
+
+  const publicDir = path.join(__dirname, "public");
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
   }
 
-  if (!foundPath) {
-    console.log(
-      "❌ Could not find blogs directory. Creating sitemap with static routes only.",
-    );
-  }
+  const sitemapPath = path.join(publicDir, "sitemap.xml");
+  fs.writeFileSync(sitemapPath, basicXml, { encoding: "utf8" });
+
+  console.log(`✅ Basic sitemap created with ${STATIC_PAGES.length} URLs`);
 }
-
-generateSitemap();
