@@ -1,244 +1,251 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import { Helmet } from "react-helmet-async";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import BlogNotFound from "./BlogNotFound";
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowLeft,
+  Tag,
+  ChevronUp,
+  Twitter,
+  Linkedin,
+  Link as LinkIcon,
+  Check,
+  BookOpen,
+} from "lucide-react";
+const params = new URLSearchParams(location.search);
+const activeTag = params.get("tag");
 
+/* =======================
+   LOAD ALL BLOG FILES
+======================= */
 const blogs = import.meta.glob("../content/blogs/*.md", {
   eager: true,
   query: "?raw",
   import: "default",
 });
 
+/* =======================
+   BLOG DETAIL PAGE
+======================= */
 export default function BlogDetail() {
   const { slug } = useParams();
+  const navigate = useNavigate();
+  const [copied, setCopied] = useState(false);
+  const [showTop, setShowTop] = useState(false);
 
-  const file = blogs[`../content/blogs/${slug}.md`];
-  if (!file) return <BlogNotFound />;
+  /* ---------- Scroll to top button ---------- */
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 500);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
+  /* ---------- Find blog by slug ---------- */
+  const blogEntry = Object.entries(blogs).find(([path]) =>
+    path.endsWith(`/${slug}.md`),
+  );
+
+  if (!blogEntry) return <BlogNotFound />;
+
+  const [, file] = blogEntry;
   const { data, content } = matter(file);
 
-  // Structured Data for SEO
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: data.title,
-    description: data.description,
-    image: data.image || "https://dreams4u.in/images/dreams4u.jpeg",
-    datePublished: data.date || new Date().toISOString(),
-    dateModified: data.updated || new Date().toISOString(),
-    author: {
-      "@type": "Person",
-      name: data.author || "Your Name",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Your Company",
-      logo: {
-        "@type": "ImageObject",
-        url: "/images/logo.png",
-      },
-    },
+  /* ---------- Helpers ---------- */
+  const formatDate = (date) =>
+    date
+      ? new Date(date).toLocaleDateString("en-IN", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })
+      : "Recent";
+
+  const tags = Array.isArray(data.tags)
+    ? data.tags
+    : data.tags?.split(",").map((t) => t.trim()) || [];
+
+  const shareUrl = `https://dreams4u.in/blog/${slug}`;
+
+  const share = (platform) => {
+    const text = encodeURIComponent(data.title);
+    const url = encodeURIComponent(shareUrl);
+
+    const links = {
+      twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+    };
+
+    window.open(links[platform], "_blank", "noopener,noreferrer");
   };
 
-  // Breadcrumb Schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://dreams4u.in",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blog",
-        item: "https://dreams4u.in/blog",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: data.title,
-        item: `https://dreams4u.in/blog/${slug}`,
-      },
-    ],
+  const copyLink = async () => {
+    await navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
+  /* =======================
+     RENDER
+  ======================= */
   return (
     <>
       <Helmet>
-        <title>{data.title} | Your Company Blog</title>
+        <title>{data.title} | Dreams4U Blog</title>
         <meta name="description" content={data.description} />
-        <meta name="keywords" content={data.tags || "React, SEO, JavaScript"} />
-        <meta property="og:title" content={data.title} />
-        <meta property="og:description" content={data.description} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://dreams4u.in/blog/${slug}`} />
-        <meta property="og:image" content={data.image || "/default-og.jpg"} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={data.title} />
-        <meta name="twitter:description" content={data.description} />
-        <link rel="canonical" href={`https://dreams4u.in/blog/${slug}`} />
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
+        <link rel="canonical" href={shareUrl} />
       </Helmet>
 
-      <article className="min-h-screen bg-gray-50">
-        {/* Breadcrumb */}
-        <nav className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 py-3">
-            <div className="flex items-center text-sm text-gray-600">
-              <Link to="/" className="hover:text-blue-600">
-                Home
-              </Link>
-              <span className="mx-2">›</span>
-              <Link to="/blog" className="hover:text-blue-600">
-                Blog
-              </Link>
-              <span className="mx-2">›</span>
-              <span className="text-gray-900 font-medium truncate">
-                {data.title}
-              </span>
-            </div>
+      {/* Scroll to top */}
+      {showTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 z-50 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700"
+        >
+          <ChevronUp />
+        </button>
+      )}
+
+      {/* Top bar */}
+      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <button
+            onClick={() => navigate("/blog")}
+            className="flex items-center gap-2 text-gray-600 hover:text-blue-600"
+          >
+            <ArrowLeft size={18} /> Back to Blogs
+          </button>
+
+          <div className="flex gap-2">
+            <button onClick={() => share("twitter")} className="icon-btn">
+              <Twitter size={18} />
+            </button>
+            <button onClick={() => share("linkedin")} className="icon-btn">
+              <Linkedin size={18} />
+            </button>
+            <button onClick={copyLink} className="icon-btn relative">
+              {copied ? <Check size={18} /> : <LinkIcon size={18} />}
+            </button>
           </div>
-        </nav>
+        </div>
+      </div>
 
-        {/* Main Content */}
-        <div className="max-w-4xl mx-auto px-4 py-12">
-          {/* Header */}
-          <header className="mb-10">
-            <div className="flex items-center space-x-2 mb-4">
-              <span className="px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
-                {data.category || "React"}
-              </span>
-              <span className="text-gray-500">•</span>
-              <time className="text-gray-500">{data.date || "Recent"}</time>
-              <span className="text-gray-500">•</span>
-              <span className="text-gray-500">
-                {data.readTime || "5 min read"}
-              </span>
-            </div>
+      {/* Page */}
+      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+        <div className="max-w-4xl mx-auto px-4 py-10">
+          {/* HERO */}
+          <section className="mb-12">
+            <span className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
+              {data.category || "SEO"}
+            </span>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
               {data.title}
             </h1>
 
-            <p className="text-xl text-gray-600 mb-6">{data.description}</p>
+            <p className="text-xl text-gray-600 mb-8">{data.description}</p>
 
-            <div className="flex items-center">
-              <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-              <div>
-                <div className="font-medium">
-                  {data.author || "Author Name"}
-                </div>
-                <div className="text-sm text-gray-500">Senior Developer</div>
-              </div>
+            <div className="flex flex-wrap gap-6 text-sm text-gray-500">
+              <span className="flex items-center gap-2">
+                <Calendar size={16} /> {formatDate(data.date)}
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock size={16} /> {data.readTime || "5 min"} read
+              </span>
+              <span className="flex items-center gap-2">
+                <User size={16} /> {data.author || "Dreams4U Team"}
+              </span>
             </div>
-          </header>
+          </section>
 
-          {/* Featured Image */}
+          {/* IMAGE */}
           {data.image && (
-            <div className="mb-10 rounded-xl overflow-hidden shadow-lg">
+            <div className="mb-14 rounded-3xl overflow-hidden shadow-lg">
               <img
                 src={data.image}
                 alt={data.title}
-                className="w-full h-auto"
-                loading="eager"
+                className="w-full h-[420px] object-cover"
               />
             </div>
           )}
 
-          {/* Content */}
-          <div className="prose prose-lg max-w-none mb-12">
-            <ReactMarkdown>{content}</ReactMarkdown>
+          {/* CONTENT */}
+          <div className="bg-white rounded-3xl shadow-sm border p-6 md:p-10">
+            <ReactMarkdown
+              components={{
+                h2: (props) => (
+                  <h2 className="text-3xl font-bold mt-10 mb-4" {...props} />
+                ),
+                h3: (props) => (
+                  <h3 className="text-2xl font-semibold mt-8 mb-3" {...props} />
+                ),
+                p: (props) => (
+                  <p
+                    className="text-gray-700 leading-relaxed my-5"
+                    {...props}
+                  />
+                ),
+                ul: (props) => (
+                  <ul className="list-disc pl-6 my-5" {...props} />
+                ),
+                blockquote: (props) => (
+                  <blockquote
+                    className="border-l-4 border-blue-500 bg-blue-50 p-5 rounded-r-xl italic my-8"
+                    {...props}
+                  />
+                ),
+              }}
+            >
+              {content}
+            </ReactMarkdown>
           </div>
 
-          {/* Tags */}
-          {data.tags && (
-            <div className="mb-12">
-              <h3 className="text-lg font-semibold mb-3">Tags:</h3>
-              <div className="flex flex-wrap gap-2">
-                {data.tags.split(",").map((tag) => (
-                  <span
-                    key={tag.trim()}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200"
+          {/* TAGS */}
+          {tags.length > 0 && (
+            <div className="mt-12">
+              <h3 className="font-semibold mb-4 flex items-center gap-2">
+                <Tag size={18} /> Tags
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    to={`/blog?tag=${tag}`}
+                    className="px-4 py-2 bg-gray-100 hover:bg-blue-100 rounded-full text-sm"
                   >
-                    #{tag.trim()}
-                  </span>
+                    #{tag}
+                  </Link>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Share Buttons */}
-          <div className="mb-12 border-t pt-8">
-            <h3 className="text-lg font-semibold mb-4">Share this article:</h3>
-            <div className="flex space-x-4">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Twitter
-              </button>
-              <button className="px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900">
-                LinkedIn
-              </button>
-              <button className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900">
-                Copy Link
-              </button>
-            </div>
-          </div>
-
-          {/* Related Posts */}
-          <div className="border-t pt-12">
-            <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Add related posts logic here */}
-            </div>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold mb-3">Stay Updated</h3>
-            <p className="text-gray-600 mb-6">
-              Get the latest React and SEO tips directly in your inbox
+          {/* CTA */}
+          <section className="mt-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-3xl p-10 text-center">
+            <h3 className="text-3xl font-bold mb-4">
+              Want Your Business to Rank on Google?
+            </h3>
+            <p className="text-blue-100 mb-6">
+              Get a free SEO audit and grow your traffic with Dreams4U.
             </p>
-            <div className="max-w-md mx-auto flex gap-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Subscribe
-              </button>
-            </div>
-          </div>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-xl"
+            >
+              Get Free SEO Audit
+            </Link>
+          </section>
         </div>
-      </article>
+      </div>
     </>
   );
 }
 
-function BlogNotFound() {
-  return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Blog Not Found</h1>
-        <p className="text-gray-600 mb-8">
-          The blog post you're looking for doesn't exist or has been moved.
-        </p>
-        <Link
-          to="/blog"
-          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-        >
-          Back to Blogs
-        </Link>
-      </div>
-    </div>
-  );
-}
+/* =======================
+   BLOG NOT FOUND
+======================= */
+<BlogNotFound />;

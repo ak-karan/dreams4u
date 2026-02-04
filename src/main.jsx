@@ -7,7 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import BlogList from "./pages/BlogList";
+import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Portfolio from "./components/Portfolio";
 import Services from "./service/Services";
@@ -28,6 +28,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
+import DebugBlogs from "./pages/DebugBlogs";
 
 import "./index.css";
 import { Buffer } from "buffer";
@@ -60,13 +61,15 @@ const router = createBrowserRouter([
         path: "services/custom-website-design",
         element: <CustomWebsiteDesign />,
       },
-
-      { path: "blog", element: <BlogList /> },
-      { path: "blog/:slug", element: <BlogDetail /> },
       { path: "privacy", element: <Privacy /> },
       { path: "terms", element: <Terms /> },
       { path: "cookies", element: <Cookies /> },
       { path: "*", element: <NotFound /> },
+
+      { path: "blog", element: <Blog /> },
+      { path: "blog/:slug", element: <BlogDetail /> },
+      { path: "debug-blogs", element: <DebugBlogs /> },
+      { path: "debug-blogs/:slug?", element: <DebugBlogs /> },
     ],
   },
 ]);
