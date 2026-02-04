@@ -1,15 +1,38 @@
 # robots.txt for https://dreams4u.in
 User-agent: *
 Allow: /
+
+# Disallow certain paths
 Disallow: /debug-blogs
 Disallow: /admin/
 Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search/
 
-Sitemap: https://dreams4u.in/sitemap.xml
-Sitemap: https://dreams4u.in/sitemap-blog.xml
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
 
-# Crawl delay
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 2
 
-# Host
+User-agent: Applebot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap reference
+Sitemap: https://dreams4u.in/sitemap.xml
+
+# Additional sitemaps
+# Sitemap: https://dreams4u.in/sitemap-blog.xml
+# Sitemap: https://dreams4u.in/sitemap-pages.xml
+
+# Host directive
 Host: https://dreams4u.in
+
+# Contact information
+# Contact: webmaster@dreams4u.in
