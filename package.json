@@ -25,10 +25,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run sitemap && vite build",
     "preview": "vite preview",
-    "start": "vite",
-    "sitemap": "node scripts/generate-sitemap.js"
+    "sitemap": "node scripts/generate-sitemap.js",
+    "sitemap:ci": "node scripts/generate-sitemap.js",
+    "deploy": "npm run build && npm run deploy:gh-pages",
+    "deploy:gh-pages": "gh-pages -d dist"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
