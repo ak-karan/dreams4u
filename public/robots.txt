@@ -1,4 +1,11 @@
+# robots.txt for https://dreams4u.in
 User-agent: *
 Allow: /
 
+# Disallow certain paths
+Disallow: /debug-blogs
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap reference
 Sitemap: https://dreams4u.in/sitemap.xml

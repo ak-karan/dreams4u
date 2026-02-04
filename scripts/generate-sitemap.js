@@ -247,7 +247,7 @@ function generateSitemap() {
   xml += `</urlset>`;
 
   // Create public directory if it doesn't exist
-  const publicDir = path.join(__dirname, "public");
+  const publicDir = path.join(process.cwd(), "public");
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
     console.log(`📁 Created directory: ${publicDir}`);
@@ -281,7 +281,7 @@ function generateRobotsTxt() {
     `# Sitemap reference${EOL}` +
     `Sitemap: ${baseUrl}/sitemap.xml${EOL}`;
 
-  const robotsPath = path.join(__dirname, "public", "robots.txt");
+  const robotsPath = path.join(process.cwd(), "public", "robots.txt");
   fs.writeFileSync(robotsPath, robotsTxt, { encoding: "utf8" });
   console.log(`✅ robots.txt generated at: ${robotsPath}`);
 }
@@ -328,7 +328,7 @@ try {
 
   basicXml += `</urlset>`;
 
-  const publicDir = path.join(__dirname, "public");
+  const publicDir = path.join(process.cwd(), "public");
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
   }
