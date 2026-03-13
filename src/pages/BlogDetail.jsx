@@ -39,11 +39,11 @@ export default function BlogDetail() {
   const [showTop, setShowTop] = useState(false);
 
   /* ---------- Scroll to top button ---------- */
-  useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 500);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // useEffect(() => {
+  //   const onScroll = () => setShowTop(window.scrollY > 500);
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
   /* ---------- Find blog by slug ---------- */
   const blogEntry = Object.entries(blogs).find(([path]) =>
@@ -168,7 +168,7 @@ export default function BlogDetail() {
               <img
                 src={data.image}
                 alt={data.title}
-                className="w-full h-[420px] object-cover"
+                className="w-full h-96 object-cover"
               />
             </div>
           )}
