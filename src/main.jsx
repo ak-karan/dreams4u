@@ -1,45 +1,46 @@
+import { lazy, Suspense } from "react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
 import { HelmetProvider } from "react-helmet-async";
-
+import MainLayout from "./layouts/MainLayout";
+// Home page Single
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import BlogDetail from "./pages/BlogDetail";
-import Portfolio from "./components/Portfolio";
-import Services from "./service/Services";
-import WebDevelopment from "./service/WebDevelopment";
-import WebsiteDesign from "./service/WebsiteDesign";
-import DigitalMarketing from "./service/DigitalMarketing";
-import ReactDevelopment from "./service/ReactDevelopment";
-import SEOPage from "./service/SEOPage";
-import EcommercePage from "./service/EcommercePage";
-import MobilePage from "./service/MobilePage";
-import BusinessWebsitePage from "./service/BusinessWebsitePage";
-import UIUXPage from "./service/UIUXPage";
-import SecurityPage from "./service/SecurityPage";
-import MaintenancePage from "./service/MaintenancePage";
-import AppDevelopment from "./service/AppDevelopment";
-import CustomWebsiteDesign from "./service/CustomWebsiteDesign";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import Cookies from "./pages/Cookies";
-import NotFound from "./pages/NotFound";
-import DebugBlogs from "./pages/DebugBlogs";
+
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const Portfolio = lazy(() => import("./components/Portfolio"));
+const Services = lazy(() => import("./service/Services"));
+const WebDevelopment = lazy(() => import("./service/WebDevelopment"));
+const WebsiteDesign = lazy(() => import("./service/WebsiteDesign"));
+const DigitalMarketing = lazy(() => import("./service/DigitalMarketing"));
+const ReactDevelopment = lazy(() => import("./service/ReactDevelopment"));
+const SEOPage = lazy(() => import("./service/SEOPage"));
+const EcommercePage = lazy(() => import("./service/EcommercePage"));
+const MobilePage = lazy(() => import("./service/MobilePage"));
+const BusinessWebsitePage = lazy(() => import("./service/BusinessWebsitePage"));
+const UIUXPage = lazy(() => import("./service/UIUXPage"));
+const SecurityPage = lazy(() => import("./service/SecurityPage"));
+const MaintenancePage = lazy(() => import("./service/MaintenancePage"));
+const AppDevelopment = lazy(() => import("./service/AppDevelopment"));
+const CustomWebsiteDesign = lazy(() => import("./service/CustomWebsiteDesign"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Cookies = lazy(() => import("./pages/Cookies"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const DebugBlogs = lazy(() => import("./pages/DebugBlogs"));
 
 import "./index.css";
-import { Buffer } from "buffer";
-window.Buffer = Buffer;
-
+import { Buffer } from "buffer"; window.Buffer = Buffer;
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
+
       { path: "about", element: <About /> },
       { path: "portfolio", element: <Portfolio /> },
       { path: "contact", element: <Contact /> },
@@ -61,15 +62,18 @@ const router = createBrowserRouter([
         path: "services/custom-website-design",
         element: <CustomWebsiteDesign />,
       },
+
       { path: "privacy", element: <Privacy /> },
       { path: "terms", element: <Terms /> },
       { path: "cookies", element: <Cookies /> },
-      { path: "*", element: <NotFound /> },
 
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogDetail /> },
+
       { path: "debug-blogs", element: <DebugBlogs /> },
       { path: "debug-blogs/:slug?", element: <DebugBlogs /> },
+
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
@@ -77,7 +81,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
-      <RouterProvider router={router} />
+      {/* ✅ Suspense MUST for lazy loading */}
+      <Suspense fallback={<div style={{ padding: 20 }}>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </HelmetProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
