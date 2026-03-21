@@ -164,10 +164,10 @@ function WhyChooseUs() {
         <div className="relative">
           {/* Navigation Buttons */}
           <div className="flex justify-center gap-4 mb-8">
-            <button className="swiper-button-prev-custom p-4 bg-white rounded-full shadow-xl border border-gray-200 hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 group">
+            <button className="swiper-button-prev-custom p-4 bg-white rounded-full shadow-xl border-4 border-cyan-600 hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 group border-double">
               <FaChevronLeft className="w-5 h-5 text-gray-700 group-hover:text-cyan-600 transition-colors" />
             </button>
-            <button className="swiper-button-next-custom p-4 bg-white rounded-full shadow-xl border border-gray-200 hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 group">
+            <button className="swiper-button-next-custom p-4 bg-white rounded-full shadow-xl border-4 border-cyan-600 hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 group border-double">
               <FaChevronRight className="w-5 h-5 text-gray-700 group-hover:text-cyan-600 transition-colors" />
             </button>
           </div>

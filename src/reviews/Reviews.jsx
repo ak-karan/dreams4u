@@ -119,10 +119,10 @@ const Reviews = () => {
         <div className="relative">
           {/* Navigation Buttons */}
           <div className="flex justify-center gap-4 mb-8">
-            <button className="swiper-button-prev-custom p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 group">
+            <button className="swiper-button-prev-custom p-4 bg-white/10 backdrop-blur-sm border border-white/80 rounded-full hover:bg-white/20 transition-all duration-300 group">
               <ChevronLeft className="w-5 h-5 text-white group-hover:text-cyan-400 transition-colors" />
             </button>
-            <button className="swiper-button-next-custom p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 group">
+            <button className="swiper-button-next-custom p-4 bg-white/10 backdrop-blur-sm border border-white/80 rounded-full hover:bg-white/20 transition-all duration-300 group">
               <ChevronRight className="w-5 h-5 text-white group-hover:text-cyan-400 transition-colors" />
             </button>
           </div>

@@ -20,6 +20,7 @@ export default function Home() {
   const companyName = "Dreams4u";
   const websiteUrl = "https://dreams4u.in";
   const phoneNumber = "+919667316333";
+  const callnow = "Call Now"
   const location = "Faridabad, Haryana";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
@@ -42,7 +43,7 @@ export default function Home() {
           src="/images/Website-design-company.webp"
           alt="Professional Website Design Company in Faridabad - Dreams4u"
           className="w-full h-auto"
-          loading="eager"
+          loading="lazy"
           width="1920"
           height="1080"
         />
@@ -110,7 +111,7 @@ export default function Home() {
               className="inline-block bg-cyan-600 text-white px-8 py-3 rounded-xl font-bold transition-all hover:bg-cyan-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
               aria-label={`Call ${companyName} at ${phoneNumber}`}
             >
-              {phoneNumber}
+              {callnow}
             </a>
           </div>
         </div>

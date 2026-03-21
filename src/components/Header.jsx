@@ -283,12 +283,14 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Toggle */}
+          
           <motion.button
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
+            className="flex  gap-2 lg:hidden p-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
           >
+            <menu className="text-lg uppercase font-bold">Menu</menu>
             {menuOpen ? (
               <X className="w-6 h-6" />
             ) : (
