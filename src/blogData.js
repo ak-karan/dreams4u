@@ -10,7 +10,7 @@ export const blogPosts = [
     date: "2024-01-15",
     readTime: "8 min read",
     author: "John Doe",
-    image: "/images/react-seo.jpg",
+    image: "/images/react-seo.webp",
     featured: true,
     metaTitle: "React SEO Tips | Boost Your React App's Search Ranking",
     metaDescription:
@@ -27,7 +27,7 @@ export const blogPosts = [
     date: "2024-01-10",
     readTime: "10 min read",
     author: "Jane Smith",
-    image: "/images/react-routing.jpg",
+    image: "/images/react-routing.webp",
     featured: true,
     metaTitle: "Dynamic Routing in React | React Router Tutorial",
     metaDescription:

@@ -6,7 +6,7 @@ tags: small business seo, 2026 seo trends, local seo, digital marketing, google 
 author: Dreams4U Team
 date: 2026-02-03
 readTime: 6 min
-image: /images/seo-small-business-2026.png
+image: /images/seo-small-business-2026.webp
 ---
 
 ## Introduction

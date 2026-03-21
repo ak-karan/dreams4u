@@ -7,7 +7,7 @@ author: "Dreams4u Team"
 date: 2026-02-06
 category: Creativity
 readTime: 6 min
-image: /images/how-to-use-creative-websites-for-innovation.png
+image: /images/how-to-use-creative-websites-for-innovation.webp
 tags:
   - innovation techniques
   - creative thinking

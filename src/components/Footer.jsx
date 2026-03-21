@@ -65,21 +65,21 @@ function Footer() {
           viewport={{ once: true }}
           className="relative -top-10 bg-gradient-to-r from-cyan-600 via-blue-600 to-violet-700 rounded-3xl p-8 md:p-12 shadow-2xl mb-12 border border-white/10"
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center py-4">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-3">
+              <h3 className="text-xl md:text-3xl font-bold mb-3">
                 Stay Updated with Latest Trends
               </h3>
-              <p className="text-cyan-100">
+              <p className="text-cyan-100 w-80 md:w-auto">
                 Subscribe to our newsletter for web design tips, SEO insights,
                 and exclusive offers.
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="md:flex gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="flex-1 px-6 mb-2 md:mb-0 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}

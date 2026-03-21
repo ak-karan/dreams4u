@@ -1,9 +1,9 @@
 import React from "react";
-// import homeImage from "../../public/images/Website-design-company.jpg";
-// import bulbHome from "../assets/images/bulb.png";
-// import lap1Home from "../assets/images/lap1Home.png";
-// import lap2Home from "../assets/images/lap2Home.png";
-// import lap3Home from "../assets/images/lap3Home.png";
+// import homeImage from "../../public/images/Website-design-company.webp";
+// import bulbHome from "../assets/images/bulb.webp";
+// import lap1Home from "../assets/images/lap1Home.webp";
+// import lap2Home from "../assets/images/lap2Home.webp";
+// import lap3Home from "../assets/images/lap3Home.webp";
 import Services from "../service/Services";
 import WhyChooseUs from "./WhyChooseUs";
 import Reviews from "../reviews/Reviews";
@@ -21,7 +21,7 @@ export default function Home() {
   const websiteUrl = "https://dreams4u.in";
   const phoneNumber = "+919667316333";
   const location = "Faridabad, Haryana";
-  const ogpost = "https://dreams4u.in/images/dreams4u.jpeg";
+  const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
   const pageTitle = `Best Website Design Company in Faridabad | ${companyName}`;
   const pageDescription = `${companyName} - Top-rated website design company in Faridabad offering affordable website design, SEO, digital marketing, e-commerce solutions & mobile-responsive development services. Call ${phoneNumber}`;
@@ -39,7 +39,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden bg-gray-100">
         {/* BACKGROUND IMAGE */}
         <img
-          src="/images/Website-design-company.jpg"
+          src="/images/Website-design-company.webp"
           alt="Professional Website Design Company in Faridabad - Dreams4u"
           className="w-full h-auto"
           loading="eager"
@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* BULB */}
         <img
-          src="/images/bulb.png"
+          src="/images/bulb.webp"
           alt="Creative Web Solutions"
           className="absolute top-10 left-[47%] md:top-[29%] md:left-[47%] w-3 md:w-10 animate-swing"
           loading="lazy"
@@ -59,27 +59,27 @@ export default function Home() {
 
         {/* FLOATING IMAGES */}
         <img
-          src="/images/lap1Home.png"
+          src="/images/lap1Home.webp"
           alt="Web Design Services Faridabad"
-          className="absolute w-12 md:w-44 animate-float delay-200 md:top-90 md:left-195 top-25 left-49"
+          className="absolute w-12 md:w-44 animate-float delay-200 md:top-90 md:left-195 top-25 left-72"
           loading="lazy"
           width="176"
           height="132"
         />
 
         <img
-          src="/images/lap2Home.png"
+          src="/images/lap2Home.webp"
           alt="Website Development Company"
-          className="absolute w-8 md:w-32 animate-float delay-500 md:top-52 md:left-175 top-15 left-48"
+          className="absolute w-8 md:w-32 animate-float delay-500 md:top-52 md:left-175 top-15 left-64"
           loading="lazy"
           width="128"
           height="96"
         />
 
         <img
-          src="/images/lap3Home.png"
+          src="/images/lap3Home.webp"
           alt="Digital Marketing Services Faridabad"
-          className="absolute w-7 md:w-28 animate-float delay-700 md:top-14 md:left-214 top-5 left-53"
+          className="absolute w-7 md:w-28 animate-float delay-700 md:top-14 md:left-214 top-5 left-74"
           loading="lazy"
           width="112"
           height="84"

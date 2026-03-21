@@ -11,7 +11,7 @@ export default function MainLayout() {
       <Header />
 
       {/* Main Content with padding for header */}
-      <main className="flex-grow pt-16 md:pt-0">
+      <main className="grow md:pt-0">
         <Outlet />
       </main>
 

@@ -7,7 +7,7 @@ author: "Dreams4u Team"
 date: 2026-02-08
 category: Creativity
 readTime: 6 min
-image: /images/daily-habits-to-boost-creativity-and-innovation.jpg
+image: /images/daily-habits-to-boost-creativity-and-innovation.webp
 tags:
   - creative habits
   - innovation mindset

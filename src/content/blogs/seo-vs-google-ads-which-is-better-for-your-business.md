@@ -7,7 +7,7 @@ author: "Dreams4u Team"
 date: 2026-03-15
 category: Digital Marketing
 readTime: 7 min
-image: /images/seo-vs-google-ads-comparison-guide.png
+image: /images/seo-vs-google-ads-comparison-guide.webp
 tags:
   - SEO vs Google Ads
   - PPC vs Organic

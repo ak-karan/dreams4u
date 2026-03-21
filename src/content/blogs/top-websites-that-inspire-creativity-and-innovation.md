@@ -7,7 +7,7 @@ author: "Dreams4u Team"
 date: 2026-02-04
 category: Creativity
 readTime: 6 min
-image: /images/top-websites-that-inspire-creativity-and-innovation.jpg
+image: /images/top-websites-that-inspire-creativity-and-innovation.webp
 tags:
   - creative inspiration websites
   - innovation ideas

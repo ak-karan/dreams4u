@@ -30,6 +30,7 @@ export default function Blog() {
                 src={blog.image}
                 alt={blog.title}
                 className="h-48 w-full object-cover group-hover:scale-105 transition"
+                loading="lazy"
               />
             )}
 
