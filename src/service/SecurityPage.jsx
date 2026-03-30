@@ -228,7 +228,7 @@ function SecurityPage() {
                 Get Security Audit
               </a>
               <a
-                href="tel:+919667316333"
+                href="tel:+919717030244"
                 className="bg-transparent border-2 border-white hover:bg-white hover:text-red-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
               >
                 Emergency: +91-96673-16333
@@ -468,7 +468,7 @@ function SecurityPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+919667316333"
+              href="tel:+919717030244"
               className="bg-white text-red-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-lg text-lg transition duration-300 transform hover:scale-105"
             >
               Emergency Call Now

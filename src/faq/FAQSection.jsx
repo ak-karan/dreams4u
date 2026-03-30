@@ -299,10 +299,10 @@ const FAQSection = ({ faqs = homeFaqs }) => {
                   <div>
                     <p className="text-sm text-gray-300">Call Us</p>
                     <a
-                      href="tel:+919667316333"
+                      href="tel:+919717030244"
                       className="text-lg font-semibold hover:text-cyan-400 transition-colors"
                     >
-                      +91 9667316333
+                      +91 9717030244
                     </a>
                   </div>
                 </div>

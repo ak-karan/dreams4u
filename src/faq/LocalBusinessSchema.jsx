@@ -6,7 +6,7 @@ const LocalBusinessSchema = () => {
     "@type": "LocalBusiness",
     name: "Dreams4u",
     image: "https://yourwebsite.com/logo.webp",
-    telephone: "+91-9667316333",
+    telephone: "+91-9717030244",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Faridabad",

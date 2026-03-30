@@ -214,10 +214,10 @@ function Footer() {
                   <Phone size={20} className="text-cyan-400" />
                 </div>
                 <a
-                  href="tel:+919667316333"
+                  href="tel:+919717030244"
                   className="text-gray-400 hover:text-cyan-400 transition-colors"
                 >
-                  +91 9667316333
+                  +91 9717030244
                 </a>
               </div>
 

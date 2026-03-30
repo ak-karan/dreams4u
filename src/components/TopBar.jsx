@@ -15,11 +15,11 @@ function TopBar() {
         {/* LEFT */}
         <div className="flex items-center justify-center md:justify-start gap-4">
           <a
-            href="tel:+919667316333"
+            href="tel:+919717030244"
             className="flex items-center gap-2 hover:text-teal-200 transition"
           >
             <Phone className="w-4 h-4 text-cyan-300" />
-            +91 9667316333
+            +91 9717030244
           </a>
 
           <span className="hidden md:inline">|</span>

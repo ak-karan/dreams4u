@@ -19,7 +19,7 @@ import homeSchema from "../seo/homeSchema";
 export default function Home() {
   const companyName = "Dreams4u";
   const websiteUrl = "https://dreams4u.in";
-  const phoneNumber = "+919667316333";
+  const phoneNumber = "+919717030244";
   const callnow = "Call Now"
   const location = "Faridabad, Haryana";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";

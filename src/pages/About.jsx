@@ -57,7 +57,7 @@ const About = () => {
             },
             contactPoint: {
               "@type": "ContactPoint",
-              telephone: "+919667316333",
+              telephone: "+919717030244",
               contactType: "customer service",
               areaServed: "IN",
               availableLanguage: "Hindi, English",

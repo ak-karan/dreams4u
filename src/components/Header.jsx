@@ -66,10 +66,10 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <Phone className="w-3 h-3 text-cyan-400" />
               <a
-                href="tel:+919667316333"
+                href="tel:+919717030244"
                 className="hover:text-cyan-400 transition-colors"
               >
-                +91 9667316333
+                +91 9717030244
               </a>
             </div>
             <div className="hidden md:flex items-center gap-2">
@@ -262,7 +262,7 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             <motion.a
-              href="https://wa.me/919667316333"
+              href="https://wa.me/919717030244"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all"
@@ -272,7 +272,7 @@ export default function Header() {
             </motion.a>
 
             <motion.a
-              href="tel:+919667316333"
+              href="tel:+919717030244"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
@@ -394,7 +394,7 @@ export default function Header() {
                   </h4>
                   <div className="space-y-3">
                     <a
-                      href="tel:+919667316333"
+                      href="tel:+919717030244"
                       className="flex items-center gap-3 p-3 bg-white rounded-xl hover:shadow-md transition-all"
                     >
                       <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
@@ -403,13 +403,13 @@ export default function Header() {
                       <div>
                         <div className="font-semibold">Call Us</div>
                         <div className="text-sm text-gray-600">
-                          +91 9667316333
+                          +91 9717030244
                         </div>
                       </div>
                     </a>
 
                     <a
-                      href="https://wa.me/919667316333"
+                      href="https://wa.me/919717030244"
                       className="flex items-center gap-3 p-3 bg-white rounded-xl hover:shadow-md transition-all"
                     >
                       <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
