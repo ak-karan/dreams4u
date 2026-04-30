@@ -47,7 +47,7 @@ function Portfolio() {
           >
             Excellence Driven by{" "}
             <span className="relative">
-              <span className="relative z-10">Client Satisfaction</span>
+              <span className="relative z-10 text-amber-500">Client Satisfaction</span>
               <motion.div
                 className="absolute bottom-2 left-0 w-full h-3 bg-gradient-to-r from-amber-400/30 to-orange-400/30 -z-0"
                 initial={{ width: 0 }}

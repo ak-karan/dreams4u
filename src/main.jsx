@@ -9,6 +9,10 @@ import Home from "./pages/Home";
 
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const FaridabadHub = lazy(() => import("./faridabad/FaridabadHub"));
+const FaridabadLocationPage = lazy(() =>
+  import("./faridabad/FaridabadLocationPage"),
+);
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 const Portfolio = lazy(() => import("./components/Portfolio"));
@@ -42,6 +46,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
 
       { path: "about", element: <About /> },
+      { path: "faridabad", element: <FaridabadHub /> },
+      { path: "faridabad/:areaSlug", element: <FaridabadLocationPage /> },
       { path: "portfolio", element: <Portfolio /> },
       { path: "contact", element: <Contact /> },
 

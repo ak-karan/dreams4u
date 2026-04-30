@@ -2,6 +2,11 @@ const base = import.meta.env.BASE_URL;
 
 export const portfolioList = [
   {
+    title: "Apparel Clinic",
+    urls: "https://apparelclinic.com/",
+    imageurl: `${base}images/apparelclinic.webp`,
+  },
+  {
     title: "Jain Hydraulics Group",
     urls: "https://jainhydraulicsgroup.com/",
     imageurl: `${base}images/jain-hydraulics.webp`,
