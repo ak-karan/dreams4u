@@ -4,6 +4,12 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { appRoutes } from "./routes";
 
+// Prevent noisy SSR warnings from client-only layout effects used by
+// animation/router libraries during static prerendering.
+if (typeof window === "undefined") {
+  React.useLayoutEffect = React.useEffect;
+}
+
 function buildHeadMarkup(helmet) {
   return [
     helmet.title?.toString() ?? "",
