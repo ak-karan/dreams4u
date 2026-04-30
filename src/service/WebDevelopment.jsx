@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import CountUp from "react-countup";
 import {
   CodeBracketIcon,
   ServerIcon,
@@ -245,40 +244,19 @@ const WebDevelopment = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-cyan-700">
-                <CountUp start={0} end={100} duration={2} suffix="+" />
-              </div>
+              <div className="text-3xl font-bold text-cyan-700">100+</div>
               <div className="text-gray-600">Websites Developed</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-cyan-700">
-                <CountUp
-                  start={0}
-                  end={3}
-                  duration={2}
-                  decimals={1}
-                  suffix="s"
-                />
-              </div>
+              <div className="text-3xl font-bold text-cyan-700">3.0s</div>
               <div className="text-gray-600">Average Load Time</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-cyan-700">
-                <CountUp
-                  start={0}
-                  end={99.9}
-                  duration={2}
-                  decimals={1}
-                  suffix="%"
-                />
-              </div>
+              <div className="text-3xl font-bold text-cyan-700">99.9%</div>
               <div className="text-gray-600">Client Satisfaction</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-cyan-700">
-                <CountUp start={0} end={24} duration={2} />
-                /7
-              </div>
+              <div className="text-3xl font-bold text-cyan-700">24/7</div>
               <div className="text-gray-600">Technical Support</div>
             </div>
           </div>

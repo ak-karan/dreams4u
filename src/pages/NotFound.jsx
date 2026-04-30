@@ -2,10 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Home, ArrowLeft } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cyan-50 flex items-center justify-center px-4">
+      <Helmet>
+        <title>Page Not Found | Dreams4u</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

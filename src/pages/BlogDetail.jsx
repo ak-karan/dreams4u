@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import { Helmet } from "react-helmet-async";
@@ -17,9 +17,6 @@ import {
   Check,
   BookOpen,
 } from "lucide-react";
-const params = new URLSearchParams(location.search);
-const activeTag = params.get("tag");
-
 /* =======================
    LOAD ALL BLOG FILES
 ======================= */
@@ -35,8 +32,11 @@ const blogs = import.meta.glob("../content/blogs/*.md", {
 export default function BlogDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const [copied, setCopied] = useState(false);
   const [showTop, setShowTop] = useState(false);
+  const params = new URLSearchParams(location.search);
+  const activeTag = params.get("tag");
 
   /* ---------- Scroll to top button ---------- */
   // useEffect(() => {
@@ -214,7 +214,7 @@ export default function BlogDetail() {
                 {tags.map((tag) => (
                   <Link
                     key={tag}
-                    to={`/blog?tag=${tag}`}
+                    to={`/blog?tag=${activeTag === tag ? "" : tag}`}
                     className="px-4 py-2 bg-gray-100 hover:bg-blue-100 rounded-full text-sm"
                   >
                     #{tag}

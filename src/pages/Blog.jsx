@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import matter from "gray-matter";
+import { Helmet } from "react-helmet-async";
 
 const blogs = import.meta.glob("../content/blogs/*.md", {
   eager: true,
@@ -16,6 +17,14 @@ export default function Blog() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
+      <Helmet>
+        <title>Dreams4u Blog | Web Design, SEO and Digital Marketing Insights</title>
+        <meta
+          name="description"
+          content="Read the latest Dreams4u blog articles on website design, SEO, digital marketing, creativity, and business growth strategies."
+        />
+        <link rel="canonical" href="https://dreams4u.in/blog" />
+      </Helmet>
       <h1 className="text-4xl font-bold mb-10">Dreams4U Blog</h1>
 
       <div className="grid md:grid-cols-3 gap-8">

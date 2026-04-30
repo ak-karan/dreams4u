@@ -10,6 +10,7 @@ import {
 } from "swiper/modules";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -21,10 +22,19 @@ function Portfolio() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28"
-      aria-labelledby="portfolio-heading"
-    >
+    <>
+      <Helmet>
+        <title>Portfolio | Dreams4u Website Design Projects in Faridabad</title>
+        <meta
+          name="description"
+          content="Explore Dreams4u portfolio featuring website design and development projects delivered for businesses in Faridabad and beyond."
+        />
+        <link rel="canonical" href="https://dreams4u.in/portfolio" />
+      </Helmet>
+      <section
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28"
+        aria-labelledby="portfolio-heading"
+      >
       {/* Header Section */}
       <div className="text-center mb-16">
         <motion.div
@@ -262,7 +272,8 @@ function Portfolio() {
           </div>
         </motion.div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 

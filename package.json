@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run sitemap && vite build",
+    "build": "npm run sitemap && vite build && vite build --ssr src/prerender.jsx --outDir dist/server && node scripts/prerender.js",
     "preview": "vite preview",
     "sitemap": "node scripts/generate-sitemap.js",
     "sitemap:ci": "node scripts/generate-sitemap.js",
