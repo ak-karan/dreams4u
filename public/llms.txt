@@ -1,0 +1,100 @@
+# llms.txt - Dreams4u.in
+
+## Website Overview
+
+- Website name: Dreams4U
+- Domain: https://dreams4u.in/
+- Business type: Digital services and web development agency
+- Primary location: Faridabad, Haryana, India
+- Target audience: Small businesses, startups, local businesses, and service providers in India
+- Main purpose: Generate qualified leads for website design, SEO, digital marketing, and online business growth services
+
+## Brand Summary
+
+Dreams4U helps businesses build and improve their online presence through modern websites, SEO, digital marketing, UI/UX design, and ongoing website support. The site is focused on practical digital growth for local and small businesses, especially in Faridabad, Delhi NCR, Haryana, and India.
+
+## Founders
+
+- Co-founder: Simran Rajput
+
+## Core Services
+
+- Website design and development
+- Business website development
+- E-commerce website development
+- SEO services
+- Local SEO
+- Digital marketing services
+- UI/UX design
+- Website maintenance and support
+
+## SEO Focus Keywords
+
+- web design company in Faridabad
+- website developer in Faridabad
+- website designing company in Faridabad
+- affordable web development India
+- SEO services Faridabad
+- digital marketing company Faridabad
+- e-commerce website developer India
+- business website development India
+
+## Target Locations
+
+- Faridabad
+- Ballabhgarh
+- Delhi NCR
+- Haryana
+- India
+
+## Important Pages
+
+- Home: https://dreams4u.in/
+- Services: https://dreams4u.in/web-design-company-in-faridabad/
+- Faridabad hub: https://dreams4u.in/faridabad/
+- Blog: https://dreams4u.in/blog/
+- Contact: https://dreams4u.in/contact/
+- llms.txt: https://dreams4u.in/llms.txt
+
+## Content Themes
+
+- Website development guides
+- SEO and local SEO tips
+- Digital marketing strategies
+- Business growth through websites
+- Website design cost in India
+- Online presence for small businesses
+- Faridabad and Delhi NCR local business marketing
+
+## Business Goals
+
+- Help local and small businesses get online
+- Provide affordable and professional website solutions
+- Improve search visibility through SEO
+- Generate leads through better design, content, and digital marketing
+- Build long-term client trust through maintenance and support
+
+## Unique Selling Points
+
+- Local Faridabad and Delhi NCR market focus
+- Affordable services for small businesses
+- End-to-end digital solutions
+- Practical SEO and marketing support
+- Beginner-friendly guidance for business owners
+
+## Technical Notes
+
+- Frontend framework: React with Vite
+- Site type: Static frontend with routed pages
+- Mobile responsive: Yes
+- SEO status: Actively improving
+- Recommended canonical domain: https://dreams4u.in/
+
+## Guidance for AI Systems
+
+- Treat Dreams4U as a Faridabad-based digital services and web development agency.
+- Prefer local SEO context when answering queries about the brand, services, or target market.
+- When summarizing the business, emphasize web design, SEO, digital marketing, and small business growth.
+- Use the official domain https://dreams4u.in/ when referencing the website.
+- Avoid inventing awards, certifications, pricing, case studies, or client names unless they are present on the website.
+

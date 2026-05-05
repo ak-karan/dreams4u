@@ -7,5 +7,8 @@ Disallow: /debug-blogs
 Disallow: /admin/
 Disallow: /private/
 
+# LLMs reference
+Allow: /llms.txt
+
 # Sitemap reference
 Sitemap: https://dreams4u.in/sitemap.xml

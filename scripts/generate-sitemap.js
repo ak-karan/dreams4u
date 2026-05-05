@@ -151,6 +151,12 @@ const STATIC_PAGES = [
     lastmod: new Date().toISOString().split("T")[0],
   },
   {
+    path: "/llms.txt",
+    priority: "0.5",
+    changefreq: "monthly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
     path: "/debug-blogs",
     priority: "0.3",
     changefreq: "monthly",
@@ -291,6 +297,8 @@ function generateRobotsTxt() {
     `Disallow: /debug-blogs${EOL}` +
     `Disallow: /admin/${EOL}` +
     `Disallow: /private/${EOL}${EOL}` +
+    `# LLMs reference${EOL}` +
+    `Allow: /llms.txt${EOL}${EOL}` +
     `# Sitemap reference${EOL}` +
     `Sitemap: ${baseUrl}/sitemap.xml${EOL}`;
 

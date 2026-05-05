@@ -38,6 +38,7 @@ function Footer() {
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
     { name: "Careers", path: "/careers" },
+    { name: "AI", path: "/llms.txt", staticFile: true },
   ];
 
   const features = [
@@ -151,16 +152,29 @@ function Footer() {
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Link
-                    to={link.path}
-                    className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors group"
-                  >
-                    <ChevronRight
-                      size={16}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400"
-                    />
-                    {link.name}
-                  </Link>
+                  {link.staticFile ? (
+                    <a
+                      href={link.path}
+                      className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors group"
+                    >
+                      <ChevronRight
+                        size={16}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400"
+                      />
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors group"
+                    >
+                      <ChevronRight
+                        size={16}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400"
+                      />
+                      {link.name}
+                    </Link>
+                  )}
                 </motion.li>
               ))}
             </ul>
