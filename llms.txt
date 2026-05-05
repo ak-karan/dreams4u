@@ -1,0 +1,131 @@
+# LLMs.txt – Dreams4u.in
+
+## 🧾 Website Overview
+
+* Website Name: Dreams4u
+* Domain: https://dreams4u.in/
+* Type: Digital Services / Web Development Agency
+* Target Audience: Small businesses, startups, local businesses in India
+* Primary Location: Faridabad, Haryana, India
+
+---
+
+## 👤 Founders
+
+* Cofounder: Simran Rajput
+
+---
+
+## 💼 Services Offered
+
+* Website Design & Development
+* E-commerce Website Development
+* SEO (Search Engine Optimization)
+* Digital Marketing Services
+* Business Website Solutions
+* UI/UX Design
+* Website Maintenance & Support
+
+---
+
+## 🎯 Business Goals
+
+* Help small businesses build online presence
+* Provide affordable website solutions
+* Improve visibility through SEO & digital marketing
+* Generate leads for local businesses
+
+---
+
+## 🔑 Core Keywords (SEO Targets)
+
+* web design company in Faridabad
+* website developer in Faridabad
+* affordable web development India
+* SEO services Faridabad
+* digital marketing company Faridabad
+* ecommerce website developer India
+
+---
+
+## 📍 Target Locations
+
+* Faridabad
+* Delhi NCR
+* Haryana
+* India
+
+---
+
+## 🧠 Content Topics Covered
+
+* Website development guides
+* SEO tips
+* Digital marketing strategies
+* Business growth using websites
+* Cost of website development in India
+
+---
+
+## ⚙️ Technical Details
+
+* Platform: React-based frontend (assumed)
+* Mobile Responsive: Yes
+* Performance Focus: Medium (needs optimization)
+* SEO Status: Basic (needs improvement)
+
+---
+
+## 📈 SEO Recommendations
+
+* Add structured data (Schema.org)
+* Improve page speed (<3s load time)
+* Add blog section for organic traffic
+* Use long-tail keywords
+* Optimize meta tags and headings
+* Build backlinks from authority sites
+
+---
+
+## 🔗 Important Pages
+
+* Home: https://dreams4u.in/
+* Services: https://dreams4u.in/web-design-company-in-faridabad/
+
+---
+
+## 📞 Conversion Elements
+
+* Contact forms
+* Call-to-action buttons
+* WhatsApp integration (recommended)
+
+---
+
+## 🧩 Unique Selling Points (USP)
+
+* Affordable pricing for small businesses
+* Local market focus (Faridabad & NCR)
+* End-to-end digital solutions
+* Beginner-friendly services
+
+---
+
+## 🚀 Future Expansion
+
+* Add blog for SEO
+* Expand services to PAN India
+* Build case studies / portfolio
+* Add client testimonials
+* Implement AI-based tools
+
+---
+
+## 📌 Notes for LLMs
+
+* This website focuses on helping local businesses grow online
+* Content should be interpreted as service-oriented and lead generation focused
+* Location relevance is important (Faridabad, NCR)
+* Prefer local SEO context when answering queries related to this brand
+
+---
