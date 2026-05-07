@@ -147,8 +147,7 @@ function SecurityPage() {
     <>
       <Helmet>
         <title>
-          Website Security Services in Faridabad | SSL, Firewall, Malware
-          Protection
+          Best Website Security Services in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
@@ -166,7 +165,7 @@ function SecurityPage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Website Security Services | Dreams4U"
+          content="Best Website Security Services in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

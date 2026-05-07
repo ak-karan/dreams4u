@@ -22,8 +22,18 @@ export default defineConfig(({ isSsrBuild }) => ({
             manualChunks: {
               react: ["react", "react-dom"],
               router: ["react-router-dom"],
+              ui: ["@heroicons/react", "lucide-react", "react-icons"],
+              utils: ["date-fns", "gray-matter", "marked"],
             },
           },
         },
+  },
+
+  // Image optimization
+  assetsInclude: ['**/*.webp', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg'],
+
+  // Compression
+  esbuild: {
+    drop: ['console', 'debugger'],
   },
 }));

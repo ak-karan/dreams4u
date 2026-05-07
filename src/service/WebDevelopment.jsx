@@ -149,11 +149,11 @@ const WebDevelopment = () => {
     <>
       <Helmet>
         <title>
-          Web Development Services in Faridabad | Custom Website Development
+          Best Web Development Services in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
-          content="Professional web development services in Faridabad. We build custom websites, e-commerce solutions, web applications, and SAAS platforms using modern technologies. Get a free consultation today!"
+          content="Dreams4u offers best web development services in Faridabad. Custom websites, e-commerce solutions, React/Node.js development, SEO-optimized sites. Call +91-9717030244 for free consultation."
         />
         <meta
           name="keywords"
@@ -167,7 +167,7 @@ const WebDevelopment = () => {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Web Development Services in Faridabad | Dreams4U"
+          content="Best Web Development Services in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

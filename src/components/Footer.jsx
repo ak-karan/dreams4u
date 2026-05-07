@@ -19,6 +19,7 @@ import {
 import { motion } from "framer-motion";
 import { services } from "./navbar";
 import { faridabadAreas } from "../faridabad/faridabadAreas";
+import { localServicePages } from "../localSeo/localServicePages";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -49,6 +50,10 @@ function Footer() {
 
   const localAreaLinks = [
     { name: "Faridabad Hub", path: "/faridabad" },
+    ...localServicePages.map((page) => ({
+      name: page.h1,
+      path: page.routePath,
+    })),
     ...faridabadAreas.map((area) => ({
       name: area.displayName,
       path: area.routePath,

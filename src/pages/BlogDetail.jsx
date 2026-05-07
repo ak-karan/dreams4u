@@ -70,6 +70,31 @@ export default function BlogDetail() {
     : data.tags?.split(",").map((t) => t.trim()) || [];
 
   const shareUrl = `https://dreams4u.in/blog/${slug}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: data.title,
+    description: data.description,
+    image: data.image ? `https://dreams4u.in${data.image}` : undefined,
+    datePublished: data.date,
+    dateModified: data.date,
+    author: {
+      "@type": "Organization",
+      name: data.author || "Dreams4u Team",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Dreams4u",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://dreams4u.in/images/Logo.webp",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": shareUrl,
+    },
+  };
 
   const share = (platform) => {
     const text = encodeURIComponent(data.title);
@@ -97,7 +122,20 @@ export default function BlogDetail() {
       <Helmet>
         <title>{data.title} | Dreams4U Blog</title>
         <meta name="description" content={data.description} />
+        {data.tags && <meta name="keywords" content={tags.join(", ")} />}
         <link rel="canonical" href={shareUrl} />
+        <meta property="og:title" content={data.title} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={shareUrl} />
+        {data.image && <meta property="og:image" content={`https://dreams4u.in${data.image}`} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={data.title} />
+        <meta name="twitter:description" content={data.description} />
+        {data.image && <meta name="twitter:image" content={`https://dreams4u.in${data.image}`} />}
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
       </Helmet>
 
       {/* Scroll to top */}
@@ -169,6 +207,9 @@ export default function BlogDetail() {
                 src={data.image}
                 alt={data.title}
                 className="w-full h-96 object-cover"
+                width="1024"
+                height="576"
+                fetchpriority="high"
               />
             </div>
           )}
@@ -177,25 +218,34 @@ export default function BlogDetail() {
           <div className="bg-white rounded-3xl shadow-sm border p-6 md:p-10">
             <ReactMarkdown
               components={{
-                h2: (props) => (
+                h2: ({ node, ...props }) => (
                   <h2 className="text-3xl font-bold mt-10 mb-4" {...props} />
                 ),
-                h3: (props) => (
+                h3: ({ node, ...props }) => (
                   <h3 className="text-2xl font-semibold mt-8 mb-3" {...props} />
                 ),
-                p: (props) => (
+                p: ({ node, ...props }) => (
                   <p
                     className="text-gray-700 leading-relaxed my-5"
                     {...props}
                   />
                 ),
-                ul: (props) => (
+                ul: ({ node, ...props }) => (
                   <ul className="list-disc pl-6 my-5" {...props} />
                 ),
-                blockquote: (props) => (
+                blockquote: ({ node, ...props }) => (
                   <blockquote
                     className="border-l-4 border-blue-500 bg-blue-50 p-5 rounded-r-xl italic my-8"
                     {...props}
+                  />
+                ),
+                img: ({ node, ...props }) => (
+                  <img
+                    {...props}
+                    loading="lazy"
+                    width="1024"
+                    height="576"
+                    className="my-8 w-full rounded-2xl object-cover"
                   />
                 ),
               }}

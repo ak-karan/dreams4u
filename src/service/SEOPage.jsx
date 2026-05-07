@@ -169,7 +169,7 @@ function SEOPage() {
     <>
       <Helmet>
         <title>
-          SEO Services in Faridabad | Search Engine Optimization Agency
+          Best SEO Services in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
@@ -187,7 +187,7 @@ function SEOPage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="SEO Services in Faridabad | Dreams4U"
+          content="Best SEO Services in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

@@ -123,7 +123,7 @@ function DigitalMarketing() {
     <>
       <Helmet>
         <title>
-          Digital Marketing Services in Faridabad | SEO, PPC, SMM Agency
+          Best Digital Marketing Services in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
@@ -141,7 +141,7 @@ function DigitalMarketing() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Digital Marketing Services in Faridabad | Dreams4U"
+          content="Best Digital Marketing Services in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

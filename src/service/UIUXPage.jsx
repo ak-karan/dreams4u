@@ -150,7 +150,7 @@ function UIUXPage() {
     <>
       <Helmet>
         <title>
-          UI/UX Design Services in Faridabad | User Interface Design Agency
+          Best UI/UX Design Services in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
@@ -165,7 +165,7 @@ function UIUXPage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="UI/UX Design Services in Faridabad | Dreams4U"
+          content="Best UI/UX Design Services in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

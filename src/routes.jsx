@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FaridabadHub from "./faridabad/FaridabadHub";
 import FaridabadLocationPage from "./faridabad/FaridabadLocationPage";
+import LocalServicePage from "./localSeo/LocalServicePage";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Portfolio from "./components/Portfolio";
@@ -37,6 +38,7 @@ export const appRoutes = [
       { path: "about", element: <About /> },
       { path: "faridabad", element: <FaridabadHub /> },
       { path: "faridabad/:areaSlug", element: <FaridabadLocationPage /> },
+      { path: ":serviceSlug", element: <LocalServicePage /> },
       { path: "portfolio", element: <Portfolio /> },
       { path: "contact", element: <Contact /> },
       { path: "services", element: <Services /> },

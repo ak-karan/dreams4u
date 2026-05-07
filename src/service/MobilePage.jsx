@@ -114,8 +114,7 @@ function MobilePage() {
     <>
       <Helmet>
         <title>
-          Mobile Responsive Website Design in Faridabad | Mobile-Friendly
-          Websites
+          Best Mobile Responsive Website Design in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
@@ -133,7 +132,7 @@ function MobilePage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Mobile Responsive Website Design | Dreams4U"
+          content="Best Mobile Responsive Website Design in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

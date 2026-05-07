@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { faridabadAreas } from "../src/faridabad/faridabadAreas.js";
+import { localServicePages } from "../src/localSeo/localServicePages.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -150,6 +151,12 @@ const STATIC_PAGES = [
     changefreq: "daily",
     lastmod: new Date().toISOString().split("T")[0],
   },
+  ...localServicePages.map((page) => ({
+    path: page.routePath,
+    priority: "0.9",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  })),
   {
     path: "/llms.txt",
     priority: "0.5",

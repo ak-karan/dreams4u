@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { fileURLToPath, pathToFileURL } from "url";
 import { faridabadAreas } from "../src/faridabad/faridabadAreas.js";
+import { localServicePages } from "../src/localSeo/localServicePages.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,6 +38,7 @@ function getStaticRoutes() {
     "/terms",
     "/cookies",
     "/blog",
+    ...localServicePages.map((page) => page.routePath),
   ];
 
   const blogRoutes = fs

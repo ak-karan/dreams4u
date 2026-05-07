@@ -104,7 +104,7 @@ function AppDevelopment() {
     <>
       <Helmet>
         <title>
-          Mobile App Development Services in Faridabad | iOS & Android Apps
+          Best Mobile App Development Services in Faridabad | Dreams4u
         </title>
         <meta
           name="description"
@@ -122,7 +122,7 @@ function AppDevelopment() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Mobile App Development Services | Dreams4U"
+          content="Best Mobile App Development Services in Faridabad | Dreams4u"
         />
         <meta
           property="og:description"

@@ -129,6 +129,179 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= ABOUT SECTION ================= */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Why Choose Dreams4u for Your Website Design in Faridabad?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              With over 5 years of experience serving Faridabad businesses, Dreams4u has become the trusted choice for website design, development, and digital marketing services. We understand the unique needs of local businesses and deliver solutions that drive real results.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Local Expertise, Global Standards
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Based in Ballabgarh, Faridabad, we serve businesses across Faridabad, Ballabgarh, NIT, Badkhal, Sector 4, Sector 21, Sector 31, and surrounding NCR areas. Our team understands the local market dynamics, customer behavior, and competitive landscape specific to Faridabad businesses.
+              </p>
+              <p className="text-gray-600 mb-6">
+                We combine this local knowledge with international best practices in web design, SEO, and digital marketing to create websites that not only look professional but also perform exceptionally well in search results and convert visitors into customers.
+              </p>
+              <h4 className="text-xl font-semibold text-gray-800 mb-3">
+                Our Commitment to Faridabad Businesses:
+              </h4>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Affordable pricing starting from ₹8,000</li>
+                <li>• Fast turnaround time (7-15 days for basic websites)</li>
+                <li>• Free consultation and website audit</li>
+                <li>• Ongoing support and maintenance services</li>
+                <li>• SEO-optimized websites from day one</li>
+                <li>• Mobile-responsive design for all devices</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Complete Digital Solutions Under One Roof
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Unlike other agencies that specialize in just one service, Dreams4u offers a complete suite of digital services designed to grow your business online. From initial website design to ongoing SEO and digital marketing, we handle everything so you can focus on your core business.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-800 mb-2">Website Design</h5>
+                  <p className="text-sm text-gray-600">Custom, responsive websites that convert visitors into customers.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-800 mb-2">SEO Services</h5>
+                  <p className="text-sm text-gray-600">Improve your Google rankings and get more organic traffic.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-800 mb-2">Digital Marketing</h5>
+                  <p className="text-sm text-gray-600">Google Ads, social media marketing, and lead generation.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-gray-800 mb-2">E-commerce</h5>
+                  <p className="text-sm text-gray-600">Online stores with payment integration and inventory management.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SERVICES OVERVIEW ================= */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Our Website Design & Development Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We specialize in creating websites that not only look great but also drive business results. Our services are tailored for Faridabad businesses looking to establish a strong online presence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Business Websites</h3>
+              <p className="text-gray-600 mb-4">
+                Professional websites for companies, clinics, coaching centers, real estate consultants, and service providers in Faridabad. Includes contact forms, service pages, and lead generation features.
+              </p>
+              <p className="text-sm font-medium text-cyan-600">Starting from ₹12,000</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">E-commerce Websites</h3>
+              <p className="text-gray-600 mb-4">
+                Complete online stores with product catalogs, shopping carts, payment gateways, and inventory management. Perfect for retailers, wholesalers, and online businesses in Faridabad.
+              </p>
+              <p className="text-sm font-medium text-cyan-600">Starting from ₹25,000</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">SEO & Digital Marketing</h3>
+              <p className="text-gray-600 mb-4">
+                Comprehensive SEO services including on-page optimization, local SEO for Faridabad, Google Ads campaigns, and social media marketing to drive targeted traffic to your website.
+              </p>
+              <p className="text-sm font-medium text-cyan-600">Starting from ₹5,000/month</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600 mb-4">
+              All our websites are mobile-responsive, SEO-optimized, and include 6 months of free maintenance. We use modern technologies like React, Node.js, and WordPress to ensure fast loading and excellent user experience.
+            </p>
+            <a
+              href={`tel:${phoneNumber.replace(/\D/g, "")}`}
+              className="inline-block bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors"
+            >
+              Get Free Website Consultation
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= LOCAL SERVICE PAGES ================= */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Local Website Services in Faridabad
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore the Faridabad-specific services we offer for website design, SEO, ecommerce, WordPress development, digital marketing, and maintenance.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Website Design Company in Faridabad",
+                path: "/website-design-company-in-faridabad",
+              },
+              {
+                title: "SEO Services in Faridabad",
+                path: "/seo-services-in-faridabad",
+              },
+              {
+                title: "Ecommerce Website Development in Faridabad",
+                path: "/ecommerce-website-development-in-faridabad",
+              },
+              {
+                title: "WordPress Development in Faridabad",
+                path: "/wordpress-development-in-faridabad",
+              },
+              {
+                title: "Digital Marketing Services in Faridabad",
+                path: "/digital-marketing-services-in-faridabad",
+              },
+              {
+                title: "Website Maintenance Services in Faridabad",
+                path: "/website-maintenance-services-in-faridabad",
+              },
+            ].map((page) => (
+              <a
+                key={page.path}
+                href={page.path}
+                className="rounded-3xl border border-gray-200 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {page.title}
+                </h3>
+                <p className="text-gray-600">
+                  Learn how Dreams4u helps Faridabad businesses grow with local service pages that are optimized for search and conversions.
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ================= CONTACT FORM ================= */}
       <ContactForm />
 
