@@ -48,12 +48,13 @@ function Footer() {
     { icon: <Send size={16} />, text: "Fast Delivery" },
   ];
 
+  const localServiceLinks = localServicePages.map((page) => ({
+    name: page.h1,
+    path: page.routePath,
+  }));
+
   const localAreaLinks = [
     { name: "Faridabad Hub", path: "/faridabad" },
-    ...localServicePages.map((page) => ({
-      name: page.h1,
-      path: page.routePath,
-    })),
     ...faridabadAreas.map((area) => ({
       name: area.displayName,
       path: area.routePath,
@@ -285,13 +286,37 @@ function Footer() {
             </div>
           </div>
 
-          {/* Local Areas */}
+          {/* Local SEO Pages */}
           <div>
             <h4 className="text-lg font-bold mb-6 pb-3 border-b border-gray-800 flex items-center gap-2">
               <ChevronRight size={20} className="text-cyan-400" />
-              Local Areas
+              Faridabad SEO Pages
             </h4>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+            <div className="space-y-3">
+              {localServiceLinks.map((page) => (
+                <motion.div
+                  key={page.path}
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Link
+                    to={page.path}
+                    className="flex items-center gap-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors group"
+                  >
+                    <ChevronRight
+                      size={14}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400"
+                    />
+                    {page.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            <h5 className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-gray-300">
+              Local Areas
+            </h5>
+            <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">
               {localAreaLinks.map((area) => (
                 <motion.div
                   key={area.path}

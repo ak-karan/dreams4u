@@ -19,6 +19,7 @@ import {
   TrendingUp,
   Layout,
 } from "lucide-react";
+import ServiceSeoExpansion from "./ServiceSeoExpansion";
 
 const services = [
   {
@@ -325,6 +326,8 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+
+          <ServiceSeoExpansion variant="services" />
 
           {/* CTA Section */}
           <motion.div

@@ -8,6 +8,7 @@ import {
   ServerIcon,
   ChartBarIcon,
 } from "@heroicons/react/24/outline";
+import ServiceSeoExpansion from "./ServiceSeoExpansion";
 
 function MaintenancePage() {
   const services = [
@@ -185,6 +186,8 @@ function MaintenancePage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoExpansion variant="maintenance" />
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

@@ -9,6 +9,7 @@ import {
   DevicePhoneMobileIcon,
   CubeIcon,
 } from "@heroicons/react/24/outline";
+import ServiceSeoExpansion from "./ServiceSeoExpansion";
 
 function EcommercePage() {
   const features = [
@@ -322,6 +323,8 @@ function EcommercePage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoExpansion variant="ecommerce" />
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-orange-600 text-white">

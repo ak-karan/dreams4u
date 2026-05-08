@@ -10,6 +10,7 @@ import {
   ShieldCheckIcon,
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
+import ServiceSeoExpansion from "./ServiceSeoExpansion";
 
 function MobilePage() {
   const features = [
@@ -423,6 +424,8 @@ function MobilePage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoExpansion variant="mobile" />
 
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
