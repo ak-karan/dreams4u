@@ -1,0 +1,35 @@
+{
+  "name": "Dreams4u - Website Design Company in Faridabad",
+  "short_name": "Dreams4u",
+  "description": "Professional website design, development, and digital marketing services in Faridabad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0891b2",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/images/favicon-32x32.webp",
+      "sizes": "32x32",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/favicon-16x16.webp",
+      "sizes": "16x16",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/dreams4u.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/dreams4u.webp",
+      "sizes": "540x720",
+      "type": "image/webp"
+    }
+  ]
+}
