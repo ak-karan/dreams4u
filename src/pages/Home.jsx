@@ -57,9 +57,9 @@ export default function Home() {
           />
 
           {/* TEXT CONTENT - RESPONSIVE OVERLAY */}
-          <div className="absolute inset-0 flex items-center justify-center md:justify-start">
-            <div className="md:ml-20 text-center md:text-left p-4 sm:p-6 animate-fade-up max-w-2xl">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase leading-tight mb-4 sm:mb-6 animate-letter text-white tracking-[0.02em]"
+          <div className="absolute inset-0 flex items-center justify-start">
+            <div className="ml-4 sm:ml-8 md:ml-20 text-left p-2 sm:p-6 animate-fade-up max-w-2xl">
+              <h1 className="text-base sm:text-2xl md:text-4xl lg:text-5xl uppercase leading-tight mb-4 sm:mb-6 animate-letter text-white tracking-[0.02em] ml-1.5"
                 style={{ textShadow: '0 20px 35px rgba(0,0,0,0.35)' }}
               >
                 {["We Build Modern", "Websites that", "grow your Business"].map(
@@ -74,11 +74,11 @@ export default function Home() {
                   ),
                 )}
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-6 sm:mb-8 block text-white/90 drop-shadow-md">
+              <p className="text-xs hidden md:block sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-white/90 drop-shadow-md">
                 Beautiful Design. Powerful Performance.
                 <br /> Result That Matter.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+              <div className="md:flex hidden md:flex-col sm:flex-row items-start gap-4">
                 <Link
                   to="/portfolio"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-bold transition-all hover:bg-white/20 hover:shadow-lg text-sm sm:text-base"
