@@ -18,10 +18,10 @@ export default function Blog() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       <Helmet>
-        <title>Dreams4u Blog | Web Design, SEO and Digital Marketing Insights</title>
+        <title>Web Design & SEO Blog | Digital Marketing Tips for Faridabad Businesses</title>
         <meta
           name="description"
-          content="Read the latest Dreams4u blog articles on website design, SEO, digital marketing, creativity, and business growth strategies."
+          content="Read expert insights on website design, SEO strategies, digital marketing trends, and business growth tips from Dreams4u blog."
         />
         <link rel="canonical" href="https://dreams4u.in/blog" />
       </Helmet>

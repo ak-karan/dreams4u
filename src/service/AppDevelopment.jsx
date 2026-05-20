@@ -104,15 +104,15 @@ function AppDevelopment() {
     <>
       <Helmet>
         <title>
-          Best Mobile App Development Services in Faridabad | Dreams4u
+          Professional Mobile App Development in Faridabad | iOS & Android Apps
         </title>
         <meta
           name="description"
-          content="Professional mobile app development company in Faridabad. We create custom iOS, Android, and cross-platform apps with cutting-edge technology. Get a free consultation today!"
+          content="Expert mobile app development company in Faridabad. We create custom iOS, Android, and cross-platform apps with latest technology. Scalable, high-performance mobile solutions."
         />
         <meta
           name="keywords"
-          content="app development Faridabad, mobile app developers, iOS app development, Android apps, React Native, Flutter, app development company, custom mobile apps"
+          content="mobile app development Faridabad, iOS app development, Android app development, React Native, Flutter, app developers, custom app development, cross-platform apps"
         />
         <link
           rel="canonical"
@@ -122,7 +122,7 @@ function AppDevelopment() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best Mobile App Development Services in Faridabad | Dreams4u"
+          content="Professional Mobile App Development | iOS & Android Solutions"
         />
         <meta
           property="og:description"

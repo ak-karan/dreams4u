@@ -24,10 +24,10 @@ function Portfolio() {
   return (
     <>
       <Helmet>
-        <title>Portfolio | Dreams4u Website Design Projects in Faridabad</title>
+        <title>Website Design Projects | Dreams4u Portfolio in Faridabad</title>
         <meta
           name="description"
-          content="Explore Dreams4u portfolio featuring website design and development projects delivered for businesses in Faridabad and beyond."
+          content="View Dreams4u's award-winning website design and development projects. Professional portfolio showcasing affordable web design solutions for Faridabad businesses."
         />
         <link rel="canonical" href="https://dreams4u.in/portfolio" />
       </Helmet>

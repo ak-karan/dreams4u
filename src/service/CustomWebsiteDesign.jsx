@@ -33,9 +33,9 @@ import ContactForm from "../components/ContactForm";
 
 function CustomWebsiteDesign() {
   const pageTitle =
-    "Best Custom Website Design Services in Faridabad | Dreams4u";
+    "Custom Website Design Services in Faridabad | Affordable Solutions";
   const pageDescription =
-    "Get custom website design services in Faridabad. Professional, responsive, SEO-friendly websites tailored to your business needs. Start from ₹8999.";
+    "Professional custom website design in Faridabad. We create unique, responsive, SEO-friendly websites tailored to your business. Affordable pricing starting from ₹8999.";
 
   const features = [
     {

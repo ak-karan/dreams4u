@@ -148,15 +148,15 @@ const Services = () => {
     <>
       <Helmet>
         <title>
-          Best Website Design Services in Faridabad | Dreams4u
+          Web Design & Development Services in Faridabad | Affordable Solutions
         </title>
         <meta
           name="description"
-          content="Professional website design and development services in Faridabad. Get custom websites, e-commerce solutions, SEO, and digital marketing services for your business growth."
+          content="Affordable web design and development services in Faridabad. Professional website design, SEO, digital marketing, e-commerce solutions, and mobile-responsive websites for business growth."
         />
         <meta
           name="keywords"
-          content="website design Faridabad, web development services, SEO services Faridabad, e-commerce website, mobile responsive design, digital marketing Faridabad"
+          content="website design company Faridabad, web development services, affordable website design, SEO services Faridabad, e-commerce website development, digital marketing"
         />
         <link rel="canonical" href="https://dreams4u.in/services" />
       </Helmet>

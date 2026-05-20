@@ -123,15 +123,15 @@ function DigitalMarketing() {
     <>
       <Helmet>
         <title>
-          Best Digital Marketing Services in Faridabad | Dreams4u
+          Affordable Digital Marketing Services in Faridabad | SEO & PPC Experts
         </title>
         <meta
           name="description"
-          content="Top digital marketing agency in Faridabad offering SEO, PPC, social media marketing, and content marketing services. Grow your business online with guaranteed results!"
+          content="Best digital marketing agency in Faridabad. We offer affordable SEO services, Google Ads management, social media marketing, and content marketing to boost your business online."
         />
         <meta
           name="keywords"
-          content="digital marketing Faridabad, SEO services Faridabad, social media marketing, Google Ads management, PPC advertising, content marketing, email marketing, digital marketing agency"
+          content="digital marketing Faridabad, SEO services Faridabad, Google Ads, social media marketing, PPC advertising, affordable digital marketing, digital marketing agency"
         />
         <link
           rel="canonical"
@@ -141,7 +141,7 @@ function DigitalMarketing() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best Digital Marketing Services in Faridabad | Dreams4u"
+          content="Affordable Digital Marketing Services in Faridabad | SEO & PPC"
         />
         <meta
           property="og:description"

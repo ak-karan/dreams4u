@@ -169,15 +169,15 @@ function SEOPage() {
     <>
       <Helmet>
         <title>
-          Best SEO Services in Faridabad | Dreams4u
+          Professional SEO Services in Faridabad | Affordable Google Ranking Solutions
         </title>
         <meta
           name="description"
-          content="Professional SEO services in Faridabad. Improve your Google rankings, drive organic traffic, and grow your business with our proven SEO strategies. Get more customers from local searches."
+          content="Affordable SEO services in Faridabad to improve Google rankings and drive organic traffic. Our proven SEO strategies help local businesses get more customers online."
         />
         <meta
           name="keywords"
-          content="SEO services Faridabad, search engine optimization, local SEO, Google ranking, organic traffic, SEO company Faridabad, digital marketing, website optimization"
+          content="SEO services Faridabad, search engine optimization, local SEO, affordable SEO, Google ranking services, organic traffic, SEO company Faridabad"
         />
         <link
           rel="canonical"
@@ -187,7 +187,7 @@ function SEOPage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best SEO Services in Faridabad | Dreams4u"
+          content="Professional SEO Services in Faridabad | Improve Google Rankings"
         />
         <meta
           property="og:description"

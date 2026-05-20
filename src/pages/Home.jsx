@@ -19,8 +19,8 @@ export default function Home() {
   const location = "Faridabad, Haryana";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
-  const pageTitle = `Best Website Design Company in Faridabad | ${companyName}`;
-  const pageDescription = `${companyName} - Top-rated website design company in Faridabad offering affordable website design, SEO, digital marketing, e-commerce solutions & mobile-responsive development services. Call ${phoneNumber}`;
+  const pageTitle = `Best Website Design Company in Faridabad | Affordable Web Design`;
+  const pageDescription = `Dreams4u - Top-rated website design company in Faridabad offering affordable web design, SEO services, digital marketing, e-commerce solutions & mobile-responsive development. Call +91-9717030244`;
   const keywords = `website design company Faridabad, web development Faridabad, SEO services Faridabad, digital marketing Faridabad, e-commerce website Faridabad, responsive web design Faridabad, ${companyName}, Dreams4u Faridabad`;
 
   return (
@@ -46,47 +46,47 @@ export default function Home() {
       {/* ================= HERO SECTION ================= */}
       <section className="relative w-full overflow-hidden bg-gray-100">
         {/* BACKGROUND IMAGE */}
-        <img
-          src="/images/Website-Design-Comapany-in-Faridabad.png"
-          alt="Affordable Website Design Company in Faridabad - Dreams4u"
-          className="w-full h-auto"
-          loading="lazy"
-          width="1920"
-          height="1080"
-        />
+        <div className="relative w-full h-auto">
+          <img
+            src="/images/Website-Design-Comapany-in-Faridabad.png"
+            alt="Affordable Website Design Company in Faridabad - Dreams4u"
+            className="w-full h-auto block"
+            loading="lazy"
+            width="1920"
+            height="1080"
+          />
 
-
-
-        {/* TEXT CONTENT */}
-        <div className="md:absolute inset-0 flex items-center justify-center md:justify-start">
-          <div className="md:ml-20 text-center md:text-left p-6 animate-fade-up max-w-2xl">
-            <h1 className="text-3xl md:text-5xl uppercase leading-tight mb-6 animate-letter text-white tracking-[0.02em]"
-              style={{ textShadow: '0 20px 35px rgba(0,0,0,0.35)' }}
-            >
-              {["We Build Modern", "Websites that", "grow your Business"].map(
-                (line, lineIndex) => (
-                  <div key={lineIndex}>
-                    {line.split("").map((char, i) => (
-                      <span key={i} style={{ "--i": lineIndex * 30 + i }}>
-                        {char === " " ? "\u00A0" : char}
-                      </span>
-                    ))}
-                  </div>
-                ),
-              )}
-            </h1>
-            <p className="text-lg md:text-xl font-medium mb-8 block text-white/90 drop-shadow-md">
-              Beautiful Design. Powerful Performance.
-              <br /> Result That Matter.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white px-8 py-3 rounded-xl font-bold transition-all hover:bg-white/20 hover:shadow-lg"
+          {/* TEXT CONTENT - RESPONSIVE OVERLAY */}
+          <div className="absolute inset-0 flex items-center justify-center md:justify-start">
+            <div className="md:ml-20 text-center md:text-left p-4 sm:p-6 animate-fade-up max-w-2xl">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase leading-tight mb-4 sm:mb-6 animate-letter text-white tracking-[0.02em]"
+                style={{ textShadow: '0 20px 35px rgba(0,0,0,0.35)' }}
               >
-                View Our Work
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                {["We Build Modern", "Websites that", "grow your Business"].map(
+                  (line, lineIndex) => (
+                    <div key={lineIndex}>
+                      {line.split("").map((char, i) => (
+                        <span key={i} style={{ "--i": lineIndex * 30 + i }}>
+                          {char === " " ? "\u00A0" : char}
+                        </span>
+                      ))}
+                    </div>
+                  ),
+                )}
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-6 sm:mb-8 block text-white/90 drop-shadow-md">
+                Beautiful Design. Powerful Performance.
+                <br /> Result That Matter.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-bold transition-all hover:bg-white/20 hover:shadow-lg text-sm sm:text-base"
+                >
+                  View Our Work
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

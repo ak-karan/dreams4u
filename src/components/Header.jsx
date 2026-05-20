@@ -75,7 +75,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            <div className={`hidden lg:block transition-all duration-500 ${scrolled ? "w-32" : "w-72"}`}>
+            <div className={`transition-all duration-500 ${scrolled ? "w-28 sm:w-32 md:w-40 lg:w-72" : "w-24 sm:w-28 md:w-40 lg:w-72"}`}>
               <Link to="/">
                   <img src={logo} alt="Best Website Design Company in Faridabad" title="Best Website Design Company in Faridabad" />
               </Link>

@@ -107,22 +107,22 @@ function EcommercePage() {
     <>
       <Helmet>
         <title>
-          Best E-commerce Website Development in Faridabad | Dreams4u
+          Professional E-commerce Website Development in Faridabad | Online Stores
         </title>
         <meta
           name="description"
-          content="Professional e-commerce website development in Faridabad. Create online stores with payment gateway, inventory management, and mobile responsiveness. Start selling online today!"
+          content="Expert e-commerce website development in Faridabad. We build online stores with payment gateways, inventory management, and mobile responsiveness. Start selling online today!"
         />
         <meta
           name="keywords"
-          content="e-commerce website Faridabad, online store development, Shopify store, Magento development, WooCommerce website, payment gateway integration, e-commerce solutions Faridabad"
+          content="e-commerce website Faridabad, online store development, Shopify store, WooCommerce website, payment gateway integration, e-commerce solutions, online business platform"
         />
         <link rel="canonical" href="https://dreams4u.in/services/ecommerce" />
 
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best E-commerce Website Development in Faridabad | Dreams4u"
+          content="E-commerce Website Development | Online Store Solutions"
         />
         <meta
           property="og:description"

@@ -147,15 +147,15 @@ function SecurityPage() {
     <>
       <Helmet>
         <title>
-          Best Website Security Services in Faridabad | Dreams4u
+          Website Security Services in Faridabad | SSL & Malware Protection
         </title>
         <meta
           name="description"
-          content="Professional website security services in Faridabad. Protect your website from hackers, malware, and cyber attacks with SSL certificates, firewall protection, security audits, and regular monitoring."
+          content="Professional website security services in Faridabad. Protect your website from hackers with SSL certificates, firewall protection, security audits, and malware scanning."
         />
         <meta
           name="keywords"
-          content="website security Faridabad, SSL certificate installation, malware protection, firewall security, website security audit, DDoS protection, cyber security services, web security solutions"
+          content="website security Faridabad, SSL certificate, website protection, malware protection, firewall security, DDoS protection, security audit, cyber security"
         />
         <link
           rel="canonical"
@@ -165,7 +165,7 @@ function SecurityPage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best Website Security Services in Faridabad | Dreams4u"
+          content="Website Security Services | SSL & Malware Protection"
         />
         <meta
           property="og:description"

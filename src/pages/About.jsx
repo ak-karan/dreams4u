@@ -21,18 +21,18 @@ const About = () => {
     <>
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>About Dreams4u | Web Design Company in Faridabad</title>
+        <title>About Dreams4u | Professional Web Design Company in Faridabad</title>
         <meta
           name="description"
-          content="Dreams4u is a leading web design company in Faridabad. We create professional, SEO-friendly websites that drive business growth. Learn about our mission, vision, and approach."
+          content="Learn about Dreams4u - a leading web design company in Faridabad specializing in affordable, professional website design and digital solutions for businesses."
         />
         <meta
           name="keywords"
-          content="web design company Faridabad, website development Faridabad, SEO services Faridabad, web design agency, digital marketing Faridabad, Dreams4u about"
+          content="web design company Faridabad, website development Faridabad, professional web design agency, digital marketing solutions, Dreams4u"
         />
         <meta
           property="og:title"
-          content="About Dreams4u | Professional Web Design Company"
+          content="About Dreams4u | Best Web Design Agency in Faridabad"
         />
         <meta
           property="og:description"

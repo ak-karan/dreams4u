@@ -150,22 +150,22 @@ function UIUXPage() {
     <>
       <Helmet>
         <title>
-          Best UI/UX Design Services in Faridabad | Dreams4u
+          Professional UI/UX Design Services in Faridabad | User Experience Design
         </title>
         <meta
           name="description"
-          content="Professional UI/UX design services in Faridabad. Create beautiful, user-friendly interfaces that enhance user experience, drive conversions, and improve customer satisfaction for your website or app."
+          content="Expert UI/UX design services in Faridabad. We create beautiful, user-friendly interfaces that increase conversions and improve customer satisfaction for websites and mobile apps."
         />
         <meta
           name="keywords"
-          content="UI/UX design Faridabad, user experience design, user interface design, website design agency, mobile app design, wireframing, prototyping, responsive design, design thinking"
+          content="UI/UX design Faridabad, user experience design, user interface design, web design, mobile app design, wireframing, prototyping, responsive design"
         />
         <link rel="canonical" href="https://dreams4u.in/services/ui-ux" />
 
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best UI/UX Design Services in Faridabad | Dreams4u"
+          content="Professional UI/UX Design Services | User Experience Excellence"
         />
         <meta
           property="og:description"

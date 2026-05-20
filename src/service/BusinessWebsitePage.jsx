@@ -118,15 +118,15 @@ function BusinessWebsitePage() {
     <>
       <Helmet>
         <title>
-          Best Business Website Development in Faridabad | Dreams4u
+          Professional Business Website Design in Faridabad | Corporate Solutions
         </title>
         <meta
           name="description"
-          content="Get a professional business website in Faridabad. We design responsive, SEO-optimized websites for companies, startups, and enterprises. Boost your online presence today!"
+          content="Professional business website development in Faridabad for companies and startups. Custom, responsive, SEO-optimized websites that boost your online presence and generate leads."
         />
         <meta
           name="keywords"
-          content="business website Faridabad, company website, corporate website development, professional website design, business website design, website development company Faridabad, responsive business website"
+          content="business website Faridabad, company website design, corporate website development, professional website, business web design, website development company"
         />
         <link
           rel="canonical"
@@ -136,7 +136,7 @@ function BusinessWebsitePage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best Business Website Development in Faridabad | Dreams4u"
+          content="Professional Business Website Design | Corporate Solutions"
         />
         <meta
           property="og:description"

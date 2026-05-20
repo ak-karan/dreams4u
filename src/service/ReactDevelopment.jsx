@@ -115,15 +115,15 @@ const ReactDevelopment = () => {
     <>
       <Helmet>
         <title>
-          Best React JS Development Services in Faridabad | Dreams4u
+          Professional React JS Development Services in Faridabad | Custom Apps
         </title>
         <meta
           name="description"
-          content="Expert React JS development services in Faridabad. We build high-performance React applications, Next.js websites, React Native mobile apps, and custom React solutions for businesses."
+          content="Expert React JS and Next.js development services in Faridabad. We build high-performance React applications, web apps, and React Native mobile solutions for startups and enterprises."
         />
         <meta
           name="keywords"
-          content="React JS development Faridabad, Next.js development, React Native apps, React development company, frontend development, web application development, custom React solutions"
+          content="React JS development Faridabad, Next.js development, React developer, React Native apps, frontend development, custom React solutions, web application development"
         />
         <link
           rel="canonical"
@@ -133,7 +133,7 @@ const ReactDevelopment = () => {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="React JS Development Services | Dreams4U"
+          content="React JS Development Services | Professional React Development"
         />
         <meta
           property="og:description"

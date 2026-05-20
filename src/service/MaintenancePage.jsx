@@ -97,15 +97,15 @@ function MaintenancePage() {
     <>
       <Helmet>
         <title>
-          Best Website Maintenance Services in Faridabad | Dreams4u
+          Website Maintenance & Support Services in Faridabad | Keep Sites Secure
         </title>
         <meta
           name="description"
-          content="Best website maintenance services in Faridabad. Keep your site secure, fast, updated and SEO-friendly with monthly plans for businesses, ecommerce stores, and WordPress websites."
+          content="Professional website maintenance services in Faridabad. Keep your site secure, fast and updated with monthly maintenance plans for business websites and e-commerce stores."
         />
         <meta
           name="keywords"
-          content="website maintenance Faridabad, website support Faridabad, website updates, security monitoring, website backup services, performance optimization, annual website maintenance, WordPress maintenance"
+          content="website maintenance Faridabad, website support, website updates, security monitoring, website backup, performance optimization, annual maintenance, WordPress support"
         />
         <link
           rel="canonical"
@@ -113,11 +113,11 @@ function MaintenancePage() {
         />
         <meta
           property="og:title"
-          content="Best Website Maintenance Services in Faridabad | Dreams4u"
+          content="Website Maintenance & Support Services | Keep Sites Secure"
         />
         <meta
           property="og:description"
-          content="Keep your Faridabad website secure, fast and up-to-date with Dreams4u maintenance plans for business websites, ecommerce stores and WordPress sites."
+          content="Keep your Faridabad website secure, fast and up-to-date with Dreams4u maintenance plans."
         />
         <meta property="og:type" content="website" />
         <meta

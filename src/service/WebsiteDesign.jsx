@@ -166,15 +166,15 @@ function WebsiteDesign() {
     <>
       <Helmet>
         <title>
-          Best Website Design Services in Faridabad | Dreams4u
+          Affordable Website Design Services in Faridabad | Custom Web Design
         </title>
         <meta
           name="description"
-          content="Professional website design services in Faridabad. Get custom, responsive, and SEO-friendly website designs that convert visitors into customers. Modern designs for businesses of all sizes."
+          content="Professional and affordable website design services in Faridabad. Get custom, mobile-responsive, SEO-friendly websites that convert. Expert designers, quick delivery, competitive pricing."
         />
         <meta
           name="keywords"
-          content="website design Faridabad, web design services, custom website design, responsive web design, UI/UX design, professional website design, website design company Faridabad"
+          content="affordable website design Faridabad, website design services, custom website design, responsive web design, best website design company, web design agency Faridabad"
         />
         <link
           rel="canonical"
@@ -184,11 +184,11 @@ function WebsiteDesign() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Website Design Services in Faridabad | Dreams4U"
+          content="Affordable Website Design in Faridabad | Professional Web Design"
         />
         <meta
           property="og:description"
-          content="Create stunning, responsive websites with our professional design services in Faridabad."
+          content="Premium website design services at affordable prices. Custom, responsive designs for your Faridabad business."
         />
         <meta property="og:type" content="website" />
         <meta

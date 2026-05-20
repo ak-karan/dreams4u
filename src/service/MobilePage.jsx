@@ -115,15 +115,15 @@ function MobilePage() {
     <>
       <Helmet>
         <title>
-          Best Mobile Responsive Website Design in Faridabad | Dreams4u
+          Mobile Responsive Website Design in Faridabad | Google-Friendly Designs
         </title>
         <meta
           name="description"
-          content="Professional mobile responsive website design services in Faridabad. Get Google-friendly, fast-loading websites that work perfectly on all mobile devices, tablets, and desktops."
+          content="Professional mobile responsive website design in Faridabad. Get fast-loading, Google-friendly websites that work perfectly on all devices. SEO-optimized for mobile-first indexing."
         />
         <meta
           name="keywords"
-          content="mobile responsive website Faridabad, mobile-friendly website design, responsive web design, mobile optimization, responsive website development, mobile-first design Faridabad"
+          content="mobile responsive website Faridabad, mobile-friendly web design, responsive web design, mobile optimization, responsive website development, mobile-first design"
         />
         <link
           rel="canonical"
@@ -133,7 +133,7 @@ function MobilePage() {
         {/* Open Graph Tags */}
         <meta
           property="og:title"
-          content="Best Mobile Responsive Website Design in Faridabad | Dreams4u"
+          content="Mobile Responsive Website Design | Google-Friendly Designs"
         />
         <meta
           property="og:description"
