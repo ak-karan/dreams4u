@@ -14,6 +14,7 @@ import {
   Zap,
   Users,
 } from "lucide-react";
+import logo from "../../public/images/top-logo.png"
 import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "./navbar";
@@ -59,54 +60,12 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-          <div className="flex items-center gap-4 mb-2 md:mb-0">
-            <div className="flex items-center gap-2">
-              <Phone className="w-3 h-3 text-cyan-400" />
-              <a
-                href="tel:+919717030244"
-                className="hover:text-cyan-400 transition-colors"
-              >
-                +91 9717030244
-              </a>
-            </div>
-            <div className="hidden md:flex items-center gap-2">
-              <Mail className="w-3 h-3 text-cyan-400" />
-              <a
-                href="mailto:info@dreams4u.in"
-                className="hover:text-cyan-400 transition-colors"
-              >
-                info@dreams4u.in
-              </a>
-            </div>
-            <div className="hidden lg:flex items-center gap-2">
-              <Clock className="w-3 h-3 text-cyan-400" />
-              <span>Mon-Sat: 9AM - 8PM</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 text-cyan-300">
-              <Shield className="w-3 h-3" />
-              <span className="text-xs">ISO 27001 Certified</span>
-            </div>
-            <div className="h-4 w-px bg-gray-700"></div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-3 h-3 text-yellow-400" />
-              <span className="text-xs">50+ Projects Done</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/10 py-2"
-            : "bg-gradient-to-r from-white via-gray-50 to-white py-4"
+            : "bg-gradient-to-r from-white via-gray-50 to-white py-0"
         }`}
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -116,18 +75,11 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            {!scrolled && (
-              <div className="hidden lg:block">
-                <Link to="/">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                    Dreams4U
-                  </div>
-                  <div className="text-xs text-gray-500 -mt-1">
-                    Digital Excellence
-                  </div>
-                </Link>
-              </div>
-            )}
+            <div className={`hidden lg:block transition-all duration-500 ${scrolled ? "w-32" : "w-72"}`}>
+              <Link to="/">
+                  <img src={logo} alt="Best Website Design Company in Faridabad" title="Best Website Design Company in Faridabad" />
+              </Link>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -260,25 +212,26 @@ export default function Header() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
+
             <motion.a
               href="https://wa.me/919717030244"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all"
+              className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all"
             >
               <FaWhatsapp className="w-5 h-5" />
               <span>WhatsApp</span>
             </motion.a>
 
             <motion.a
-              href="tel:+919717030244"
+              href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
             >
-              <Phone className="w-4 h-4" />
-              <span>Call Now</span>
+              <span>Get a Quote</span>
+              <ArrowRight className="w-4 h-4" />
             </motion.a>
           </div>
 
