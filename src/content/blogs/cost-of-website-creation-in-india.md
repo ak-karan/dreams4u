@@ -6,10 +6,10 @@ tags: website cost india, website design cost, ecommerce website cost, wordpress
 author: Dreams4U Team
 date: 2026-05-07
 readTime: 9 min
-image: /images/website-creation-cost-india.webp
+image: /images/website-creation-cost-india.jpeg
 ---
 
-![Website creation cost in India for business websites](/images/website-creation-cost-india.webp)
+![Website creation cost in India for business websites](/images/website-creation-cost-india.jpeg)
 
 ## Introduction
 
@@ -43,7 +43,7 @@ Design decisions affect business results. A good design makes the website easy t
 
 For example, a local business in Faridabad may need a homepage, six service pages, a blog, local SEO sections, contact form, WhatsApp button, schema markup, and fast mobile loading. The design must look professional, but the development must also make the website crawlable and easy to update.
 
-![Responsive website design and development in India](/images/responsive-website-development-india.webp)
+![Responsive website design and development in India](/images/responsive-website-development-india.jpeg)
 
 ## WordPress Website Cost in India
 
