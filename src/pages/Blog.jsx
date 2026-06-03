@@ -9,11 +9,13 @@ const blogs = import.meta.glob("../content/blogs/*.md", {
 });
 
 export default function Blog() {
-  const blogList = Object.entries(blogs).map(([path, file]) => {
-    const slug = path.split("/").pop().replace(".md", "");
-    const { data } = matter(file);
-    return { slug, ...data };
-  });
+  const blogList = Object.entries(blogs)
+    .map(([path, file]) => {
+      const slug = path.split("/").pop().replace(".md", "");
+      const { data } = matter(file);
+      return { slug, ...data };
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
@@ -25,7 +27,10 @@ export default function Blog() {
         />
         <link rel="canonical" href="https://dreams4u.in/blog" />
       </Helmet>
-      <h1 className="text-4xl font-bold mb-10">Dreams4U Blog</h1>
+      <h1 className="text-4xl font-bold mb-4">Dreams4U Blog</h1>
+      <p className="text-sm text-gray-500 mb-10">
+        Showing {blogList.length} blog posts.
+      </p>
 
       <div className="grid md:grid-cols-3 gap-8">
         {blogList.map((blog) => (
