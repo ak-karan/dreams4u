@@ -2,6 +2,7 @@ import React from "react";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Works from "./pages/Works";
 import Contact from "./pages/Contact";
 import FaridabadHub from "./faridabad/FaridabadHub";
 import FaridabadLocationPage from "./faridabad/FaridabadLocationPage";
@@ -36,6 +37,7 @@ export const appRoutes = [
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
+      { path: "works", element: <Works /> },
       { path: "faridabad", element: <FaridabadHub /> },
       { path: "faridabad/:areaSlug", element: <FaridabadLocationPage /> },
       { path: ":serviceSlug", element: <LocalServicePage /> },

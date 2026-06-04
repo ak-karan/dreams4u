@@ -18,8 +18,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { services } from "./navbar";
-import { faridabadAreas } from "../faridabad/faridabadAreas";
-import { localServicePages } from "../localSeo/localServicePages";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,6 +33,7 @@ function Footer() {
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
+    { name: "Works", path: "/works" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
@@ -46,19 +45,6 @@ function Footer() {
     { icon: <Clock size={16} />, text: "24/7 Support" },
     { icon: <Shield size={16} />, text: "Data Secure" },
     { icon: <Send size={16} />, text: "Fast Delivery" },
-  ];
-
-  const localServiceLinks = localServicePages.map((page) => ({
-    name: page.h1,
-    path: page.routePath,
-  }));
-
-  const localAreaLinks = [
-    { name: "Faridabad Hub", path: "/faridabad" },
-    ...faridabadAreas.map((area) => ({
-      name: area.displayName,
-      path: area.routePath,
-    })),
   ];
 
   return (
@@ -109,7 +95,7 @@ function Footer() {
         </motion.div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-10 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 pb-16">
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="inline-block">
@@ -286,57 +272,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Local SEO Pages */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 pb-3 border-b border-gray-800 flex items-center gap-2">
-              <ChevronRight size={20} className="text-cyan-400" />
-              Faridabad SEO Pages
-            </h4>
-            <div className="space-y-3">
-              {localServiceLinks.map((page) => (
-                <motion.div
-                  key={page.path}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Link
-                    to={page.path}
-                    className="flex items-center gap-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors group"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400"
-                    />
-                    {page.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            <h5 className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-gray-300">
-              Local Areas
-            </h5>
-            <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">
-              {localAreaLinks.map((area) => (
-                <motion.div
-                  key={area.path}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Link
-                    to={area.path}
-                    className="flex items-center gap-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors group"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400"
-                    />
-                    {area.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}

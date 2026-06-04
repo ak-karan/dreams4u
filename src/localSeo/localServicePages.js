@@ -2,15 +2,186 @@ const baseUrl = "https://dreams4u.in";
 const phoneNumber = "+91-9717030244";
 const whatsappUrl = "https://wa.me/919717030244";
 const address = "1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad";
-const image = `${baseUrl}/images/website-design-company-faridabad.webp`;
+const image = `${baseUrl}/images/Website-Design-Comapany-in-Faridabad.png`;
 
 const sharedKeywords = [
   "website design company in faridabad",
+  "web design company in faridabad",
+  "best website designer in faridabad",
+  "website development company in faridabad",
+  "web development company in faridabad",
+  "professional website design services faridabad",
+  "custom website development faridabad",
+  "responsive website design faridabad",
+  "seo friendly website design faridabad",
+  "website designer near me",
+  "web development services near me",
+  "website design services in faridabad",
+  "website company in faridabad",
+  "digital agency in faridabad",
+  "it company in faridabad",
+  "web design agency faridabad",
+  "website maker in faridabad",
+  "website developer faridabad",
+  "best web agency faridabad",
   "web designer in ballabgarh",
+  "ecommerce website development faridabad",
+  "ecommerce website development company faridabad",
   "ecommerce website company faridabad",
+  "online store development faridabad",
+  "shopify website developer faridabad",
+  "woocommerce website development faridabad",
+  "small business website design faridabad",
+  "corporate website development faridabad",
+  "startup website development faridabad",
+  "business website designer faridabad",
   "seo company in faridabad",
+  "local seo services faridabad",
+  "google my business optimization faridabad",
+  "digital marketing company faridabad",
+  "search engine optimization services faridabad",
+  "google ranking services faridabad",
   "website development services near me",
+  "ai powered website development",
+  "mobile friendly website design",
+  "fast loading business websites",
+  "conversion focused website design",
+  "ui ux design services faridabad",
+  "website maintenance services",
+  "landing page design services",
+  "website speed optimization",
+  "lead generation website design",
 ];
+
+const delhiAreas = [
+  ["Saket", "south delhi", "selectwalk mall, coaching centres, clinics, boutiques, and neighbourhood service brands"],
+  ["Malviya Nagar", "south delhi", "cafes, education businesses, consultants, and high-street retail stores"],
+  ["Hauz Khas", "south delhi", "creative studios, restaurants, designers, and premium service businesses"],
+  ["Greater Kailash", "south delhi", "luxury retail, wellness clinics, consultants, and professional brands"],
+  ["Kalkaji", "south delhi", "local shops, coaching centres, healthcare providers, and service companies"],
+  ["Nehru Place", "south delhi", "IT traders, software firms, laptop markets, and B2B technology businesses"],
+  ["Vasant Kunj", "south delhi", "premium retail, schools, clinics, real estate consultants, and service brands"],
+  ["Lajpat Nagar", "south delhi", "fashion stores, traders, coaching institutes, and local service providers"],
+  ["Defence Colony", "south delhi", "restaurants, clinics, consultants, architects, and premium local brands"],
+  ["Green Park", "south delhi", "healthcare, education, hospitality, and boutique service businesses"],
+  ["Janakpuri", "west delhi", "coaching centres, clinics, retail brands, and established local companies"],
+  ["Rajouri Garden", "west delhi", "fashion, restaurants, showrooms, event businesses, and local retailers"],
+  ["Punjabi Bagh", "west delhi", "clinics, showrooms, consultants, restaurants, and premium service providers"],
+  ["Tilak Nagar", "west delhi", "retail stores, institutes, wholesalers, and service businesses"],
+  ["Uttam Nagar", "west delhi", "small businesses, coaching centres, property consultants, and local shops"],
+  ["Paschim Vihar", "west delhi", "healthcare, schools, consultants, real estate, and family-run companies"],
+  ["Dwarka", "south-west delhi", "startups, societies, clinics, schools, consultants, and ecommerce brands"],
+  ["Vikaspuri", "west delhi", "coaching centres, clinics, retailers, and professional service firms"],
+  ["Laxmi Nagar", "east delhi", "education institutes, finance consultants, shops, and local service companies"],
+  ["Preet Vihar", "east delhi", "clinics, schools, consultants, retailers, and professional offices"],
+  ["Mayur Vihar", "east delhi", "residential service providers, clinics, consultants, and local brands"],
+  ["Shahdara", "east delhi", "manufacturers, traders, retailers, and service businesses"],
+  ["Krishna Nagar", "east delhi", "retail stores, coaching institutes, clinics, and family businesses"],
+  ["Anand Vihar", "east delhi", "transport-linked businesses, consultants, retailers, and service brands"],
+  ["Rohini", "north delhi", "schools, clinics, ecommerce sellers, consultants, and local retailers"],
+  ["Pitampura", "north delhi", "coaching centres, healthcare providers, IT firms, and professional services"],
+  ["Model Town", "north delhi", "restaurants, clinics, boutiques, schools, and premium service businesses"],
+  ["Civil Lines", "north delhi", "professional offices, institutes, consultants, and heritage-area businesses"],
+  ["Kamla Nagar", "north delhi", "student-focused brands, cafes, retailers, and coaching businesses"],
+  ["Ashok Vihar", "north delhi", "manufacturers, clinics, schools, retailers, and service providers"],
+  ["Connaught Place", "central delhi", "corporate offices, agencies, finance firms, restaurants, and premium brands"],
+  ["Karol Bagh", "central delhi", "jewellery, automotive, fashion, hospitality, and retail businesses"],
+  ["Paharganj", "central delhi", "hotels, travel agencies, restaurants, exporters, and local shops"],
+  ["Patel Nagar", "central delhi", "coaching centres, clinics, consultants, and local retailers"],
+  ["Netaji Subhash Place", "north-west delhi", "IT offices, finance firms, restaurants, agencies, and B2B companies"],
+  ["Shalimar Bagh", "north-west delhi", "clinics, schools, consultants, retailers, and residential service brands"],
+  ["Rani Bagh", "north-west delhi", "retailers, small businesses, service providers, and local shops"],
+  ["Najafgarh", "south-west delhi", "local businesses, schools, clinics, property consultants, and retailers"],
+  ["Palam", "south-west delhi", "travel-linked businesses, local shops, service providers, and consultants"],
+  ["Mahipalpur", "south-west delhi", "hotels, logistics businesses, travel agencies, and airport-area companies"],
+];
+
+const priorityDelhiAreas = new Set([
+  "Connaught Place",
+  "Nehru Place",
+  "Dwarka",
+  "Rohini",
+  "Janakpuri",
+  "Laxmi Nagar",
+  "Rajouri Garden",
+  "Saket",
+  "Vasant Kunj",
+  "Karol Bagh",
+  "Pitampura",
+  "Mayur Vihar",
+]);
+
+function slugifyArea(area) {
+  return area.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function createDelhiLandingPage([area, zone, localReferences]) {
+  const slug = `website-design-company-in-${slugifyArea(area)}`;
+  const priority = priorityDelhiAreas.has(area);
+  const focus = priority
+    ? "high-intent commercial searches, faster enquiry journeys, and stronger service-page depth"
+    : "local search visibility, clear service presentation, and practical lead generation";
+
+  return {
+    slug,
+    title: `Website Design Company in ${area} | Web Development & SEO | Dreams4u`,
+    h1: `Website Design Company in ${area}`,
+    serviceType: "Website Design",
+    city: "Delhi",
+    badge: `${area} Delhi Landing Page`,
+    areaServed: [area, "Delhi", "Faridabad", "NCR"],
+    metaDescription: `Dreams4u offers website design, web development, ecommerce websites, SEO-friendly design, and local SEO services for businesses in ${area}, ${zone}.`,
+    intro: `Dreams4u creates modern, responsive, and SEO-friendly websites for businesses in ${area}, ${zone}. The page strategy is built for companies that need professional website design, custom website development, ecommerce website development, and local SEO support without keyword stuffing or generic copy.`,
+    imageAlt: `Website design company in ${area} by Dreams4u`,
+    primaryOffer: `Businesses in ${area} compete in a busy Delhi market, so a website must quickly show credibility, services, pricing direction, reviews, and a clear contact path. We build fast-loading business websites, landing pages, ecommerce stores, and service pages that help visitors move from search to call, WhatsApp, or enquiry form.`,
+    whyLocal: `${area} has demand from ${localReferences}. A local landing page should mention the real market, explain the offer, and support searches such as website designer near me, web development services near me, website design company in ${area}, and SEO friendly website design. We use location context naturally so the content remains useful for customers and search engines.`,
+    approach: `For ${area}, our approach starts with keyword mapping, competitor review, audience questions, and page structure. We plan unique headings, service blocks, FAQs, testimonials, internal links, image alt text, schema, metadata, and conversion buttons. The result is a mobile-friendly, conversion-focused website page built around ${focus}.`,
+    deliverables: [
+      `Custom website design for ${area} businesses`,
+      "Responsive design for mobile, tablet, and desktop",
+      "SEO title, meta description, headings, and image alt text",
+      "LocalBusiness, Service, FAQ, and breadcrumb schema",
+      "Ecommerce, Shopify, WooCommerce, and online store planning",
+      "Contact, WhatsApp, call, and lead-generation actions",
+    ],
+    sections: [
+      {
+        heading: `Website design for ${area} businesses`,
+        body: `A strong business website in ${area} should feel professional, load quickly, and answer customer questions before they call. We create pages for startups, shops, consultants, clinics, schools, agencies, ecommerce sellers, and corporate teams with clear service copy, trust sections, portfolio proof, and simple enquiry actions.`,
+      },
+      {
+        heading: "Web development, ecommerce, and maintenance support",
+        body: `Dreams4u handles custom website development, corporate website development, small business website design, ecommerce website design, online store development, landing page design, website speed optimization, and website maintenance. We can also plan Shopify or WooCommerce builds when a business wants catalogue, cart, payment, and product SEO features.`,
+      },
+      {
+        heading: `Local SEO signals for ${area}`,
+        body: `The page content is written around useful intent: website design services in ${area}, web design agency ${area}, digital agency in Delhi, SEO company support, Google Business Profile optimization, and search engine optimization services. Keywords are placed in titles, descriptions, headings, FAQs, and body copy only where they read naturally.`,
+      },
+    ],
+    faqs: [
+      {
+        question: `Do you provide website design services in ${area}?`,
+        answer: `Yes. Dreams4u provides website design, web development, responsive design, ecommerce website development, and SEO-friendly website design for businesses in ${area}, Delhi.`,
+      },
+      {
+        question: `Can you build an ecommerce website for a ${area} business?`,
+        answer: `Yes. We build ecommerce websites, Shopify stores, WooCommerce stores, product pages, category pages, payment-ready stores, and online business websites for ${area} retailers and service brands.`,
+      },
+      {
+        question: `Will my ${area} landing page have unique SEO content?`,
+        answer: `Yes. We create a unique introduction, local business references, area-specific service content, FAQs, metadata, schema, and internal links so the page does not look like duplicate location copy.`,
+      },
+      {
+        question: `Do you also help with SEO and Google Business Profile optimization?`,
+        answer: `Yes. We support local SEO services, Google Business Profile optimization, search engine optimization services, Google ranking services, and conversion-focused content improvements.`,
+      },
+    ],
+  };
+}
+
+function createDelhiLandingPages() {
+  return delhiAreas.map(createDelhiLandingPage);
+}
 
 export const localServicePages = [
   {
@@ -367,6 +538,7 @@ export const localServicePages = [
       },
     ],
   },
+  ...createDelhiLandingPages(),
 ].map((page) => ({
   ...page,
   routePath: `/${page.slug}`,

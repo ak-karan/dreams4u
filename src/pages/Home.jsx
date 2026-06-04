@@ -19,9 +19,9 @@ export default function Home() {
   const location = "Faridabad, Haryana";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
-  const pageTitle = `Best Website Design Company in Faridabad | Affordable Web Design`;
-  const pageDescription = `Dreams4u - Top-rated website design company in Faridabad offering affordable web design, SEO services, digital marketing, e-commerce solutions & mobile-responsive development. Call +91-9717030244`;
-  const keywords = `website design company Faridabad, web development Faridabad, SEO services Faridabad, digital marketing Faridabad, e-commerce website Faridabad, responsive web design Faridabad, ${companyName}, Dreams4u Faridabad`;
+  const pageTitle = `Website Design Company in Faridabad | Web Development & SEO Services | Dreams4U`;
+  const pageDescription = `Dreams4U is a leading website design company in Faridabad offering professional web development, ecommerce solutions, SEO services, and responsive website design for startups and businesses. Contact us today for a free consultation.`;
+  const keywords = `website design company in Faridabad, web design company in Faridabad, best website designer in Faridabad, website development company in Faridabad, professional website design services Faridabad, custom website development Faridabad, ecommerce website development Faridabad, responsive website design Faridabad, SEO friendly website design Faridabad, website designer near me, web development services near me, SEO company in Faridabad, local SEO services Faridabad, digital marketing company Faridabad, AI powered website development, modern website design services, mobile friendly website design, fast loading business websites, conversion focused website design, UI UX design services Faridabad, website maintenance services, landing page design services, website speed optimization, lead generation website design, ${companyName}, Dreams4u Faridabad`;
 
   return (
     <>
@@ -320,6 +320,12 @@ export default function Home() {
 
       {/* ================= FAQ ================= */}
       <FAQSection faqs={homeFaqs} />
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={websiteUrl} />
+      </Helmet>
     </>
   );
 }

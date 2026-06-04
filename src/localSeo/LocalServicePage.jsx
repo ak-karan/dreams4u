@@ -23,6 +23,12 @@ const relatedLinks = [
 ];
 
 function buildSchemas(page) {
+  const servedAreas = page.areaServed || [
+    "Faridabad",
+    "Ballabgarh",
+    "NIT Faridabad",
+    "Badkhal",
+  ];
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -31,12 +37,7 @@ function buildSchemas(page) {
     description: page.metaDescription,
     image: page.image,
     url: page.canonicalUrl,
-    areaServed: [
-      { "@type": "City", name: "Faridabad" },
-      { "@type": "Place", name: "Ballabgarh" },
-      { "@type": "Place", name: "NIT Faridabad" },
-      { "@type": "Place", name: "Badkhal" },
-    ],
+    areaServed: servedAreas.map((name) => ({ "@type": "Place", name })),
     provider: {
       "@type": "LocalBusiness",
       name: "Dreams4u",
@@ -124,7 +125,7 @@ export default function LocalServicePage() {
               <span className="text-white">{page.h1}</span>
             </div>
             <span className="inline-flex rounded-full bg-cyan-500/15 px-4 py-2 text-sm font-semibold text-cyan-200 ring-1 ring-cyan-400/30">
-              Faridabad Local SEO Page
+              {page.badge || "Faridabad Local SEO Page"}
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
               {page.h1}
@@ -150,7 +151,7 @@ export default function LocalServicePage() {
 
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-cyan-950/20">
             <img
-              src="/images/website-design-company-faridabad.webp"
+              src={page.image}
               alt={page.imageAlt}
               width="900"
               height="620"

@@ -32,6 +32,12 @@ const STATIC_PAGES = [
     lastmod: new Date().toISOString().split("T")[0],
   },
   {
+    path: "/works",
+    priority: "0.9",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
     path: "/portfolio",
     priority: "0.8",
     changefreq: "monthly",

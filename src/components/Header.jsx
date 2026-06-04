@@ -176,6 +176,7 @@ export default function Header() {
             {/* Other Navigation Links */}
             {[
               { path: "/about", label: "About Us" },
+              { path: "/works", label: "Works" },
               { path: "/portfolio", label: "Portfolio" },
               { path: "/blog", label: "Blog" },
               { path: "/contact", label: "Contact" },
@@ -317,6 +318,7 @@ export default function Header() {
                   {[
                     { path: "/", label: "Home", icon: "🏠" },
                     { path: "/about", label: "About Us", icon: "👥" },
+                    { path: "/works", label: "Works", icon: "W" },
                     { path: "/portfolio", label: "Portfolio", icon: "🎯" },
                     { path: "/blog", label: "Blog", icon: "📝" },
                     { path: "/contact", label: "Contact", icon: "📞" },

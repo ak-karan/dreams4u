@@ -17,6 +17,7 @@ function getStaticRoutes() {
   const appRoutes = [
     "/",
     "/about",
+    "/works",
     "/faridabad",
     "/portfolio",
     "/contact",

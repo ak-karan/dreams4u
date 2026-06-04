@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 
 // Import all markdown files (Vite v7 compatible)
-const blogFiles = import.meta.glob("../blogs/*.md", {
+const blogFiles = import.meta.glob("../content/blogs/*.md", {
   eager: true,
   query: "?raw",
   import: "default",
