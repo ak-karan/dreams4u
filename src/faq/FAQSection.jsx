@@ -37,7 +37,10 @@ const FAQSection = ({ faqs = homeFaqs }) => {
   });
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 via-white to-cyan-50/30 relative overflow-hidden">
+    <section
+      id="faq"
+      className="py-24 bg-gradient-to-b from-gray-50 via-white to-cyan-50/30 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
@@ -299,10 +302,10 @@ const FAQSection = ({ faqs = homeFaqs }) => {
                   <div>
                     <p className="text-sm text-gray-300">Call Us</p>
                     <a
-                      href="tel:+919717030244"
+                      href="tel:+919667316333"
                       className="text-lg font-semibold hover:text-cyan-400 transition-colors"
                     >
-                      +91 9717030244
+                      +91 9667316333
                     </a>
                   </div>
                 </div>

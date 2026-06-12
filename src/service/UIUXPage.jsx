@@ -224,7 +224,7 @@ function UIUXPage() {
                 Get Design Consultation
               </a>
               <a
-                href="tel:+919717030244"
+                href="tel:+919667316333"
                 className="bg-transparent border-2 border-white hover:bg-white hover:text-pink-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
               >
                 Call: +91-96673-16333
@@ -508,7 +508,7 @@ function UIUXPage() {
               Start Design Project
             </a>
             <a
-              href="tel:+919717030244"
+              href="tel:+919667316333"
               className="bg-transparent border-2 border-white hover:bg-white hover:text-pink-600 font-bold py-4 px-10 rounded-lg text-lg transition duration-300"
             >
               Call Now: +91-96673-16333

@@ -1,14 +1,22 @@
-# robots.txt for https://dreams4u.in
 User-agent: *
 Allow: /
-
-# Disallow certain paths
 Disallow: /debug-blogs
 Disallow: /admin/
 Disallow: /private/
 
-# LLMs reference
+# LLM file
 Allow: /llms.txt
 
-# Sitemap reference
+# OpenAI bots
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
 Sitemap: https://dreams4u.in/sitemap.xml

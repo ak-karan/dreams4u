@@ -132,7 +132,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+const Services = ({ showMetadata = true }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const navigate = useNavigate();
 
@@ -146,20 +146,23 @@ const Services = () => {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Web Design & Development Services in Faridabad | Affordable Solutions
-        </title>
-        <meta
-          name="description"
-          content="Affordable web design and development services in Faridabad. Professional website design, SEO, digital marketing, e-commerce solutions, and mobile-responsive websites for business growth."
-        />
-        <meta
-          name="keywords"
-          content="website design company Faridabad, web development services, affordable website design, SEO services Faridabad, e-commerce website development, digital marketing"
-        />
-        <link rel="canonical" href="https://dreams4u.in/services" />
-      </Helmet>
+      {showMetadata && (
+        <Helmet>
+          <title>
+            Web Design & Development Services in Faridabad | Affordable
+            Solutions
+          </title>
+          <meta
+            name="description"
+            content="Affordable web design and development services in Faridabad. Professional website design, SEO, digital marketing, e-commerce solutions, and mobile-responsive websites for business growth."
+          />
+          <meta
+            name="keywords"
+            content="website design company Faridabad, web development services, affordable website design, SEO services Faridabad, e-commerce website development, digital marketing"
+          />
+          <link rel="canonical" href="https://dreams4u.in/services" />
+        </Helmet>
+      )}
 
       <section
         className="py-28 relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-cyan-50/30"

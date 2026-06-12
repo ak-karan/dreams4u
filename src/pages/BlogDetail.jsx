@@ -77,7 +77,7 @@ export default function BlogDetail() {
     description: data.description,
     image: data.image ? `https://dreams4u.in${data.image}` : undefined,
     datePublished: data.date,
-    dateModified: data.date,
+    dateModified: data.updated || data.date,
     author: {
       "@type": "Organization",
       name: data.author || "Dreams4u Team",

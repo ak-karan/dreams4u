@@ -1,6 +1,6 @@
 const officeAddress = "1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad";
-const phoneNumber = "+91-9717030244";
-const whatsappNumber = "919717030244";
+const phoneNumber = "+91-9667316333";
+const whatsappNumber = "919667316333";
 const baseUrl = "https://dreams4u.in";
 const baseImage = `${baseUrl}/images/dreams4u.webp`;
 

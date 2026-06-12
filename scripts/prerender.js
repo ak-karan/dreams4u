@@ -16,7 +16,7 @@ const blogsDir = path.join(projectRoot, "src", "content", "blogs");
 function getStaticRoutes() {
   const appRoutes = [
     "/",
-    "/about",
+    "/about-dreams4u",
     "/works",
     "/faridabad",
     "/portfolio",

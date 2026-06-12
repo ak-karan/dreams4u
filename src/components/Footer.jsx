@@ -32,7 +32,7 @@ function Footer() {
 
   const quickLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
+    { name: "About Us", path: "/about-dreams4u" },
     { name: "Works", path: "/works" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Blog", path: "/blog" },
@@ -42,7 +42,7 @@ function Footer() {
   ];
 
   const features = [
-    { icon: <Clock size={16} />, text: "24/7 Support" },
+    { icon: <Clock size={16} />, text: "Website Support" },
     { icon: <Shield size={16} />, text: "Data Secure" },
     { icon: <Send size={16} />, text: "Fast Delivery" },
   ];
@@ -229,10 +229,10 @@ function Footer() {
                   <Phone size={20} className="text-cyan-400" />
                 </div>
                 <a
-                  href="tel:+919717030244"
+                  href="tel:+919667316333"
                   className="text-gray-400 hover:text-cyan-400 transition-colors"
                 >
-                  +91 9717030244
+                  +91 9667316333
                 </a>
               </div>
 
@@ -305,7 +305,7 @@ function Footer() {
               <span className="text-gray-600">•</span>
               <span className="text-cyan-400 font-semibold flex items-center gap-1">
                 <Shield size={14} />
-                ISO 27001 Certified
+                Serving Faridabad, Delhi NCR & India
               </span>
             </div>
           </div>

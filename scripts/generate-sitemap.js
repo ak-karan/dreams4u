@@ -26,7 +26,7 @@ const STATIC_PAGES = [
     lastmod: new Date().toISOString().split("T")[0],
   },
   {
-    path: "/about",
+    path: "/about-dreams4u",
     priority: "0.9",
     changefreq: "monthly",
     lastmod: new Date().toISOString().split("T")[0],
@@ -303,16 +303,22 @@ function generateSitemap() {
 // Function to generate robots.txt
 function generateRobotsTxt() {
   const robotsTxt =
-    `# robots.txt for ${baseUrl}${EOL}` +
     `User-agent: *${EOL}` +
-    `Allow: /${EOL}${EOL}` +
-    `# Disallow certain paths${EOL}` +
+    `Allow: /${EOL}` +
     `Disallow: /debug-blogs${EOL}` +
     `Disallow: /admin/${EOL}` +
     `Disallow: /private/${EOL}${EOL}` +
-    `# LLMs reference${EOL}` +
+    `# LLM file${EOL}` +
     `Allow: /llms.txt${EOL}${EOL}` +
-    `# Sitemap reference${EOL}` +
+    `# OpenAI bots${EOL}` +
+    `User-agent: OAI-SearchBot${EOL}` +
+    `Allow: /${EOL}${EOL}` +
+    `User-agent: GPTBot${EOL}` +
+    `Allow: /${EOL}${EOL}` +
+    `# Google AI${EOL}` +
+    `User-agent: Google-Extended${EOL}` +
+    `Allow: /${EOL}${EOL}` +
+    `# Sitemap${EOL}` +
     `Sitemap: ${baseUrl}/sitemap.xml${EOL}`;
 
   const robotsPath = path.join(process.cwd(), "public", "robots.txt");

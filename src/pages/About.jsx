@@ -1,427 +1,354 @@
 import React from "react";
-import { motion } from "framer-motion";
-import {
-  Target,
-  Eye,
-  Users,
-  Award,
-  CheckCircle,
-  Rocket,
-  Heart,
-  Shield,
-  Zap,
-  Globe,
-  Sparkles,
-  ArrowRight,
-} from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Building2,
+  CheckCircle2,
+  Globe2,
+  Mail,
+  MapPin,
+  Phone,
+  Search,
+  ShoppingCart,
+  TrendingUp,
+  Users,
+  Wrench,
+} from "lucide-react";
 
-const About = () => {
+const canonicalUrl = "https://dreams4u.in/about-dreams4u";
+
+const services = [
+  {
+    name: "Website Design",
+    description:
+      "Responsive business websites, landing pages, corporate websites, and UI/UX design.",
+    icon: Building2,
+    path: "/website-design-company-in-faridabad",
+  },
+  {
+    name: "Web Development",
+    description:
+      "Business websites, ecommerce stores, WordPress websites, and custom web solutions.",
+    icon: Globe2,
+    path: "/website-development-company-in-faridabad",
+  },
+  {
+    name: "SEO Services",
+    description:
+      "On-page SEO, technical SEO, local SEO, content planning, and search visibility improvements.",
+    icon: Search,
+    path: "/seo-services-in-faridabad",
+  },
+  {
+    name: "Digital Marketing",
+    description:
+      "Landing pages, campaign planning, local lead generation, content, and conversion support.",
+    icon: TrendingUp,
+    path: "/digital-marketing-company-in-faridabad",
+  },
+  {
+    name: "Ecommerce Development",
+    description:
+      "Product catalogues, online stores, payment-ready buying flows, and product SEO.",
+    icon: ShoppingCart,
+    path: "/ecommerce-website-development-in-faridabad",
+  },
+  {
+    name: "Website Maintenance",
+    description:
+      "Content updates, technical fixes, performance improvements, and ongoing website support.",
+    icon: Wrench,
+    path: "/website-maintenance-services-in-faridabad",
+  },
+];
+
+const clientTypes = [
+  "Small businesses and local service providers",
+  "Startups and entrepreneurs",
+  "Manufacturers, traders, and B2B companies",
+  "Doctors, clinics, schools, and coaching institutes",
+  "Real estate, travel, hospitality, and professional services",
+  "Retailers and ecommerce brands",
+];
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${canonicalUrl}/#webpage`,
+      url: canonicalUrl,
+      name: "About Dreams4u",
+      description:
+        "Company information, services, client types, service areas, and contact details for Dreams4u.",
+      about: {
+        "@id": "https://dreams4u.in/#organization",
+      },
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dreams4u.in/#organization",
+      name: "Dreams4u",
+      alternateName: "Dreams4U",
+      url: "https://dreams4u.in/",
+      logo: "https://dreams4u.in/images/Logo.webp",
+      description:
+        "Dreams4u is a website design, web development, SEO and digital marketing company in Faridabad serving Delhi NCR and India.",
+      telephone: "+91-9667316333",
+      email: "info@dreams4u.in",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1361, Bhagat Singh Colony, Sector 4",
+        addressLocality: "Ballabgarh, Faridabad",
+        addressRegion: "Haryana",
+        postalCode: "121004",
+        addressCountry: "IN",
+      },
+      areaServed: ["Faridabad", "Delhi NCR", "Haryana", "India"],
+      sameAs: [
+        "https://www.facebook.com/Dreams4u.in/",
+        "https://www.instagram.com/dreams4u.in/",
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://dreams4u.in/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Dreams4u",
+          item: canonicalUrl,
+        },
+      ],
+    },
+  ],
+};
+
+export default function About() {
   return (
     <>
-      {/* SEO Meta Tags */}
       <Helmet>
-        <title>About Dreams4u | Professional Web Design Company in Faridabad</title>
+        <title>About Dreams4u | Web Design, Development, SEO & Marketing</title>
         <meta
           name="description"
-          content="Learn about Dreams4u - a leading web design company in Faridabad specializing in affordable, professional website design and digital solutions for businesses."
+          content="Dreams4u is a Faridabad website design, web development, SEO and digital marketing company serving Delhi NCR and businesses across India."
         />
-        <meta
-          name="keywords"
-          content="web design company Faridabad, website development Faridabad, professional web design agency, digital marketing solutions, Dreams4u"
-        />
-        <meta
-          property="og:title"
-          content="About Dreams4u | Best Web Design Agency in Faridabad"
-        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="About Dreams4u" />
         <meta
           property="og:description"
-          content="Transforming businesses with innovative web solutions in Faridabad. Professional, responsive, and high-performance websites."
+          content="Learn what Dreams4u does, where we work, who we serve, and how to contact our Faridabad team."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta
+          property="og:image"
+          content="https://dreams4u.in/images/dreams4u.webp"
+        />
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Dreams4u",
-            url: "https://dreams4u.in/about",
-            logo: "https://dreams4u.in/images/dreams4u.webp",
-            description:
-              "Professional web design and development company in Faridabad",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Faridabad",
-              addressRegion: "Haryana",
-              postalCode: "121004",
-              addressCountry: "IN",
-            },
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+919717030244",
-              contactType: "customer service",
-              areaServed: "IN",
-              availableLanguage: "Hindi, English",
-            },
-            sameAs: [
-              "https://www.facebook.com/Dreams4u.in/",
-              "https://www.instagram.com/dreams4u.in/",
-            ],
-          })}
+          {JSON.stringify(aboutSchema)}
         </script>
       </Helmet>
 
-      <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-gray-50 to-cyan-50/30">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-white text-sm font-semibold mb-6 shadow-lg shadow-cyan-500/25">
-              <Sparkles className="w-4 h-4" />
-              About Us
-            </span>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent animate-gradient">
-                Crafting Digital Excellence
-              </span>
-              <br />
-              <span className="text-3xl md:text-4xl text-gray-700">
-                in Faridabad & Beyond
-              </span>
-            </h1>
-
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We transform your vision into a powerful digital reality that
-              drives growth and success.
+      <section className="bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
+              About Dreams4u
             </p>
-          </motion.div>
-
-          {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-20">
-            {/* Left Column - Our Story */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-8"
-            >
-              <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-200">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-white" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    Our Story
-                  </h2>
-                </div>
-
-                <div className="space-y-6">
-                  <p className="text-gray-700 leading-relaxed">
-                    At <strong className="text-cyan-600">Dreams4u</strong>, we
-                    believe every business deserves a powerful digital identity.
-                    We specialize in designing and developing professional,
-                    high-quality websites that combine
-                    <span className="font-semibold text-gray-900">
-                      {" "}
-                      creativity, performance, and functionality
-                    </span>
-                    .
-                  </p>
-
-                  <p className="text-gray-700 leading-relaxed">
-                    Our approach is simple — we understand your vision, align it
-                    with modern technology, and transform it into a digital
-                    experience that delivers real results. From new website
-                    development to service-based platforms, we focus on
-                    <span className="font-semibold text-gray-900">
-                      {" "}
-                      clean design, strong performance, and long-term value
-                    </span>
-                    .
-                  </p>
-
-                  <div className="flex items-center gap-3 text-sm text-cyan-600 font-semibold">
-                    <Zap className="w-4 h-4" />
-                    <span>50+ Projects Delivered</span>
-                    <span className="text-gray-400">•</span>
-                    <span>45+ Happy Clients</span>
-                    <span className="text-gray-400">•</span>
-                    <span>100% Satisfaction</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mission Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 border border-cyan-100"
+            <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              A Faridabad digital company focused on useful business growth
+            </h1>
+            <p className="mt-6 text-xl leading-9 text-slate-200">
+              Dreams4U is a website design, web development, SEO and digital
+              marketing company in Faridabad serving Delhi NCR and India.
+            </p>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+              We help businesses build a clear and credible online presence
+              through responsive websites, search-friendly content, local SEO,
+              ecommerce solutions, digital marketing, and ongoing website
+              support.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Target className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      Our Mission
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      To create{" "}
-                      <strong>innovative, scalable, and result-driven</strong>{" "}
-                      web solutions that help brands grow, connect with their
-                      audience, and succeed in the digital world.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Vision Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-100"
+                Discuss Your Project
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+              <a
+                href="tel:+919667316333"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Eye className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      Our Vision
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      To become a{" "}
-                      <strong>globally trusted web development company</strong>,
-                      known for creativity, quality, and building long-term
-                      digital partnerships.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+                <Phone className="h-5 w-5" />
+                +91 9667316333
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Right Column - Values & Stats */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="space-y-8"
-            >
-              {/* Core Values */}
-              <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl flex items-center justify-center">
-                    <Award className="w-5 h-5 text-white" />
-                  </div>
-                  Our Core Values
-                </h2>
+      <section className="bg-white py-16">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+          <article className="rounded-3xl border border-slate-200 p-7">
+            <Building2 className="h-9 w-9 text-cyan-600" />
+            <h2 className="mt-5 text-2xl font-bold text-slate-900">
+              What Dreams4u is
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600">
+              Dreams4u is a digital services company based in Ballabgarh,
+              Faridabad. We plan, design, develop, optimize, and maintain
+              websites that help businesses explain their services, earn trust,
+              and generate enquiries.
+            </p>
+          </article>
 
-                <div className="grid gap-6">
-                  {[
-                    {
-                      icon: <Users className="w-5 h-5" />,
-                      title: "Client-Centric Approach",
-                      description:
-                        "Your success is our priority. We listen, understand, and deliver exactly what you need.",
-                      color: "from-cyan-500 to-blue-500",
-                    },
-                    {
-                      icon: <Shield className="w-5 h-5" />,
-                      title: "Quality & Excellence",
-                      description:
-                        "We never compromise on quality. Every project meets the highest standards of excellence.",
-                      color: "from-green-500 to-emerald-500",
-                    },
-                    {
-                      icon: <Rocket className="w-5 h-5" />,
-                      title: "Innovation & Technology",
-                      description:
-                        "Using cutting-edge technologies to create future-ready solutions.",
-                      color: "from-purple-500 to-pink-500",
-                    },
-                    {
-                      icon: <CheckCircle className="w-5 h-5" />,
-                      title: "Transparency & Trust",
-                      description:
-                        "Clear communication and honest partnerships built on trust.",
-                      color: "from-amber-500 to-orange-500",
-                    },
-                  ].map((value, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1 * index + 0.3 }}
-                      className="flex gap-4 group hover:bg-gray-50 p-4 rounded-2xl transition-all"
-                    >
-                      <div
-                        className={`w-12 h-12 bg-gradient-to-r ${value.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}
-                      >
-                        <div className="text-white">{value.icon}</div>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">
-                          {value.title}
-                        </h3>
-                        <p className="text-sm text-gray-600">
-                          {value.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+          <article className="rounded-3xl border border-slate-200 p-7">
+            <MapPin className="h-9 w-9 text-cyan-600" />
+            <h2 className="mt-5 text-2xl font-bold text-slate-900">
+              Where we serve
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600">
+              Our primary market is Faridabad and Ballabgarh. We also serve
+              Delhi NCR, including Delhi, Gurugram, Noida, Greater Noida, and
+              Ghaziabad, and work remotely with clients across India.
+            </p>
+          </article>
 
-              {/* Stats Banner */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="bg-gradient-to-r from-gray-900 to-black text-white rounded-3xl p-8"
-              >
-                <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-cyan-400" />
-                  Our Impact in Numbers
-                </h3>
+          <article className="rounded-3xl border border-slate-200 p-7">
+            <Users className="h-9 w-9 text-cyan-600" />
+            <h2 className="mt-5 text-2xl font-bold text-slate-900">
+              How we work
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600">
+              We begin with the business goal, customer questions, required
+              pages, features, and target locations. The project then moves
+              through content planning, design, development, SEO setup, testing,
+              launch, and support.
+            </p>
+          </article>
+        </div>
+      </section>
 
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    { value: "50+", label: "Projects", icon: "🚀" },
-                    { value: "45+", label: "Happy Clients", icon: "😊" },
-                    { value: "95%", label: "Satisfaction", icon: "⭐" },
-                    { value: "100%", label: "On-Time Delivery", icon: "⏱️" },
-                  ].map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-3xl font-bold mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-gray-300">{stat.label}</div>
-                      <div className="text-xl mt-2">{stat.icon}</div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              Services
+            </p>
+            <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
+              What Dreams4u does
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Our services cover the main parts of building and growing a
+              business online. Scope is selected according to the client's
+              goals, current website, budget, and internal resources.
+            </p>
           </div>
 
-          {/* Why Choose Us */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="mb-20"
-          >
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Why Choose Dreams4u?
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                We're not just a web design company - we're your digital growth
-                partners.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Local Expertise",
-                  description:
-                    "Based in Faridabad, we understand the local market and business needs.",
-                  icon: "📍",
-                },
-                {
-                  title: "SEO-First Approach",
-                  description:
-                    "Every website is built with SEO best practices for better rankings.",
-                  icon: "🔍",
-                },
-                {
-                  title: "24/7 Support",
-                  description:
-                    "Round-the-clock support to ensure your website runs smoothly.",
-                  icon: "🛡️",
-                },
-                {
-                  title: "Modern Technology",
-                  description:
-                    "Using React.js, Next.js, and latest frameworks for superior performance.",
-                  icon: "⚡",
-                },
-                {
-                  title: "Custom Solutions",
-                  description:
-                    "Tailored websites that match your unique business requirements.",
-                  icon: "🎨",
-                },
-                {
-                  title: "Affordable Pricing",
-                  description:
-                    "High-quality solutions at competitive prices for Faridabad businesses.",
-                  icon: "💰",
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-shadow"
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Link
+                  key={service.name}
+                  to={service.path}
+                  className="group rounded-3xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg"
                 >
-                  <div className="text-3xl mb-4">{feature.icon}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    {feature.title}
+                  <Icon className="h-8 w-8 text-cyan-600" />
+                  <h3 className="mt-5 text-xl font-bold text-slate-900">
+                    {service.name}
                   </h3>
-                  <p className="text-sm text-gray-600">{feature.description}</p>
+                  <p className="mt-3 leading-7 text-slate-600">
+                    {service.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 font-semibold text-cyan-700">
+                    View service
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              Client Types
+            </p>
+            <h2 className="mt-4 text-3xl font-bold text-slate-900">
+              Businesses we work with
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Dreams4u works with organizations that need a new website, a
+              stronger local search presence, clearer content, online sales, or
+              ongoing digital support.
+            </p>
+            <div className="mt-7 space-y-4">
+              {clientTypes.map((clientType) => (
+                <div key={clientType} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-cyan-600" />
+                  <p className="leading-7 text-slate-700">{clientType}</p>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="text-center"
-          >
-            <div className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-3xl p-12 shadow-2xl shadow-cyan-500/25">
-              <h3 className="text-3xl font-bold text-white mb-4">
-                Ready to Start Your Digital Journey?
-              </h3>
-              <p className="text-cyan-100 mb-8 max-w-2xl mx-auto">
-                Let's discuss how we can transform your business with a powerful
-                website.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-cyan-700 font-bold rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-lg group"
-                >
-                  <span>Get Free Consultation</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href="/portfolio"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-2xl hover:bg-white/10 transition-all duration-300"
-                >
-                  <span>View Our Work</span>
-                </a>
+          <aside className="rounded-3xl bg-slate-950 p-8 text-white lg:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              Contact Details
+            </p>
+            <h2 className="mt-4 text-3xl font-bold">Contact Dreams4u</h2>
+            <p className="mt-4 leading-7 text-slate-300">
+              Share your business type, required pages, target locations, and
+              current website URL if available. We will use that information to
+              discuss the right scope.
+            </p>
+            <address className="mt-8 space-y-5 not-italic">
+              <a
+                href="tel:+919667316333"
+                className="flex items-center gap-4 text-slate-200 hover:text-cyan-300"
+              >
+                <Phone className="h-6 w-6 text-cyan-300" />
+                +91 9667316333
+              </a>
+              <a
+                href="mailto:info@dreams4u.in"
+                className="flex items-center gap-4 text-slate-200 hover:text-cyan-300"
+              >
+                <Mail className="h-6 w-6 text-cyan-300" />
+                info@dreams4u.in
+              </a>
+              <div className="flex items-start gap-4 text-slate-200">
+                <MapPin className="mt-0.5 h-6 w-6 shrink-0 text-cyan-300" />
+                <span>
+                  1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad,
+                  Haryana 121004, India
+                </span>
               </div>
-            </div>
-          </motion.div>
+            </address>
+            <Link
+              to="/contact"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400"
+            >
+              Open Contact Form
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </aside>
         </div>
       </section>
     </>
   );
-};
-
-export default About;
+}

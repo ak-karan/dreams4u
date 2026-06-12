@@ -22,6 +22,15 @@ const relatedLinks = [
   { name: "Contact Dreams4u", path: "/contact" },
 ];
 
+const featuredLocalSlugs = [
+  "website-design-company-in-faridabad",
+  "website-development-company-in-faridabad",
+  "seo-services-in-faridabad",
+  "digital-marketing-company-in-faridabad",
+  "website-design-company-in-delhi-ncr",
+  "ecommerce-website-development-in-faridabad",
+];
+
 function buildSchemas(page) {
   const servedAreas = page.areaServed || [
     "Faridabad",
@@ -87,7 +96,15 @@ export default function LocalServicePage() {
   }
 
   const { serviceSchema, breadcrumbSchema } = buildSchemas(page);
-  const otherLocalPages = localServicePages.filter((item) => item.slug !== page.slug);
+  const targetLocation = page.seoLocation || page.city || "Faridabad";
+  const locationKeywordExamples =
+    targetLocation === "Delhi NCR"
+      ? "website design company in Delhi NCR, web development company in Delhi NCR, SEO services in Delhi NCR, and website designer near me"
+      : "website design company in Faridabad, website development company in Faridabad, SEO services in Faridabad, and digital marketing company in Faridabad";
+  const otherLocalPages = localServicePages.filter(
+    (item) =>
+      item.slug !== page.slug && featuredLocalSlugs.includes(item.slug),
+  );
 
   return (
     <>
@@ -259,21 +276,19 @@ export default function LocalServicePage() {
               title tag, helpful meta description, one clear H1, logical H2
               sections, descriptive image alt text, crawlable internal links,
               clean canonical URL, and schema markup. We use these signals to
-              connect the page with Faridabad service intent while keeping the
-              copy readable for real customers. The page is written to answer
-              what the service includes, who it is for, how the process works,
-              what local areas are served, and what action the visitor should
-              take next.
+              connect the page with {targetLocation} service intent while
+              keeping the copy readable for real customers. The page is written
+              to answer what the service includes, who it is for, how the
+              process works, what local areas are served, and what action the
+              visitor should take next.
             </p>
             <p>
               Content SEO is handled with depth instead of keyword stuffing.
-              Search terms such as website design company in Faridabad, web
-              designer in Ballabgarh, ecommerce website company Faridabad, SEO
-              company in Faridabad, and website development services near me are
-              placed where they make sense. The surrounding content explains
-              benefits, use cases, deliverables, local coverage, technical
-              checks, FAQs, and conversion points so Google receives enough
-              context and visitors receive enough confidence.
+              Search terms such as {locationKeywordExamples} are placed where
+              they make sense. The surrounding content explains benefits, use
+              cases, deliverables, local coverage, technical checks, FAQs, and
+              conversion points so search engines receive useful context and
+              visitors receive enough confidence.
             </p>
             <p>
               Technical SEO and speed are reviewed together. Images use
@@ -287,12 +302,12 @@ export default function LocalServicePage() {
             </p>
             <p>
               Local SEO needs consistent trust signals. The page includes
-              Dreams4u contact details, Faridabad service coverage, references
-              to Ballabgarh, NIT, Badkhal, and nearby sectors, links to related
-              services, and a clear path to the contact page. These internal
-              links help users move from research to enquiry and help search
-              engines understand the relationship between services, blog
-              content, and local landing pages.
+              Dreams4u contact details, {targetLocation} service coverage,
+              relevant area references, links to related services, and a clear
+              path to the contact page. These internal links help users move
+              from research to enquiry and help search engines understand the
+              relationship between services, blog content, and local landing
+              pages.
             </p>
             <p>
               After publishing, the page should be checked in Google Search
@@ -342,7 +357,7 @@ export default function LocalServicePage() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-slate-900">
-            More local SEO pages in Faridabad
+            Explore related local service pages
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {otherLocalPages.map((item) => (

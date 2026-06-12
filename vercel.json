@@ -1,5 +1,17 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about-dreams4u",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-services-in-faridabad",
+      "destination": "/digital-marketing-company-in-faridabad",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

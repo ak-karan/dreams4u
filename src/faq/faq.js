@@ -25,7 +25,7 @@ export const homeFaqs = [
     id: 4,
     question: "Do you work with local businesses in Faridabad?",
     answer:
-      "Yes, we work with local shops, startups, and service-based businesses in Faridabad, providing website design and SEO services. We've worked with 50+ local businesses across various industries.",
+      "Yes, we work with local shops, startups, manufacturers, professionals, and service-based businesses in Faridabad, providing website design, development, SEO, and digital marketing support.",
     category: "services",
   },
   {
@@ -46,14 +46,14 @@ export const homeFaqs = [
     id: 7,
     question: "Do you offer hosting services?",
     answer:
-      "Yes, we provide reliable hosting solutions starting from ₹2,000/year with 99.9% uptime guarantee, free SSL certificates, and daily backups.",
+      "Yes, we can help businesses select and configure hosting with SSL, backup, security, and performance requirements based on the website technology and traffic needs.",
     category: "hosting",
   },
   {
     id: 8,
     question: "Can you redesign my existing website?",
     answer:
-      "Absolutely! We specialize in website redesigns while maintaining SEO rankings. We analyze your current site and create a modern, faster, and more effective version.",
+      "Yes. We can review and redesign an existing website while planning redirects, metadata, content migration, internal links, and other steps that help preserve important SEO signals.",
     category: "services",
   },
 ];

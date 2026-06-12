@@ -14,9 +14,7 @@ import homeSchema from "../seo/homeSchema";
 export default function Home() {
   const companyName = "Dreams4u";
   const websiteUrl = "https://dreams4u.in";
-  const phoneNumber = "+919717030244";
-  const callnow = "Call Now"
-  const location = "Faridabad, Haryana";
+  const phoneNumber = "+919667316333";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
   const pageTitle = `Website Design Company in Faridabad | Web Development & SEO Services | Dreams4U`;
@@ -48,10 +46,11 @@ export default function Home() {
         {/* BACKGROUND IMAGE */}
         <div className="relative w-full h-auto">
           <img
-            src="/images/Website-Design-Comapany-in-Faridabad.png"
+            src="/images/Website-Design-Comapany-in-Faridabad.webp"
             alt="Affordable Website Design Company in Faridabad - Dreams4u"
             className="w-full h-auto block"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             width="1920"
             height="1080"
           />
@@ -76,7 +75,7 @@ export default function Home() {
               </h1>
               <p className="text-xs hidden md:block sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-white/90 drop-shadow-md">
                 Beautiful Design. Powerful Performance.
-                <br /> Result That Matter.
+                <br /> Results That Matter.
               </p>
               <div className="md:flex hidden md:flex-col sm:flex-row items-start gap-4">
                 <Link
@@ -242,29 +241,25 @@ export default function Home() {
                 path: "/website-design-company-in-faridabad",
               },
               {
+                title: "Website Development Company in Faridabad",
+                path: "/website-development-company-in-faridabad",
+              },
+              {
                 title: "SEO Services in Faridabad",
                 path: "/seo-services-in-faridabad",
               },
               {
-                title: "Ecommerce Website Development in Faridabad",
-                path: "/ecommerce-website-development-in-faridabad",
+                title: "Digital Marketing Company in Faridabad",
+                path: "/digital-marketing-company-in-faridabad",
               },
               {
-                title: "WordPress Development in Faridabad",
-                path: "/wordpress-development-in-faridabad",
-              },
-              {
-                title: "Digital Marketing Services in Faridabad",
-                path: "/digital-marketing-services-in-faridabad",
-              },
-              {
-                title: "Website Maintenance Services in Faridabad",
-                path: "/website-maintenance-services-in-faridabad",
+                title: "Website Design Company in Delhi NCR",
+                path: "/website-design-company-in-delhi-ncr",
               },
             ].map((page) => (
-              <a
+              <Link
                 key={page.path}
-                href={page.path}
+                to={page.path}
                 className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-start justify-between gap-4">
@@ -282,7 +277,7 @@ export default function Home() {
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -296,7 +291,7 @@ export default function Home() {
         <h2 id="services-heading" className="sr-only">
           Our Web Services
         </h2>
-        <Services />
+        <Services showMetadata={false} />
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
@@ -315,17 +310,11 @@ export default function Home() {
         <h2 id="portfolio-heading" className="sr-only">
           Our Portfolio
         </h2>
-        <Portfolio />
+        <Portfolio showMetadata={false} />
       </section>
 
       {/* ================= FAQ ================= */}
       <FAQSection faqs={homeFaqs} />
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={keywords} />
-        <link rel="canonical" href={websiteUrl} />
-      </Helmet>
     </>
   );
 }

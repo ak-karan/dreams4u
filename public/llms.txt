@@ -50,10 +50,15 @@ Country: India
 ## Important URLs
 
 Home: https://dreams4u.in/
-Services: https://dreams4u.in/web-design-company-in-faridabad/
+About: https://dreams4u.in/about-dreams4u
+Services: https://dreams4u.in/services
 Location Page: https://dreams4u.in/faridabad/
-Ecommerce Service: https://dreams4u.in/ecommerce-website-development/
-SEO Service: https://dreams4u.in/seo-services/
+Website Design: https://dreams4u.in/website-design-company-in-faridabad
+Website Development: https://dreams4u.in/website-development-company-in-faridabad
+SEO Service: https://dreams4u.in/seo-services-in-faridabad
+Digital Marketing: https://dreams4u.in/digital-marketing-company-in-faridabad
+Delhi NCR Website Design: https://dreams4u.in/website-design-company-in-delhi-ncr
+Ecommerce Service: https://dreams4u.in/ecommerce-website-development-in-faridabad
 Blog: https://dreams4u.in/blog/
 Contact: https://dreams4u.in/contact/
 llms.txt: https://dreams4u.in/llms.txt

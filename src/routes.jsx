@@ -37,6 +37,7 @@ export const appRoutes = [
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
+      { path: "about-dreams4u", element: <About /> },
       { path: "works", element: <Works /> },
       { path: "faridabad", element: <FaridabadHub /> },
       { path: "faridabad/:areaSlug", element: <FaridabadLocationPage /> },

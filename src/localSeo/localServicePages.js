@@ -1,8 +1,8 @@
 const baseUrl = "https://dreams4u.in";
-const phoneNumber = "+91-9717030244";
-const whatsappUrl = "https://wa.me/919717030244";
+const phoneNumber = "+91-9667316333";
+const whatsappUrl = "https://wa.me/919667316333";
 const address = "1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad";
-const image = `${baseUrl}/images/Website-Design-Comapany-in-Faridabad.png`;
+const image = `${baseUrl}/images/Website-Design-Comapany-in-Faridabad.webp`;
 
 const sharedKeywords = [
   "website design company in faridabad",
@@ -244,6 +244,65 @@ export const localServicePages = [
     ],
   },
   {
+    slug: "website-development-company-in-faridabad",
+    title: "Website Development Company in Faridabad | Dreams4u",
+    h1: "Website Development Company in Faridabad",
+    serviceType: "Website Development",
+    metaDescription:
+      "Dreams4u is a website development company in Faridabad building fast business websites, ecommerce stores, custom web solutions, and SEO-ready platforms.",
+    intro:
+      "Dreams4u provides website development services in Faridabad for businesses that need a reliable, fast, secure, and easy-to-manage website. We develop business websites, ecommerce stores, landing pages, service portals, and custom web solutions with mobile usability, search visibility, and lead generation planned from the start.",
+    imageAlt: "Website development company in Faridabad by Dreams4u",
+    primaryOffer:
+      "Website development turns your business requirements and approved design into a working digital platform. We handle responsive front-end development, forms, content structure, ecommerce functions, performance optimization, technical SEO, analytics readiness, and post-launch support so the website can support real business operations.",
+    whyLocal:
+      "Faridabad businesses often need practical website features such as enquiry forms, WhatsApp actions, product catalogues, dealer or service information, location pages, recruitment forms, blogs, and payment flows. Working with a Faridabad website development company makes discovery, content collection, communication, and ongoing support easier for local teams.",
+    approach:
+      "We start by documenting goals, pages, features, integrations, content ownership, and the customer journey. Development then moves through reusable components, responsive testing, form validation, image optimization, metadata, schema, crawl checks, and launch verification. The technology is selected according to the project rather than forcing every business into the same setup.",
+    deliverables: [
+      "Business, corporate, and service website development",
+      "Responsive front-end development for all screen sizes",
+      "Contact forms, WhatsApp actions, and lead capture flows",
+      "Ecommerce, catalogue, blog, and landing page functionality",
+      "Technical SEO, schema, sitemap, and performance setup",
+      "Testing, deployment support, and maintenance options",
+    ],
+    sections: [
+      {
+        heading: "Business websites developed around clear goals",
+        body:
+          "A useful business website should do specific work: explain services, answer buyer questions, collect enquiries, support sales conversations, or enable online transactions. We translate those goals into page templates, navigation, content blocks, forms, and integrations that are simple for customers to use and practical for the business to maintain.",
+      },
+      {
+        heading: "Fast, mobile-first, and search-ready development",
+        body:
+          "Development quality affects both customer experience and SEO. We use responsive layouts, compressed images, semantic headings, crawlable links, canonical tags, structured data, and performance-focused implementation. Important pages are built so search engines can understand the service, location, company, and relationship between supporting content.",
+      },
+      {
+        heading: "Technology and support that fit the project",
+        body:
+          "A small local website, a WordPress content site, an ecommerce store, and a custom React application have different needs. Dreams4u recommends an approach based on editing requirements, integrations, scale, budget, and future plans. After launch, we can support content changes, technical fixes, SEO improvements, speed checks, and new features.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What websites does Dreams4u develop in Faridabad?",
+        answer:
+          "Dreams4u develops business websites, corporate websites, ecommerce stores, WordPress websites, landing pages, service portals, and custom React-based web experiences.",
+      },
+      {
+        question: "Will my website work properly on mobile devices?",
+        answer:
+          "Yes. Every website is planned and tested for mobile, tablet, and desktop layouts, including navigation, forms, buttons, images, and content readability.",
+      },
+      {
+        question: "Do you provide support after website launch?",
+        answer:
+          "Yes. Dreams4u offers website maintenance, content updates, technical fixes, performance improvements, and SEO support after launch.",
+      },
+    ],
+  },
+  {
     slug: "seo-services-in-faridabad",
     title: "Best SEO Services in Faridabad | Dreams4u",
     h1: "SEO Services in Faridabad",
@@ -421,14 +480,14 @@ export const localServicePages = [
     ],
   },
   {
-    slug: "digital-marketing-services-in-faridabad",
-    title: "Best Digital Marketing Services in Faridabad | Dreams4u",
-    h1: "Digital Marketing Services in Faridabad",
-    serviceType: "Digital Marketing Services",
+    slug: "digital-marketing-company-in-faridabad",
+    title: "Digital Marketing Company in Faridabad | Dreams4u",
+    h1: "Digital Marketing Company in Faridabad",
+    serviceType: "Digital Marketing",
     metaDescription:
-      "Dreams4u provides digital marketing services in Faridabad including SEO, local SEO, website content, landing pages, campaigns, and lead generation strategy.",
+      "Dreams4u is a digital marketing company in Faridabad providing SEO, local SEO, website content, landing pages, campaigns, and lead generation strategy.",
     intro:
-      "Dreams4u offers digital marketing services in Faridabad for businesses that want a stronger online presence and better quality leads. We combine SEO, local SEO, website content, landing pages, creative campaigns, analytics, and conversion planning so your marketing efforts connect with real customer searches.",
+      "Dreams4u is a digital marketing company in Faridabad helping businesses build a stronger online presence and generate better quality leads. We combine SEO, local SEO, website content, landing pages, campaign planning, analytics, and conversion improvements so marketing activity connects with real customer searches and measurable enquiries.",
     imageAlt: "Digital marketing services in Faridabad by Dreams4u",
     primaryOffer:
       "Digital marketing becomes effective when your website, content, SEO, ads, and local visibility work together. We help Faridabad businesses build that foundation with clear service pages, strong calls to action, useful blog topics, Google-friendly structure, and campaign landing pages that support enquiries.",
@@ -476,6 +535,76 @@ export const localServicePages = [
         question: "Do you create landing pages for campaigns?",
         answer:
           "Yes. We create landing pages with optimized content, metadata, schema, fast loading, and clear calls to action.",
+      },
+    ],
+  },
+  {
+    slug: "website-design-company-in-delhi-ncr",
+    title: "Website Design Company in Delhi NCR | Dreams4u",
+    h1: "Website Design Company in Delhi NCR",
+    serviceType: "Website Design",
+    city: "Delhi NCR",
+    seoLocation: "Delhi NCR",
+    badge: "Delhi NCR Website Design",
+    areaServed: [
+      "Delhi",
+      "Faridabad",
+      "Gurugram",
+      "Noida",
+      "Greater Noida",
+      "Ghaziabad",
+    ],
+    metaDescription:
+      "Dreams4u is a website design company serving Delhi NCR with responsive business websites, ecommerce design, web development, SEO, and maintenance.",
+    intro:
+      "Dreams4u provides website design and development services across Delhi NCR for businesses that need a professional, responsive, fast, and SEO-ready website. We work with companies in Delhi, Faridabad, Gurugram, Noida, Greater Noida, and Ghaziabad, as well as teams serving customers across India.",
+    imageAlt: "Website design company in Delhi NCR by Dreams4u",
+    primaryOffer:
+      "Delhi NCR is a large and competitive market, so a website must communicate value quickly. We design business websites, corporate websites, ecommerce stores, landing pages, and local service pages that make services clear, establish trust, and guide visitors toward a call, WhatsApp message, form submission, appointment, or purchase.",
+    whyLocal:
+      "Customers across Delhi NCR compare several providers before making contact. Strong local pages, accurate company details, useful service content, fast mobile performance, and clear proof help a business stand out. We map location intent carefully so one useful regional page supports the wider NCR offer without copying city pages or stuffing place names.",
+    approach:
+      "Our process covers discovery, competitor and audience review, sitemap planning, content structure, responsive UI design, development, technical SEO, schema, performance checks, and launch support. Each project is planned around the client's market, sales process, content resources, and future growth rather than a fixed template.",
+    deliverables: [
+      "Custom business and corporate website design",
+      "Responsive layouts for mobile, tablet, and desktop",
+      "Web development, forms, and lead-generation actions",
+      "SEO-ready metadata, internal links, and structured data",
+      "Ecommerce and campaign landing page design",
+      "Launch checks, analytics readiness, and maintenance support",
+    ],
+    sections: [
+      {
+        heading: "Website design for a competitive Delhi NCR market",
+        body:
+          "Businesses in Delhi NCR serve varied audiences, from neighbourhood customers to national procurement teams. We create page structures that help each audience understand the offer, industries served, process, service area, and next step. The visual design supports credibility while keeping the content easy to scan on mobile.",
+      },
+      {
+        heading: "One connected design, development, and SEO process",
+        body:
+          "Design decisions affect development, speed, accessibility, conversions, and search visibility. Dreams4u plans these areas together. Headings, navigation, content blocks, internal links, images, forms, and schema are considered before launch so the finished website is not only attractive but also usable and discoverable.",
+      },
+      {
+        heading: "Serving Delhi, Faridabad, Gurugram, Noida, and beyond",
+        body:
+          "Dreams4u is based in Faridabad and serves clients throughout Delhi NCR and India. Meetings, content reviews, and project approvals can be handled remotely, while local market knowledge supports businesses targeting Delhi, Faridabad, Gurugram, Noida, Greater Noida, Ghaziabad, and surrounding areas.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Does Dreams4u provide website design across Delhi NCR?",
+        answer:
+          "Yes. Dreams4u serves businesses in Delhi, Faridabad, Gurugram, Noida, Greater Noida, Ghaziabad, and other Delhi NCR locations.",
+      },
+      {
+        question: "Can you design a website for clients across India?",
+        answer:
+          "Yes. Project discovery, content review, design approvals, development, and support can be managed remotely for businesses anywhere in India.",
+      },
+      {
+        question: "Do Delhi NCR website projects include SEO setup?",
+        answer:
+          "SEO scope depends on the package, but Dreams4u can include metadata, heading structure, internal links, schema, sitemap, image optimization, and local service content.",
       },
     ],
   },

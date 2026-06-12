@@ -175,7 +175,7 @@ export default function Header() {
 
             {/* Other Navigation Links */}
             {[
-              { path: "/about", label: "About Us" },
+              { path: "/about-dreams4u", label: "About Us" },
               { path: "/works", label: "Works" },
               { path: "/portfolio", label: "Portfolio" },
               { path: "/blog", label: "Blog" },
@@ -216,7 +216,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
 
             <motion.a
-              href="https://wa.me/919717030244"
+              href="https://wa.me/919667316333"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all"
@@ -317,7 +317,11 @@ export default function Header() {
                 <div className="space-y-3">
                   {[
                     { path: "/", label: "Home", icon: "🏠" },
-                    { path: "/about", label: "About Us", icon: "👥" },
+                    {
+                      path: "/about-dreams4u",
+                      label: "About Us",
+                      icon: "👥",
+                    },
                     { path: "/works", label: "Works", icon: "W" },
                     { path: "/portfolio", label: "Portfolio", icon: "🎯" },
                     { path: "/blog", label: "Blog", icon: "📝" },
@@ -349,7 +353,7 @@ export default function Header() {
                   </h4>
                   <div className="space-y-3">
                     <a
-                      href="tel:+919717030244"
+                      href="tel:+919667316333"
                       className="flex items-center gap-3 p-3 bg-white rounded-xl hover:shadow-md transition-all"
                     >
                       <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
@@ -358,13 +362,13 @@ export default function Header() {
                       <div>
                         <div className="font-semibold">Call Us</div>
                         <div className="text-sm text-gray-600">
-                          +91 9717030244
+                          +91 9667316333
                         </div>
                       </div>
                     </a>
 
                     <a
-                      href="https://wa.me/919717030244"
+                      href="https://wa.me/919667316333"
                       className="flex items-center gap-3 p-3 bg-white rounded-xl hover:shadow-md transition-all"
                     >
                       <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">

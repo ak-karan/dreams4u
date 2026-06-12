@@ -17,20 +17,22 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
 
-function Portfolio() {
+function Portfolio({ showMetadata = true }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
-      <Helmet>
-        <title>Website Design Projects | Dreams4u Portfolio in Faridabad</title>
-        <meta
-          name="description"
-          content="View Dreams4u's award-winning website design and development projects. Professional portfolio showcasing affordable web design solutions for Faridabad businesses."
-        />
-        <link rel="canonical" href="https://dreams4u.in/portfolio" />
-      </Helmet>
+      {showMetadata && (
+        <Helmet>
+          <title>Website Design Projects | Dreams4u Portfolio in Faridabad</title>
+          <meta
+            name="description"
+            content="View Dreams4u's website design and development projects for businesses in Faridabad and India."
+          />
+          <link rel="canonical" href="https://dreams4u.in/portfolio" />
+        </Helmet>
+      )}
       <section
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28"
         aria-labelledby="portfolio-heading"
