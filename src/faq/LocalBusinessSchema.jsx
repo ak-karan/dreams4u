@@ -5,7 +5,7 @@ const LocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Dreams4u",
-    image: "https://yourwebsite.com/logo.webp",
+    image: "https://dreams4u.in/images/dreams4u.webp",
     telephone: "+91-9667316333",
     address: {
       "@type": "PostalAddress",

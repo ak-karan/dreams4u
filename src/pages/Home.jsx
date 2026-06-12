@@ -51,27 +51,20 @@ export default function Home() {
             className="w-full h-auto block"
             loading="eager"
             fetchpriority="high"
+            decoding="async"
             width="1920"
             height="1080"
           />
 
           {/* TEXT CONTENT - RESPONSIVE OVERLAY */}
           <div className="absolute inset-0 flex items-center justify-start">
-            <div className="ml-4 sm:ml-8 md:ml-20 text-left p-2 sm:p-6 animate-fade-up max-w-2xl">
-              <h1 className="text-base sm:text-2xl md:text-4xl lg:text-5xl uppercase leading-tight mb-4 sm:mb-6 animate-letter text-white tracking-[0.02em] ml-1.5"
+            <div className="ml-4 sm:ml-8 md:ml-20 max-w-2xl p-2 text-left sm:p-6">
+              <h1 className="text-base sm:text-2xl md:text-4xl lg:text-5xl uppercase leading-tight mb-4 sm:mb-6 text-white tracking-[0.02em] ml-1.5"
                 style={{ textShadow: '0 20px 35px rgba(0,0,0,0.35)' }}
               >
-                {["We Build Modern", "Websites that", "grow your Business"].map(
-                  (line, lineIndex) => (
-                    <div key={lineIndex}>
-                      {line.split("").map((char, i) => (
-                        <span key={i} style={{ "--i": lineIndex * 30 + i }}>
-                          {char === " " ? "\u00A0" : char}
-                        </span>
-                      ))}
-                    </div>
-                  ),
-                )}
+                <span className="block">We Build Modern</span>
+                <span className="block">Websites that</span>
+                <span className="block">grow your Business</span>
               </h1>
               <p className="text-xs hidden md:block sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-white/90 drop-shadow-md">
                 Beautiful Design. Powerful Performance.
@@ -284,10 +277,15 @@ export default function Home() {
       </section>
 
       {/* ================= CONTACT FORM ================= */}
-      <ContactForm />
+      <div className="content-auto-section">
+        <ContactForm />
+      </div>
 
       {/* ================= SERVICES ================= */}
-      <section aria-labelledby="services-heading">
+      <section
+        className="content-auto-section"
+        aria-labelledby="services-heading"
+      >
         <h2 id="services-heading" className="sr-only">
           Our Web Services
         </h2>
@@ -295,10 +293,15 @@ export default function Home() {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <WhyChooseUs />
+      <div className="content-auto-section">
+        <WhyChooseUs />
+      </div>
 
       {/* ================= REVIEWS ================= */}
-      <section aria-labelledby="reviews-heading">
+      <section
+        className="content-auto-section"
+        aria-labelledby="reviews-heading"
+      >
         <h2 id="reviews-heading" className="sr-only">
           Customer Reviews
         </h2>
@@ -306,7 +309,10 @@ export default function Home() {
       </section>
 
       {/* ================= PORTFOLIO ================= */}
-      <section aria-labelledby="portfolio-heading">
+      <section
+        className="content-auto-section"
+        aria-labelledby="portfolio-heading"
+      >
         <h2 id="portfolio-heading" className="sr-only">
           Our Portfolio
         </h2>
@@ -314,7 +320,9 @@ export default function Home() {
       </section>
 
       {/* ================= FAQ ================= */}
-      <FAQSection faqs={homeFaqs} />
+      <div className="content-auto-section">
+        <FAQSection faqs={homeFaqs} />
+      </div>
     </>
   );
 }
