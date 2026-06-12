@@ -14,6 +14,7 @@ import {
   Zap,
   Users,
 } from "lucide-react";
+import logo from "../../public/images/top-logo.webp"
 import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "./navbar";
@@ -69,19 +70,20 @@ export default function Header() {
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-3"
+          >
             <div className={`transition-all duration-500 ${scrolled ? "w-28 sm:w-32 md:w-40 lg:w-72" : "w-24 sm:w-28 md:w-40 lg:w-72"}`}>
               <Link to="/">
-                <img
-                  src="/images/top-logo.webp"
-                  alt="Dreams4U website design company in Faridabad"
-                  width="1048"
-                  height="299"
+                  <img src={logo} 
+                  loading="lazy"
                   decoding="async"
-                />
+                   alt="Best Website Design Company in Faridabad" title="Best Website Design Company in Faridabad" />
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8" ref={dropdownRef}>

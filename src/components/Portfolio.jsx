@@ -213,6 +213,8 @@ function Portfolio({ showMetadata = true }) {
                             src={project.imageurl}
                             alt={project.title}
                             loading="lazy"
+                            width="600"
+                            height="400"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           />
                           {/* Gradient Overlay */}

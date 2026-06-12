@@ -209,6 +209,8 @@ export default function BlogDetail() {
                 className="w-full h-96 object-cover"
                 width="1024"
                 height="576"
+                loading="lazy"
+                decoding="async"
                 fetchpriority="high"
               />
             </div>
@@ -245,6 +247,7 @@ export default function BlogDetail() {
                     loading="lazy"
                     width="1024"
                     height="576"
+                    decoding="async"
                     className="my-8 w-full rounded-2xl object-cover"
                   />
                 ),
