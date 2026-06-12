@@ -29,10 +29,12 @@ function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   // ✅ HANDLE INPUT CHANGE
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setSubmitError("");
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -42,7 +44,10 @@ function ContactForm() {
   // ✅ HANDLE FORM SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     setIsSubmitting(true);
+    setSubmitError("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -51,15 +56,32 @@ function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) throw new Error("Failed");
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.message || "Message could not be sent.");
+      }
+
+      if (result.delivery === "whatsapp" && result.whatsappUrl) {
+        window.location.assign(result.whatsappUrl);
+        return;
+      }
 
       setIsSubmitted(true);
-      setFormData({ name: "", phone: "", service: "", message: "" });
+      setFormData({
+        name: "",
+        phone: "",
+        service: "",
+        message: "",
+        company: "",
+      });
 
       setTimeout(() => setIsSubmitted(false), 3000);
     } catch (error) {
-      alert("Failed to send message. Try again.");
-      console.error(error);
+      setSubmitError(
+        error.message ||
+          "Message could not be sent. Please call or WhatsApp us.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -133,6 +155,8 @@ function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Full Name"
+                    autoComplete="name"
+                    maxLength="100"
                     required
                     className="w-full pl-12 py-4 bg-white/10 border border-white/20 rounded-xl text-white"
                   />
@@ -147,6 +171,9 @@ function ContactForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Phone Number"
+                    autoComplete="tel"
+                    inputMode="tel"
+                    maxLength="30"
                     required
                     className="w-full pl-12 py-4 bg-white/10 border border-white/20 rounded-xl text-white"
                   />
@@ -180,14 +207,31 @@ function ContactForm() {
                   onChange={handleChange}
                   placeholder="Tell us about your project..."
                   rows="4"
+                  maxLength="2000"
                   className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white resize-none"
                 />
+
+                {submitError && (
+                  <div
+                    className="rounded-xl border border-red-200/30 bg-red-500/20 px-4 py-3 text-sm text-white"
+                    role="alert"
+                    aria-live="assertive"
+                  >
+                    {submitError}{" "}
+                    <a
+                      href="tel:+919667316333"
+                      className="font-semibold underline"
+                    >
+                      Call +91 9667316333
+                    </a>
+                  </div>
+                )}
 
                 {/* BUTTON */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold"
+                  className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSubmitting ? "Sending..." : "Submit Request"}
                 </button>
