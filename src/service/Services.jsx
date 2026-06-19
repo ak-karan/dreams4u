@@ -29,7 +29,7 @@ const services = [
     features: ["UI/UX Design", "Responsive Layout", "Custom Graphics"],
     price: "₹8K+",
     color: "from-cyan-500 to-blue-500",
-    path: "/services/web-development",
+    path: "/website-development-company-in-faridabad",
   },
   {
     icon: Code,
@@ -47,7 +47,7 @@ const services = [
     features: ["Keyword Research", "On-page SEO", "Local SEO"],
     price: "₹5K+",
     color: "from-green-500 to-emerald-500",
-    path: "/services/search-engine-optimization",
+    path: "/seo-services-in-faridabad",
   },
   {
     icon: ShoppingCart,
@@ -56,7 +56,7 @@ const services = [
     features: ["Payment Gateway", "Inventory Management", "Order Tracking"],
     price: "₹25K+",
     color: "from-yellow-500 to-orange-500",
-    path: "/services/ecommerce",
+    path: "/ecommerce-website-development-in-faridabad",
   },
   {
     icon: Smartphone,
@@ -101,7 +101,7 @@ const services = [
     features: ["99.9% Uptime", "Daily Backups", "Tech Support"],
     price: "₹2K/month",
     color: "from-blue-500 to-cyan-500",
-    path: "/services/annual-maintenance",
+    path: "/website-maintenance-services-in-faridabad",
   },
   {
     icon: TrendingUp,
@@ -110,7 +110,7 @@ const services = [
     features: ["Google Ads", "Social Media Marketing", "Lead Generation"],
     price: "₹7K+",
     color: "from-pink-500 to-rose-500",
-    path: "/services/digital-marketing",
+    path: "/digital-marketing-company-in-faridabad",
   },
   {
     icon: Smartphone,
@@ -128,7 +128,7 @@ const services = [
     features: ["Custom UI Design", "Brand Consistency", "Conversion Focused"],
     price: "₹10K+",
     color: "from-violet-500 to-purple-500",
-    path: "/services/custom-website-design",
+    path: "/custom-website-development-in-faridabad",
   },
 ];
 

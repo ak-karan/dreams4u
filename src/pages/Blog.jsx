@@ -15,6 +15,7 @@ export default function Blog() {
       const { data } = matter(file);
       return { slug, ...data };
     })
+    .filter((blog) => blog.category !== "Case Study")
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
@@ -27,9 +28,14 @@ export default function Blog() {
         />
         <link rel="canonical" href="https://dreams4u.in/blog" />
       </Helmet>
-      <h1 className="text-4xl font-bold mb-4">Dreams4U Blog</h1>
+      <h1 className="text-4xl font-bold mb-4">Website Design, SEO and Growth Guides</h1>
+      <p className="max-w-3xl text-lg leading-8 text-gray-600 mb-4">
+        Practical answers on website cost, development timelines, WordPress,
+        custom builds, AI search, lead generation, speed, and local SEO for
+        Faridabad businesses.
+      </p>
       <p className="text-sm text-gray-500 mb-10">
-        Showing {blogList.length} blog posts.
+        {blogList.length} published guides. Read our <Link to="/case-studies" className="text-blue-700 underline">case studies</Link> for implementation details.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -37,7 +43,7 @@ export default function Blog() {
           <Link
             key={blog.slug}
             to={`/blog/${blog.slug}`}
-            className="group bg-white border rounded-2xl overflow-hidden hover:shadow-xl transition"
+            className="group overflow-hidden border border-slate-200 bg-white hover:shadow-xl transition"
           >
             {blog.image && (
               <img
@@ -48,7 +54,6 @@ export default function Blog() {
                 loading="lazy"
                 decoding="async"
                 className="h-48 w-full object-cover group-hover:scale-105 transition"
-                loading="lazy"
               />
             )}
 

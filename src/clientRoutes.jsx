@@ -12,30 +12,22 @@ const FaridabadLocationPage = lazy(
 const LocalServicePage = lazy(() => import("./localSeo/LocalServicePage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const SiteMap = lazy(() => import("./pages/SiteMap"));
 const Portfolio = lazy(() => import("./components/Portfolio"));
 const Services = lazy(() => import("./service/Services"));
-const WebDevelopment = lazy(() => import("./service/WebDevelopment"));
-const WebsiteDesign = lazy(() => import("./service/WebsiteDesign"));
-const DigitalMarketing = lazy(() => import("./service/DigitalMarketing"));
 const ReactDevelopment = lazy(() => import("./service/ReactDevelopment"));
-const SEOPage = lazy(() => import("./service/SEOPage"));
-const EcommercePage = lazy(() => import("./service/EcommercePage"));
 const MobilePage = lazy(() => import("./service/MobilePage"));
 const BusinessWebsitePage = lazy(
   () => import("./service/BusinessWebsitePage"),
 );
 const UIUXPage = lazy(() => import("./service/UIUXPage"));
 const SecurityPage = lazy(() => import("./service/SecurityPage"));
-const MaintenancePage = lazy(() => import("./service/MaintenancePage"));
 const AppDevelopment = lazy(() => import("./service/AppDevelopment"));
-const CustomWebsiteDesign = lazy(
-  () => import("./service/CustomWebsiteDesign"),
-);
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Cookies = lazy(() => import("./pages/Cookies"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const DebugBlogs = lazy(() => import("./pages/DebugBlogs"));
 
 function deferred(element) {
   return (
@@ -55,7 +47,6 @@ export const clientRoutes = [
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "about", element: deferred(<About />) },
       { path: "about-dreams4u", element: deferred(<About />) },
       { path: "works", element: deferred(<Works />) },
       { path: "faridabad", element: deferred(<FaridabadHub />) },
@@ -68,18 +59,6 @@ export const clientRoutes = [
       { path: "contact", element: deferred(<Contact />) },
       { path: "services", element: deferred(<Services />) },
       {
-        path: "services/web-development",
-        element: deferred(<WebDevelopment />),
-      },
-      {
-        path: "services/website-design",
-        element: deferred(<WebsiteDesign />),
-      },
-      {
-        path: "services/digital-marketing",
-        element: deferred(<DigitalMarketing />),
-      },
-      {
         path: "services/react-development",
         element: deferred(<ReactDevelopment />),
       },
@@ -87,11 +66,6 @@ export const clientRoutes = [
         path: "services/app-development",
         element: deferred(<AppDevelopment />),
       },
-      {
-        path: "services/search-engine-optimization",
-        element: deferred(<SEOPage />),
-      },
-      { path: "services/ecommerce", element: deferred(<EcommercePage />) },
       {
         path: "services/mobile-responsive",
         element: deferred(<MobilePage />),
@@ -105,21 +79,13 @@ export const clientRoutes = [
         path: "services/website-security",
         element: deferred(<SecurityPage />),
       },
-      {
-        path: "services/annual-maintenance",
-        element: deferred(<MaintenancePage />),
-      },
-      {
-        path: "services/custom-website-design",
-        element: deferred(<CustomWebsiteDesign />),
-      },
       { path: "privacy", element: deferred(<Privacy />) },
       { path: "terms", element: deferred(<Terms />) },
       { path: "cookies", element: deferred(<Cookies />) },
       { path: "blog", element: deferred(<Blog />) },
       { path: "blog/:slug", element: deferred(<BlogDetail />) },
-      { path: "debug-blogs", element: deferred(<DebugBlogs />) },
-      { path: "debug-blogs/:slug?", element: deferred(<DebugBlogs />) },
+      { path: "case-studies", element: deferred(<CaseStudies />) },
+      { path: "sitemap", element: deferred(<SiteMap />) },
       { path: "*", element: deferred(<NotFound />) },
     ],
   },

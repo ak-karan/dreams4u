@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import Services from "../service/Services";
-import WhyChooseUs from "./WhyChooseUs";
 import Reviews from "../reviews/Reviews";
 import { homeFaqs } from "../faq/faq";
 import FAQSection from "../faq/FAQSection";
@@ -12,14 +10,12 @@ import { Helmet } from "react-helmet-async";
 import homeSchema from "../seo/homeSchema";
 
 export default function Home() {
-  const companyName = "Dreams4u";
   const websiteUrl = "https://dreams4u.in";
   const phoneNumber = "+919667316333";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
-  const pageTitle = `Website Design Company in Faridabad | Web Development & SEO Services | Dreams4U`;
-  const pageDescription = `Dreams4U is a leading website design company in Faridabad offering professional web development, ecommerce solutions, SEO services, and responsive website design for startups and businesses. Contact us today for a free consultation.`;
-  const keywords = `website design company in Faridabad, web design company in Faridabad, best website designer in Faridabad, website development company in Faridabad, professional website design services Faridabad, custom website development Faridabad, ecommerce website development Faridabad, responsive website design Faridabad, SEO friendly website design Faridabad, website designer near me, web development services near me, SEO company in Faridabad, local SEO services Faridabad, digital marketing company Faridabad, AI powered website development, modern website design services, mobile friendly website design, fast loading business websites, conversion focused website design, UI UX design services Faridabad, website maintenance services, landing page design services, website speed optimization, lead generation website design, ${companyName}, Dreams4u Faridabad`;
+  const pageTitle = `Dreams4u | Website Design, Development & SEO in Faridabad`;
+  const pageDescription = `Dreams4u designs and develops business websites, ecommerce stores, landing pages, and SEO-ready digital experiences in Faridabad, Delhi NCR, and India.`;
 
   return (
     <>
@@ -27,7 +23,6 @@ export default function Home() {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={keywords} />
         <link rel="canonical" href={websiteUrl} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
@@ -50,7 +45,7 @@ export default function Home() {
             alt="Affordable Website Design Company in Faridabad - Dreams4u"
             className="w-full h-auto block"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
             width="1920"
             height="1080"
@@ -62,13 +57,12 @@ export default function Home() {
               <h1 className="text-base sm:text-2xl md:text-4xl lg:text-5xl uppercase leading-tight mb-4 sm:mb-6 text-white tracking-[0.02em] ml-1.5"
                 style={{ textShadow: '0 20px 35px rgba(0,0,0,0.35)' }}
               >
-                <span className="block">We Build Modern</span>
-                <span className="block">Websites that</span>
-                <span className="block">grow your Business</span>
+                <span className="block">Dreams4u Website</span>
+                <span className="block">Design & Development</span>
               </h1>
               <p className="text-xs hidden md:block sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-white/90 drop-shadow-md">
-                Beautiful Design. Powerful Performance.
-                <br /> Results That Matter.
+                Fast, accessible, and SEO-ready websites for Faridabad
+                businesses.
               </p>
               <div className="md:flex hidden md:flex-col sm:flex-row items-start gap-4">
                 <Link
@@ -88,8 +82,6 @@ export default function Home() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="relative overflow-hidden rounded-[2rem] bg-white shadow-[0_30px_90px_-40px_rgba(15,23,42,0.5)] ring-1 ring-slate-200/80">
-            <div className="pointer-events-none absolute -right-16 top-10 h-40 w-40 rounded-full bg-cyan-100 opacity-70 blur-3xl"></div>
-            <div className="pointer-events-none absolute -left-16 bottom-10 h-40 w-40 rounded-full bg-blue-100 opacity-70 blur-3xl"></div>
             <div className="relative grid gap-10 md:grid-cols-[1.05fr_0.95fr] p-8 md:p-12">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-700">
@@ -100,7 +92,9 @@ export default function Home() {
                     Why Choose Dreams4u for Website Design in Faridabad?
                   </h2>
                   <p className="text-lg text-slate-600 max-w-2xl">
-                    With over 5 years of experience serving Faridabad businesses, Dreams4u delivers websites that look premium, load fast, and convert visitors into customers.
+                    Dreams4u plans websites around clear business information,
+                    responsive usability, fast loading, search visibility, and
+                    straightforward enquiry journeys.
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -110,7 +104,7 @@ export default function Home() {
                   </div>
                   <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
                     <p className="text-sm uppercase font-semibold text-blue-600 mb-2">Transparent Pricing</p>
-                    <p className="text-gray-600">Clear costs from ₹8,000 so you know exactly what you pay for.</p>
+                    <p className="text-gray-600">Written scope and planning estimates from Rs. 10,000 for focused small-business requirements.</p>
                   </div>
                 </div>
               </div>
@@ -174,7 +168,7 @@ export default function Home() {
               <p className="text-slate-200 mb-6">
                 Professional websites for companies, clinics, coaching centers, and service providers with lead-focused pages.
               </p>
-              <p className="text-sm font-semibold text-cyan-200">Starting from ₹12,000</p>
+              <p className="text-sm font-semibold text-cyan-200">Planning starts around Rs. 10,000</p>
             </div>
 
             <div className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-[0_20px_80px_-40px_rgba(59,130,246,0.35)] transition hover:-translate-y-1 hover:bg-white/10">
@@ -184,7 +178,7 @@ export default function Home() {
               <p className="text-slate-200 mb-6">
                 End-to-end online stores with catalog management, payment gateway integration, and sales-ready design.
               </p>
-              <p className="text-sm font-semibold text-blue-200">Starting from ₹25,000</p>
+              <p className="text-sm font-semibold text-blue-200">Scope-based ecommerce pricing</p>
             </div>
 
             <div className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-[0_20px_80px_-40px_rgba(16,185,129,0.35)] transition hover:-translate-y-1 hover:bg-white/10">
@@ -194,13 +188,14 @@ export default function Home() {
               <p className="text-slate-200 mb-6">
                 Local SEO, Google Ads, and digital marketing services built to help Faridabad brands rank higher and get more leads.
               </p>
-              <p className="text-sm font-semibold text-emerald-200">Starting from ₹5,000/month</p>
+              <p className="text-sm font-semibold text-emerald-200">Monthly scope based on goals</p>
             </div>
           </div>
 
           <div className="text-center mt-10">
             <p className="text-slate-400 mb-4">
-              All our websites are mobile-responsive, SEO-optimized, and include 6 months of free maintenance.
+              Website scope can include responsive design, technical SEO,
+              analytics readiness, and a documented maintenance option.
             </p>
             <a
               href={`tel:${phoneNumber.replace(/\D/g, "")}`}
@@ -249,6 +244,30 @@ export default function Home() {
                 title: "Website Design Company in Delhi NCR",
                 path: "/website-design-company-in-delhi-ncr",
               },
+              {
+                title: "Ecommerce Website Development",
+                path: "/ecommerce-website-development-in-faridabad",
+              },
+              {
+                title: "WordPress Website Development",
+                path: "/wordpress-development-in-faridabad",
+              },
+              {
+                title: "Custom Website Development",
+                path: "/custom-website-development-in-faridabad",
+              },
+              {
+                title: "Website Redesign Services",
+                path: "/website-redesign-services-in-faridabad",
+              },
+              {
+                title: "Landing Page Design Services",
+                path: "/landing-page-design-services-in-faridabad",
+              },
+              {
+                title: "Website Maintenance Services",
+                path: "/website-maintenance-services-in-faridabad",
+              },
             ].map((page) => (
               <Link
                 key={page.path}
@@ -281,43 +300,15 @@ export default function Home() {
         <ContactForm />
       </div>
 
-      {/* ================= SERVICES ================= */}
-      <section
-        className="content-auto-section"
-        aria-labelledby="services-heading"
-      >
-        <h2 id="services-heading" className="sr-only">
-          Our Web Services
-        </h2>
-        <Services showMetadata={false} />
-      </section>
-
-      {/* ================= WHY CHOOSE US ================= */}
+      {/* ================= REVIEWS ================= */}
       <div className="content-auto-section">
-        <WhyChooseUs />
+        <Reviews />
       </div>
 
-      {/* ================= REVIEWS ================= */}
-      <section
-        className="content-auto-section"
-        aria-labelledby="reviews-heading"
-      >
-        <h2 id="reviews-heading" className="sr-only">
-          Customer Reviews
-        </h2>
-        <Reviews />
-      </section>
-
       {/* ================= PORTFOLIO ================= */}
-      <section
-        className="content-auto-section"
-        aria-labelledby="portfolio-heading"
-      >
-        <h2 id="portfolio-heading" className="sr-only">
-          Our Portfolio
-        </h2>
+      <div className="content-auto-section">
         <Portfolio showMetadata={false} />
-      </section>
+      </div>
 
       {/* ================= FAQ ================= */}
       <div className="content-auto-section">

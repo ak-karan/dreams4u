@@ -14,12 +14,24 @@ import NotFound from "../pages/NotFound";
 import { localServicePageMap, localServicePages } from "./localServicePages";
 
 const relatedLinks = [
-  { name: "Website Design", path: "/services/website-design" },
-  { name: "SEO Optimization", path: "/services/search-engine-optimization" },
-  { name: "Ecommerce Solutions", path: "/services/ecommerce" },
-  { name: "Digital Marketing", path: "/services/digital-marketing" },
-  { name: "Website Maintenance", path: "/services/annual-maintenance" },
+  { name: "Website Design", path: "/website-design-company-in-faridabad" },
+  { name: "Web Development", path: "/website-development-company-in-faridabad" },
+  { name: "Ecommerce", path: "/ecommerce-website-development-in-faridabad" },
+  { name: "WordPress", path: "/wordpress-development-in-faridabad" },
+  { name: "Custom Development", path: "/custom-website-development-in-faridabad" },
+  { name: "Website Redesign", path: "/website-redesign-services-in-faridabad" },
+  { name: "Landing Pages", path: "/landing-page-design-services-in-faridabad" },
+  { name: "Maintenance", path: "/website-maintenance-services-in-faridabad" },
   { name: "Contact Dreams4u", path: "/contact" },
+];
+
+const guideLinks = [
+  { name: "Website Design Cost in Faridabad", path: "/blog/website-design-cost-in-faridabad-2026" },
+  { name: "Website Development Timeline", path: "/blog/how-long-does-it-take-to-build-a-website" },
+  { name: "WordPress vs Custom Website", path: "/blog/wordpress-vs-custom-website" },
+  { name: "Website Speed Optimization", path: "/blog/website-speed-optimization-guide" },
+  { name: "Local SEO for Faridabad", path: "/blog/local-seo-for-faridabad-businesses" },
+  { name: "Lead Generation Website Features", path: "/blog/best-website-features-for-lead-generation" },
 ];
 
 const featuredLocalSlugs = [
@@ -29,6 +41,11 @@ const featuredLocalSlugs = [
   "digital-marketing-company-in-faridabad",
   "website-design-company-in-delhi-ncr",
   "ecommerce-website-development-in-faridabad",
+  "wordpress-development-in-faridabad",
+  "custom-website-development-in-faridabad",
+  "website-redesign-services-in-faridabad",
+  "landing-page-design-services-in-faridabad",
+  "website-maintenance-services-in-faridabad",
 ];
 
 function buildSchemas(page) {
@@ -53,7 +70,7 @@ function buildSchemas(page) {
       url: "https://dreams4u.in",
       telephone: page.phoneNumber,
       image: page.image,
-      priceRange: "Rs. 8,000+",
+      priceRange: "Rs. 10,000+",
       address: {
         "@type": "PostalAddress",
         streetAddress: page.address,
@@ -96,11 +113,6 @@ export default function LocalServicePage() {
   }
 
   const { serviceSchema, breadcrumbSchema } = buildSchemas(page);
-  const targetLocation = page.seoLocation || page.city || "Faridabad";
-  const locationKeywordExamples =
-    targetLocation === "Delhi NCR"
-      ? "website design company in Delhi NCR, web development company in Delhi NCR, SEO services in Delhi NCR, and website designer near me"
-      : "website design company in Faridabad, website development company in Faridabad, SEO services in Faridabad, and digital marketing company in Faridabad";
   const otherLocalPages = localServicePages.filter(
     (item) =>
       item.slug !== page.slug && featuredLocalSlugs.includes(item.slug),
@@ -111,7 +123,6 @@ export default function LocalServicePage() {
       <Helmet>
         <title>{page.title}</title>
         <meta name="description" content={page.metaDescription} />
-        <meta name="keywords" content={page.keywords} />
         <link rel="canonical" href={page.canonicalUrl} />
         <meta property="og:title" content={page.title} />
         <meta property="og:description" content={page.metaDescription} />
@@ -173,7 +184,7 @@ export default function LocalServicePage() {
               width="900"
               height="620"
               className="h-full min-h-[320px] w-full object-cover"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -262,66 +273,6 @@ export default function LocalServicePage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
-            SEO, Content, Local Signals
-          </p>
-          <h2 className="mt-4 text-3xl font-bold text-slate-900">
-            Complete optimization checklist for {page.serviceType}
-          </h2>
-          <div className="mt-6 space-y-6 text-lg leading-8 text-slate-600">
-            <p>
-              Every {page.serviceType.toLowerCase()} page should have a focused
-              title tag, helpful meta description, one clear H1, logical H2
-              sections, descriptive image alt text, crawlable internal links,
-              clean canonical URL, and schema markup. We use these signals to
-              connect the page with {targetLocation} service intent while
-              keeping the copy readable for real customers. The page is written
-              to answer what the service includes, who it is for, how the
-              process works, what local areas are served, and what action the
-              visitor should take next.
-            </p>
-            <p>
-              Content SEO is handled with depth instead of keyword stuffing.
-              Search terms such as {locationKeywordExamples} are placed where
-              they make sense. The surrounding content explains benefits, use
-              cases, deliverables, local coverage, technical checks, FAQs, and
-              conversion points so search engines receive useful context and
-              visitors receive enough confidence.
-            </p>
-            <p>
-              Technical SEO and speed are reviewed together. Images use
-              descriptive names, width and height attributes, meaningful alt
-              text, and lazy loading where the image is not the main visual.
-              Static assets are cached for a long duration, pages are
-              prerendered into HTML, sitemap and robots.txt are regenerated, and
-              structured data is included in the head. This helps the page load
-              faster, become easier to crawl, and present stronger information
-              in search results.
-            </p>
-            <p>
-              Local SEO needs consistent trust signals. The page includes
-              Dreams4u contact details, {targetLocation} service coverage,
-              relevant area references, links to related services, and a clear
-              path to the contact page. These internal links help users move
-              from research to enquiry and help search engines understand the
-              relationship between services, blog content, and local landing
-              pages.
-            </p>
-            <p>
-              After publishing, the page should be checked in Google Search
-              Console, PageSpeed Insights, Rich Results Test, and analytics.
-              Real SEO performance depends on crawl status, competition,
-              backlinks, Google Business Profile strength, reviews, and ongoing
-              content updates. The page is built with best-practice on-page,
-              technical, content, local, and schema foundations so future
-              improvements can build on a clean base.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-slate-950 py-16 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
@@ -350,6 +301,26 @@ export default function LocalServicePage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Helpful website planning guides
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {guideLinks.map((guide) => (
+              <Link
+                key={guide.path}
+                to={guide.path}
+                className="flex items-center justify-between border border-slate-200 bg-white p-5 font-semibold text-slate-900 hover:border-cyan-400"
+              >
+                {guide.name}
+                <ArrowRightIcon className="h-5 w-5 shrink-0 text-cyan-600" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

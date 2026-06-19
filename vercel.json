@@ -10,6 +10,46 @@
       "source": "/digital-marketing-services-in-faridabad",
       "destination": "/digital-marketing-company-in-faridabad",
       "permanent": true
+    },
+    {
+      "source": "/blog/why-local-businesses-need-a-website-in-2026",
+      "destination": "/blog/why-small-businesses-need-a-website",
+      "permanent": true
+    },
+    {
+      "source": "/services/website-design",
+      "destination": "/website-design-company-in-faridabad",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-development",
+      "destination": "/website-development-company-in-faridabad",
+      "permanent": true
+    },
+    {
+      "source": "/services/ecommerce",
+      "destination": "/ecommerce-website-development-in-faridabad",
+      "permanent": true
+    },
+    {
+      "source": "/services/annual-maintenance",
+      "destination": "/website-maintenance-services-in-faridabad",
+      "permanent": true
+    },
+    {
+      "source": "/services/custom-website-design",
+      "destination": "/custom-website-development-in-faridabad",
+      "permanent": true
+    },
+    {
+      "source": "/services/search-engine-optimization",
+      "destination": "/seo-services-in-faridabad",
+      "permanent": true
+    },
+    {
+      "source": "/services/digital-marketing",
+      "destination": "/digital-marketing-company-in-faridabad",
+      "permanent": true
     }
   ],
   "headers": [

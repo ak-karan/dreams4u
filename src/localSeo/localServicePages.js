@@ -4,55 +4,6 @@ const whatsappUrl = "https://wa.me/919667316333";
 const address = "1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad";
 const image = `${baseUrl}/images/Website-Design-Comapany-in-Faridabad.webp`;
 
-const sharedKeywords = [
-  "website design company in faridabad",
-  "web design company in faridabad",
-  "best website designer in faridabad",
-  "website development company in faridabad",
-  "web development company in faridabad",
-  "professional website design services faridabad",
-  "custom website development faridabad",
-  "responsive website design faridabad",
-  "seo friendly website design faridabad",
-  "website designer near me",
-  "web development services near me",
-  "website design services in faridabad",
-  "website company in faridabad",
-  "digital agency in faridabad",
-  "it company in faridabad",
-  "web design agency faridabad",
-  "website maker in faridabad",
-  "website developer faridabad",
-  "best web agency faridabad",
-  "web designer in ballabgarh",
-  "ecommerce website development faridabad",
-  "ecommerce website development company faridabad",
-  "ecommerce website company faridabad",
-  "online store development faridabad",
-  "shopify website developer faridabad",
-  "woocommerce website development faridabad",
-  "small business website design faridabad",
-  "corporate website development faridabad",
-  "startup website development faridabad",
-  "business website designer faridabad",
-  "seo company in faridabad",
-  "local seo services faridabad",
-  "google my business optimization faridabad",
-  "digital marketing company faridabad",
-  "search engine optimization services faridabad",
-  "google ranking services faridabad",
-  "website development services near me",
-  "ai powered website development",
-  "mobile friendly website design",
-  "fast loading business websites",
-  "conversion focused website design",
-  "ui ux design services faridabad",
-  "website maintenance services",
-  "landing page design services",
-  "website speed optimization",
-  "lead generation website design",
-];
-
 const delhiAreas = [
   ["Saket", "south delhi", "selectwalk mall, coaching centres, clinics, boutiques, and neighbourhood service brands"],
   ["Malviya Nagar", "south delhi", "cafes, education businesses, consultants, and high-street retail stores"],
@@ -181,6 +132,46 @@ function createDelhiLandingPage([area, zone, localReferences]) {
 
 function createDelhiLandingPages() {
   return delhiAreas.map(createDelhiLandingPage);
+}
+
+function createSharedServiceFaqs(page) {
+  const location = page.seoLocation || page.city || "Faridabad";
+  const service = page.serviceType;
+
+  return [
+    {
+      question: `How much does ${service.toLowerCase()} cost?`,
+      answer: `${service} cost depends on the number of pages, design depth, content, integrations, SEO scope, and support required. Dreams4u provides a written scope and quote after a short requirement discussion.`,
+    },
+    {
+      question: `How long does a ${service.toLowerCase()} project take?`,
+      answer: `A focused business website or landing page may take 1 to 3 weeks, while ecommerce and custom development usually need more time. The final schedule depends on scope, content readiness, feedback, and integrations.`,
+    },
+    {
+      question: `Is ${service.toLowerCase()} mobile-friendly?`,
+      answer: `Yes. Dreams4u plans responsive layouts, readable content, touch-friendly actions, optimized images, and tested forms for mobile, tablet, and desktop users.`,
+    },
+    {
+      question: `Does the service include SEO setup?`,
+      answer: `The agreed SEO setup can include titles, meta descriptions, heading structure, canonical URLs, internal links, image alt text, schema, sitemap checks, and crawl-friendly content.`,
+    },
+    {
+      question: `Can you work with my existing website?`,
+      answer: `Yes. We can audit an existing website, retain useful content, identify technical or conversion issues, and recommend whether focused improvements or a rebuild will give the better result.`,
+    },
+    {
+      question: `Will I own the website and content after launch?`,
+      answer: `Project ownership, source files, accounts, licences, and third-party services are documented in the proposal so responsibilities are clear before development begins.`,
+    },
+    {
+      question: `Do you provide support after launch?`,
+      answer: `Yes. Dreams4u offers maintenance options for content updates, security checks, backups, bug fixes, speed improvements, SEO updates, and new page requirements.`,
+    },
+    {
+      question: `Do you serve businesses outside ${location}?`,
+      answer: `Yes. Dreams4u is based in Faridabad and works with businesses across Delhi NCR and India through online discovery, content review, design approval, development, and support.`,
+    },
+  ];
 }
 
 export const localServicePages = [
@@ -667,6 +658,183 @@ export const localServicePages = [
       },
     ],
   },
+  {
+    slug: "custom-website-development-in-faridabad",
+    title: "Custom Website Development in Faridabad | Dreams4u",
+    h1: "Custom Website Development in Faridabad",
+    serviceType: "Custom Website Development",
+    metaDescription:
+      "Custom website development in Faridabad for portals, integrations, business workflows, React applications, and scalable SEO-ready websites by Dreams4u.",
+    intro:
+      "Dreams4u develops custom websites for Faridabad businesses that need more than a standard theme. We plan the interface, data flow, integrations, content structure, performance, security, and future maintenance around the way the business actually works.",
+    imageAlt: "Custom website development in Faridabad by Dreams4u",
+    primaryOffer:
+      "Custom development is useful when a website needs special enquiry workflows, searchable catalogues, dashboards, calculators, bookings, role-based access, API connections, or a distinctive content experience. The project starts with requirements and user journeys, not a preselected template.",
+    whyLocal:
+      "Manufacturers, distributors, clinics, educators, professional firms, and growing retailers in Faridabad often have processes that generic website builders cannot represent cleanly. A custom build can connect those processes with a faster customer journey while keeping ownership, SEO, and future expansion in view.",
+    approach:
+      "We document users, pages, actions, data, integrations, permissions, search requirements, and success measures before development. Work is delivered in reviewable stages, followed by responsive testing, accessibility checks, technical SEO, structured data, performance checks, deployment, and handover.",
+    deliverables: [
+      "Requirements, sitemap, user flows, and technical scope",
+      "Custom responsive interface and reusable components",
+      "Forms, APIs, dashboards, catalogues, or workflow features",
+      "Technical SEO, metadata, schema, and crawlable navigation",
+      "Performance, accessibility, security, and browser testing",
+      "Deployment, documentation, training, and support options",
+    ],
+    sections: [
+      {
+        heading: "When a custom website is the right choice",
+        body:
+          "A custom build makes sense when the website must support a unique process, integrate with another system, scale to many content types, or provide an app-like experience. We first test whether a reliable existing platform can meet the need, then recommend custom development only where it creates meaningful business value.",
+      },
+      {
+        heading: "Architecture built for search and expansion",
+        body:
+          "Custom functionality should not hide important content from search engines. Public pages use semantic HTML, stable URLs, descriptive headings, internal links, metadata, canonical tags, and structured data. Reusable components make it easier to add services, locations, resources, and conversion pages later.",
+      },
+      {
+        heading: "A maintainable handover",
+        body:
+          "The finished website includes a clear deployment and maintenance path. Accounts, external services, update responsibilities, backups, monitoring, and future feature work are documented so the project does not become dependent on hidden knowledge.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a custom website?",
+        answer:
+          "A custom website is designed and developed around specific business requirements instead of relying only on a ready-made theme or fixed page builder.",
+      },
+      {
+        question: "Can you build custom React websites in Faridabad?",
+        answer:
+          "Yes. Dreams4u can build React-based websites and interfaces when the project benefits from reusable components, interactive features, integrations, or app-like behaviour.",
+      },
+      {
+        question: "Can a custom website be SEO-friendly?",
+        answer:
+          "Yes. SEO is planned through crawlable pages, clean URLs, metadata, semantic headings, internal links, structured data, optimized media, and prerendering or server rendering where appropriate.",
+      },
+    ],
+  },
+  {
+    slug: "website-redesign-services-in-faridabad",
+    title: "Website Redesign Services in Faridabad | Dreams4u",
+    h1: "Website Redesign Services in Faridabad",
+    serviceType: "Website Redesign Services",
+    metaDescription:
+      "Website redesign services in Faridabad focused on better usability, mobile performance, conversions, SEO migration, content clarity, and Core Web Vitals.",
+    intro:
+      "Dreams4u redesigns outdated, slow, confusing, or low-converting websites for Faridabad businesses. The redesign keeps useful brand and search assets, improves the customer journey, and gives every important page a clearer purpose.",
+    imageAlt: "Website redesign services in Faridabad by Dreams4u",
+    primaryOffer:
+      "A redesign should solve measurable problems rather than only change colours. We review navigation, page intent, mobile layouts, content gaps, calls to action, forms, image weight, technical SEO, analytics signals, and existing rankings before deciding what to retain, rewrite, merge, or remove.",
+    whyLocal:
+      "Many established Faridabad businesses have websites that were built before mobile-first buying became normal. A focused redesign can make services easier to understand, improve trust for local customers, and protect valuable URLs while adding stronger location, proof, and enquiry content.",
+    approach:
+      "The process begins with a content and URL inventory. We map old pages to the new structure, preserve or redirect useful URLs, prototype the main user journeys, rebuild responsive layouts, optimize media, test forms, validate metadata and schema, and monitor the launch for crawl or usability issues.",
+    deliverables: [
+      "Website, content, analytics, and SEO migration audit",
+      "Revised sitemap, navigation, and conversion journeys",
+      "Responsive redesign for high-priority page templates",
+      "Content consolidation, metadata, and redirect mapping",
+      "Image, JavaScript, CSS, and Core Web Vitals improvements",
+      "Pre-launch testing and post-launch monitoring plan",
+    ],
+    sections: [
+      {
+        heading: "Redesign decisions based on evidence",
+        body:
+          "Useful pages, links, enquiries, and search visibility should not be discarded because a new layout is being introduced. We inventory the current site and use available analytics, Search Console data, customer questions, and sales feedback to prioritize the redesign.",
+      },
+      {
+        heading: "SEO migration without avoidable losses",
+        body:
+          "Changing URLs or deleting content without a map can damage visibility. We preserve strong URLs where possible, use permanent redirects where necessary, update canonicals and internal links, regenerate the sitemap, and check that important content remains crawlable after launch.",
+      },
+      {
+        heading: "Faster paths to enquiry",
+        body:
+          "The new design places service details, proof, FAQs, contact options, and calls to action where visitors need them. Forms are shorter, mobile interactions are easier, and visual effects are kept subordinate to clarity and speed.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you redesign a website without losing SEO?",
+        answer:
+          "A redesign cannot guarantee unchanged rankings, but careful URL preservation, redirects, content mapping, metadata, internal links, and crawl checks can reduce avoidable SEO loss.",
+      },
+      {
+        question: "Should every old page be kept?",
+        answer:
+          "No. Thin, duplicate, or obsolete pages can be merged or removed after checking traffic, links, rankings, business value, and the correct redirect destination.",
+      },
+      {
+        question: "Will the redesigned website load faster?",
+        answer:
+          "Performance is part of the redesign scope through image optimization, lighter components, reduced third-party code, stable layouts, caching, and mobile testing.",
+      },
+    ],
+  },
+  {
+    slug: "landing-page-design-services-in-faridabad",
+    title: "Landing Page Design Services in Faridabad | Dreams4u",
+    h1: "Landing Page Design Services in Faridabad",
+    serviceType: "Landing Page Design Services",
+    metaDescription:
+      "Conversion-focused landing page design in Faridabad for Google Ads, local SEO, product launches, lead generation, WhatsApp enquiries, and campaigns.",
+    intro:
+      "Dreams4u designs focused landing pages for Faridabad businesses running ads, launching services, collecting leads, promoting offers, or targeting a specific local search. Each page connects one audience, one offer, and one primary action.",
+    imageAlt: "Landing page design services in Faridabad by Dreams4u",
+    primaryOffer:
+      "A landing page removes the distractions of a general homepage and gives campaign visitors the exact information they need. We combine a clear offer, relevant proof, benefit-led sections, objection-handling FAQs, a short form, phone or WhatsApp actions, and analytics-ready events.",
+    whyLocal:
+      "Faridabad campaigns often target a specific service, sector, industrial audience, or neighbourhood. Matching the page copy to that intent can improve message clarity and lead quality. Local contact details and realistic service coverage also build confidence before a visitor calls.",
+    approach:
+      "We define the traffic source, search intent, audience, offer, proof, objections, and conversion event first. The page is then written, designed, developed, optimized for mobile speed, connected to forms or analytics, and tested across common screen sizes before the campaign starts.",
+    deliverables: [
+      "Campaign message, keyword, and audience alignment",
+      "Responsive landing page copy and visual design",
+      "Lead form, call, WhatsApp, booking, or purchase action",
+      "FAQ, Service, and breadcrumb structured data",
+      "Fast media, stable layout, and mobile usability checks",
+      "Analytics and conversion tracking implementation support",
+    ],
+    sections: [
+      {
+        heading: "One page, one primary conversion goal",
+        body:
+          "High-performing landing pages make the next step obvious. The page can support a quote request, consultation booking, WhatsApp conversation, phone call, product purchase, or event registration, but the hierarchy keeps one action primary.",
+      },
+      {
+        heading: "Content that answers buying questions",
+        body:
+          "The page explains the offer, who it is for, important inclusions, expected process, proof, common objections, and what happens after enquiry. Specific information is more persuasive than exaggerated claims or a long list of unrelated keywords.",
+      },
+      {
+        heading: "Speed and measurement from launch",
+        body:
+          "Campaign traffic is expensive, so landing pages are kept lean. Images are compressed, nonessential scripts are limited, layout shifts are controlled, and form or click events can be measured so future changes are based on real behaviour.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How is a landing page different from a homepage?",
+        answer:
+          "A homepage introduces the wider business, while a landing page is focused on one audience, campaign, offer, and conversion action.",
+      },
+      {
+        question: "Can you create landing pages for Google Ads?",
+        answer:
+          "Yes. We align the page with the campaign message, keywords, audience, form, call tracking requirements, and mobile experience.",
+      },
+      {
+        question: "Can a landing page rank in organic search?",
+        answer:
+          "It can when the page provides substantial, unique value and fits the website structure, although short campaign-only pages are usually built primarily for paid traffic and conversion.",
+      },
+    ],
+  },
   ...createDelhiLandingPages(),
 ].map((page) => ({
   ...page,
@@ -676,12 +844,17 @@ export const localServicePages = [
   whatsappUrl,
   address,
   image,
-  keywords: [...sharedKeywords, page.h1.toLowerCase(), page.serviceType.toLowerCase()].join(", "),
-  faqs: page.faqs.map((faq, index) => ({
+  faqs: [...page.faqs, ...createSharedServiceFaqs(page)]
+    .filter(
+      (faq, index, faqs) =>
+        faqs.findIndex((item) => item.question === faq.question) === index,
+    )
+    .slice(0, 12)
+    .map((faq, index) => ({
     id: `${page.slug}-faq-${index + 1}`,
     category: index === 0 ? "services" : index === 1 ? "seo" : "timeline",
     ...faq,
-  })),
+    })),
 }));
 
 export const localServicePageMap = localServicePages.reduce((acc, page) => {

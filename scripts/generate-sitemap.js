@@ -56,24 +56,6 @@ const STATIC_PAGES = [
     lastmod: new Date().toISOString().split("T")[0],
   },
   {
-    path: "/services/web-development",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
-    path: "/services/website-design",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
-    path: "/services/digital-marketing",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
     path: "/services/react-development",
     priority: "0.8",
     changefreq: "weekly",
@@ -81,18 +63,6 @@ const STATIC_PAGES = [
   },
   {
     path: "/services/app-development",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
-    path: "/services/search-engine-optimization",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
-    path: "/services/ecommerce",
     priority: "0.8",
     changefreq: "weekly",
     lastmod: new Date().toISOString().split("T")[0],
@@ -122,18 +92,6 @@ const STATIC_PAGES = [
     lastmod: new Date().toISOString().split("T")[0],
   },
   {
-    path: "/services/annual-maintenance",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
-    path: "/services/custom-website-design",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
     path: "/privacy",
     priority: "0.6",
     changefreq: "yearly",
@@ -157,6 +115,18 @@ const STATIC_PAGES = [
     changefreq: "daily",
     lastmod: new Date().toISOString().split("T")[0],
   },
+  {
+    path: "/case-studies",
+    priority: "0.8",
+    changefreq: "monthly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
+  {
+    path: "/sitemap",
+    priority: "0.6",
+    changefreq: "weekly",
+    lastmod: new Date().toISOString().split("T")[0],
+  },
   ...localServicePages.map((page) => ({
     path: page.routePath,
     priority: "0.9",
@@ -166,12 +136,6 @@ const STATIC_PAGES = [
   {
     path: "/llms.txt",
     priority: "0.5",
-    changefreq: "monthly",
-    lastmod: new Date().toISOString().split("T")[0],
-  },
-  {
-    path: "/debug-blogs",
-    priority: "0.3",
     changefreq: "monthly",
     lastmod: new Date().toISOString().split("T")[0],
   },

@@ -14,7 +14,7 @@ import {
   Zap,
   Users,
 } from "lucide-react";
-import logo from "../../public/images/top-logo.webp"
+import logo from "../../public/images/top-logo.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "./navbar";
@@ -77,16 +77,21 @@ export default function Header() {
           >
             <div className={`transition-all duration-500 ${scrolled ? "w-28 sm:w-32 md:w-40 lg:w-72" : "w-24 sm:w-28 md:w-40 lg:w-72"}`}>
               <Link to="/">
-                  <img src={logo} 
-                  loading="lazy"
+                <img
+                  src={logo}
+                  loading="eager"
                   decoding="async"
-                   alt="Best Website Design Company in Faridabad" title="Best Website Design Company in Faridabad" />
+                  width="907"
+                  height="275"
+                  className="h-auto w-full"
+                  alt="Dreams4u website design company in Faridabad"
+                />
               </Link>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8" ref={dropdownRef}>
+          <div className="hidden lg:flex items-center gap-4" ref={dropdownRef}>
             {/* Services Mega Menu */}
             <div
               className="relative"
@@ -179,8 +184,9 @@ export default function Header() {
             {/* Other Navigation Links */}
             {[
               { path: "/about-dreams4u", label: "About Us" },
-              { path: "/works", label: "Works" },
+              { path: "/works", label: "Service Areas" },
               { path: "/portfolio", label: "Portfolio" },
+              { path: "/case-studies", label: "Case Studies" },
               { path: "/blog", label: "Blog" },
               { path: "/contact", label: "Contact" },
             ].map((item) => (
@@ -228,15 +234,18 @@ export default function Header() {
               <span>WhatsApp</span>
             </motion.a>
 
-            <motion.a
-              href="/contact"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
             >
-              <span>Get a Quote</span>
-              <ArrowRight className="w-4 h-4" />
-            </motion.a>
+              <Link
+                to="/contact"
+                className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-2.5 font-semibold text-white hover:shadow-lg hover:shadow-cyan-500/25"
+              >
+                <span>Get a Quote</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -319,16 +328,14 @@ export default function Header() {
                 {/* Mobile Navigation Links */}
                 <div className="space-y-3">
                   {[
-                    { path: "/", label: "Home", icon: "🏠" },
-                    {
-                      path: "/about-dreams4u",
-                      label: "About Us",
-                      icon: "👥",
-                    },
-                    { path: "/works", label: "Works", icon: "W" },
-                    { path: "/portfolio", label: "Portfolio", icon: "🎯" },
-                    { path: "/blog", label: "Blog", icon: "📝" },
-                    { path: "/contact", label: "Contact", icon: "📞" },
+                    { path: "/", label: "Home" },
+                    { path: "/about-dreams4u", label: "About Us" },
+                    { path: "/works", label: "Service Areas" },
+                    { path: "/portfolio", label: "Portfolio" },
+                    { path: "/case-studies", label: "Case Studies" },
+                    { path: "/blog", label: "Blog" },
+                    { path: "/contact", label: "Contact" },
+                    { path: "/sitemap", label: "All Pages" },
                   ].map((item) => (
                     <NavLink
                       key={item.path}
@@ -342,7 +349,7 @@ export default function Header() {
                         }`
                       }
                     >
-                      <span className="text-xl">{item.icon}</span>
+                      <ChevronRight className="h-5 w-5 text-cyan-600" />
                       <span className="font-semibold">{item.label}</span>
                     </NavLink>
                   ))}

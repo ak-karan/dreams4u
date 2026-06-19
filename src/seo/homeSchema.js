@@ -1,8 +1,12 @@
 import { homeFaqs } from "../faq/faq";
+import { reviews } from "../reviews/reviewsData";
 
 const baseUrl = "https://dreams4u.in";
 const organizationId = `${baseUrl}/#organization`;
 const businessId = `${baseUrl}/#business`;
+const ratingValue = (
+  reviews.reduce((total, review) => total + review.rating, 0) / reviews.length
+).toFixed(1);
 
 const postalAddress = {
   "@type": "PostalAddress",
@@ -24,7 +28,7 @@ const homeSchema = {
       url: `${baseUrl}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/images/Logo.webp`,
+        url: `${baseUrl}/images/top-logo.webp`,
       },
       image: `${baseUrl}/images/dreams4u.webp`,
       description:
@@ -34,8 +38,10 @@ const homeSchema = {
       address: postalAddress,
       areaServed: ["Faridabad", "Delhi NCR", "Haryana", "India"],
       sameAs: [
-        "https://www.facebook.com/Dreams4u.in/",
+        "https://www.facebook.com/ak.karan.2818/",
         "https://www.instagram.com/dreams4u.in/",
+        "https://github.com/ak-karan",
+        "https://in.pinterest.com/dreams4uu/website-design/",
       ],
       contactPoint: {
         "@type": "ContactPoint",
@@ -54,7 +60,7 @@ const homeSchema = {
         "@id": organizationId,
       },
       image: `${baseUrl}/images/dreams4u.webp`,
-      logo: `${baseUrl}/images/Logo.webp`,
+      logo: `${baseUrl}/images/top-logo.webp`,
       telephone: "+91-9667316333",
       email: "info@dreams4u.in",
       priceRange: "INR 8,000+",
@@ -78,6 +84,13 @@ const homeSchema = {
         "Digital marketing",
         "Ecommerce website development",
       ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue,
+        reviewCount: reviews.length,
+        bestRating: 5,
+        worstRating: 1,
+      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Digital services",
@@ -123,6 +136,24 @@ const homeSchema = {
         },
       })),
     },
+    ...reviews.map((review) => ({
+      "@type": "Review",
+      "@id": `${baseUrl}/#review-${review.id}`,
+      itemReviewed: {
+        "@id": businessId,
+      },
+      author: {
+        "@type": "Person",
+        name: review.name,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: review.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: review.text,
+    })),
   ],
 };
 

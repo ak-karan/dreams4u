@@ -1,8 +1,9 @@
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import matter from "gray-matter";
 import { Helmet } from "react-helmet-async";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import BlogNotFound from "./BlogNotFound";
 import {
   Calendar,
@@ -70,6 +71,17 @@ export default function BlogDetail() {
     : data.tags?.split(",").map((t) => t.trim()) || [];
 
   const shareUrl = `https://dreams4u.in/blog/${slug}`;
+  const faqs = Array.isArray(data.faqs) ? data.faqs : [];
+  const relatedPosts = Object.entries(blogs)
+    .map(([path, raw]) => {
+      const { data: postData } = matter(raw);
+      return {
+        slug: path.split("/").pop().replace(".md", ""),
+        ...postData,
+      };
+    })
+    .filter((post) => post.slug !== slug && post.category === data.category)
+    .slice(0, 3);
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -87,7 +99,7 @@ export default function BlogDetail() {
       name: "Dreams4u",
       logo: {
         "@type": "ImageObject",
-        url: "https://dreams4u.in/images/Logo.webp",
+        url: "https://dreams4u.in/images/top-logo.webp",
       },
     },
     mainEntityOfPage: {
@@ -95,6 +107,44 @@ export default function BlogDetail() {
       "@id": shareUrl,
     },
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://dreams4u.in/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://dreams4u.in/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: data.title,
+        item: shareUrl,
+      },
+    ],
+  };
+  const faqSchema = faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
 
   const share = (platform) => {
     const text = encodeURIComponent(data.title);
@@ -136,6 +186,14 @@ export default function BlogDetail() {
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       {/* Scroll to top */}
@@ -209,9 +267,9 @@ export default function BlogDetail() {
                 className="w-full h-96 object-cover"
                 width="1024"
                 height="576"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </div>
           )}
@@ -219,6 +277,7 @@ export default function BlogDetail() {
           {/* CONTENT */}
           <div className="bg-white rounded-3xl shadow-sm border p-6 md:p-10">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               components={{
                 h2: ({ node, ...props }) => (
                   <h2 className="text-3xl font-bold mt-10 mb-4" {...props} />
@@ -233,7 +292,46 @@ export default function BlogDetail() {
                   />
                 ),
                 ul: ({ node, ...props }) => (
-                  <ul className="list-disc pl-6 my-5" {...props} />
+                  <ul className="list-disc space-y-2 pl-6 my-5" {...props} />
+                ),
+                ol: ({ node, ...props }) => (
+                  <ol className="list-decimal space-y-2 pl-6 my-5" {...props} />
+                ),
+                a: ({ node, href = "", ...props }) =>
+                  href.startsWith("/") ? (
+                    <Link
+                      to={href}
+                      className="font-medium text-blue-700 underline underline-offset-4"
+                      {...props}
+                    />
+                  ) : (
+                    <a
+                      href={href}
+                      className="font-medium text-blue-700 underline underline-offset-4"
+                      target="_blank"
+                      rel="noreferrer"
+                      {...props}
+                    />
+                  ),
+                table: ({ node, ...props }) => (
+                  <div className="my-8 overflow-x-auto">
+                    <table
+                      className="w-full min-w-[640px] border-collapse text-left text-sm"
+                      {...props}
+                    />
+                  </div>
+                ),
+                th: ({ node, ...props }) => (
+                  <th
+                    className="border border-slate-300 bg-slate-100 px-4 py-3 font-semibold text-slate-900"
+                    {...props}
+                  />
+                ),
+                td: ({ node, ...props }) => (
+                  <td
+                    className="border border-slate-300 px-4 py-3 align-top text-slate-700"
+                    {...props}
+                  />
                 ),
                 blockquote: ({ node, ...props }) => (
                   <blockquote
@@ -256,6 +354,56 @@ export default function BlogDetail() {
               {content}
             </ReactMarkdown>
           </div>
+
+          {faqs.length > 0 && (
+            <section className="mt-12" aria-labelledby="article-faq-heading">
+              <h2
+                id="article-faq-heading"
+                className="text-3xl font-bold text-slate-900"
+              >
+                Frequently Asked Questions
+              </h2>
+              <div className="mt-6 divide-y divide-slate-200 border-y border-slate-200">
+                {faqs.map((faq) => (
+                  <details key={faq.question} className="group py-5">
+                    <summary className="cursor-pointer list-none pr-8 font-semibold text-slate-900">
+                      {faq.question}
+                    </summary>
+                    <p className="mt-3 leading-7 text-slate-600">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {relatedPosts.length > 0 && (
+            <section className="mt-12" aria-labelledby="related-posts-heading">
+              <h2
+                id="related-posts-heading"
+                className="text-3xl font-bold text-slate-900"
+              >
+                Related Guides
+              </h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-3">
+                {relatedPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-md"
+                  >
+                    <p className="font-semibold leading-6 text-slate-900">
+                      {post.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      {post.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* TAGS */}
           {tags.length > 0 && (

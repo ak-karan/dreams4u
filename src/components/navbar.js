@@ -14,31 +14,31 @@ import {
 
 export const services = [
   {
-    path: "/services/web-development",
+    path: "/website-development-company-in-faridabad",
     name: "Web Development",
     icon: Code,
     description: "Custom website development",
   },
   {
-    path: "/services/website-design",
+    path: "/website-design-company-in-faridabad",
     name: "Website Design",
     icon: Monitor,
     description: "Professional website design",
   },
   {
-    path: "/services/search-engine-optimization",
+    path: "/seo-services-in-faridabad",
     name: "SEO Optimization",
     icon: Search,
     description: "Search engine optimization",
   },
   {
-    path: "/services/digital-marketing",
+    path: "/digital-marketing-company-in-faridabad",
     name: "Digital Marketing",
     icon: TrendingUp,
     description: "Digital marketing services",
   },
   {
-    path: "/services/annual-maintenance",
+    path: "/website-maintenance-services-in-faridabad",
     name: "Annual Maintenance",
     icon: Wrench,
     description: "Website maintenance & support",
@@ -56,7 +56,7 @@ export const services = [
     description: "User interface & experience design",
   },
   {
-    path: "/services/ecommerce",
+    path: "/ecommerce-website-development-in-faridabad",
     name: "E-commerce Solutions",
     icon: ShoppingCart,
     description: "E-commerce website development",
@@ -79,33 +79,45 @@ export const services = [
     icon: Smartphone,
     description: "Mobile-friendly website design",
   },
-  // {
-  //   path: "/services/website-redesign",
-  //   name: "Website Redesign",
-  //   icon: MessageCircle,
-  //   description: "Website redesign services",
-  // },
+  {
+    path: "/custom-website-development-in-faridabad",
+    name: "Custom Website Development",
+    icon: Code,
+    description: "Custom platforms and integrations",
+  },
+  {
+    path: "/website-redesign-services-in-faridabad",
+    name: "Website Redesign",
+    icon: MessageCircle,
+    description: "SEO-aware website redesign",
+  },
+  {
+    path: "/landing-page-design-services-in-faridabad",
+    name: "Landing Page Design",
+    icon: Palette,
+    description: "Campaign and lead landing pages",
+  },
 ];
 
 // You can also export grouped services for different sections
 export const mainServices = [
   {
-    path: "/services/web-development",
+    path: "/website-development-company-in-faridabad",
     name: "Web Development",
     icon: Code,
   },
   {
-    path: "/services/website-design",
+    path: "/website-design-company-in-faridabad",
     name: "Website Design",
     icon: Monitor,
   },
   {
-    path: "/services/search-engine-optimization",
+    path: "/seo-services-in-faridabad",
     name: "SEO Optimization",
     icon: Search,
   },
   {
-    path: "/services/digital-marketing",
+    path: "/digital-marketing-company-in-faridabad",
     name: "Digital Marketing",
     icon: TrendingUp,
   },
@@ -115,7 +127,7 @@ export const mainServices = [
     icon: AppIcon,
   },
   {
-    path: "/services/ecommerce",
+    path: "/ecommerce-website-development-in-faridabad",
     name: "E-commerce Solutions",
     icon: ShoppingCart,
   },
@@ -123,7 +135,7 @@ export const mainServices = [
 
 export const additionalServices = [
   {
-    path: "/services/annual-maintenance",
+    path: "/website-maintenance-services-in-faridabad",
     name: "Annual Maintenance",
     icon: Wrench,
   },
@@ -138,7 +150,7 @@ export const additionalServices = [
     icon: Smartphone,
   },
   {
-    path: "/services/website-redesign",
+    path: "/website-redesign-services-in-faridabad",
     name: "Website Redesign",
     icon: MessageCircle,
   },
