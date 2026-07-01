@@ -57,10 +57,16 @@ export default function SiteMap() {
     .filter((post) => post.category === "Case Study")
     .map((post) => [post.title, `/blog/${post.slug}`]);
   const faridabadServiceLinks = localServicePages
-    .filter((page) => page.city !== "Delhi")
+    .filter((page) => !["Delhi", "Gurgaon", "Noida"].includes(page.city))
     .map((page) => [page.h1, page.routePath]);
   const delhiServiceLinks = localServicePages
     .filter((page) => page.city === "Delhi")
+    .map((page) => [page.h1, page.routePath]);
+  const gurgaonServiceLinks = localServicePages
+    .filter((page) => page.city === "Gurgaon")
+    .map((page) => [page.h1, page.routePath]);
+  const noidaServiceLinks = localServicePages
+    .filter((page) => page.city === "Noida")
     .map((page) => [page.h1, page.routePath]);
 
   return (
@@ -69,7 +75,7 @@ export default function SiteMap() {
         <title>HTML Sitemap | All Dreams4u Website Pages</title>
         <meta
           name="description"
-          content="Browse every public Dreams4u page, including services, Faridabad and Delhi locations, website guides, case studies, portfolio, and company information."
+          content="Browse every public Dreams4u page, including services, Faridabad, Delhi, Gurgaon, Noida locations, website guides, case studies, portfolio, and company information."
         />
         <link rel="canonical" href="https://dreams4u.in/sitemap" />
       </Helmet>
@@ -100,6 +106,8 @@ export default function SiteMap() {
             links={faridabadAreas.map((area) => [area.displayName, area.routePath])}
           />
           <LinkGroup title="Delhi Service Areas" links={delhiServiceLinks} />
+          <LinkGroup title="Gurgaon Service Areas" links={gurgaonServiceLinks} />
+          <LinkGroup title="Noida Service Areas" links={noidaServiceLinks} />
           <LinkGroup title="Website and SEO Guides" links={guideLinks} />
           <LinkGroup title="Case Studies" links={caseStudyLinks} />
           <LinkGroup

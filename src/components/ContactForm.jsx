@@ -8,15 +8,28 @@ import {
 } from "react-icons/fa";
 
 const services = [
+  "Website Design",
   "Web Development",
-  "SEO Optimization",
-  "Digital Marketing",
-  "App Development",
-  "UI / UX Design",
-  "E-commerce Solutions",
-  "Brand Identity",
-  "Social Media Marketing",
+  "Ecommerce Website Development",
+  "WordPress Website Development",
+  "Custom Website Development",
+  "Website Redesign",
+  "Landing Page Design",
+  "Website Maintenance",
+  "SEO Services",
 ];
+
+function buildWhatsAppUrl({ name, phone, service, message }) {
+  const text = [
+    "New website enquiry",
+    `Name: ${name.trim()}`,
+    `Phone: ${phone.trim()}`,
+    `Service: ${service.trim()}`,
+    `Message: ${message.trim() || "N/A"}`,
+  ].join("\n");
+
+  return `https://wa.me/919667316333?text=${encodeURIComponent(text)}`;
+}
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,7 +37,7 @@ function ContactForm() {
     phone: "",
     service: "",
     message: "",
-    company: "",
+    website: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,11 +63,23 @@ function ContactForm() {
     setSubmitError("");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 12000);
+      let res;
+
+      try {
+        res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+          signal: controller.signal,
+        });
+      } catch {
+        window.location.assign(buildWhatsAppUrl(formData));
+        return;
+      } finally {
+        window.clearTimeout(timeoutId);
+      }
 
       const result = await res.json().catch(() => ({}));
 
@@ -73,7 +98,7 @@ function ContactForm() {
         phone: "",
         service: "",
         message: "",
-        company: "",
+        website: "",
       });
 
       setTimeout(() => setIsSubmitted(false), 3000);
@@ -139,12 +164,13 @@ function ContactForm() {
                 {/* 🔒 Honeypot Field (SPAM protection) */}
                 <input
                   type="text"
-                  name="company"
-                  value={formData.company || ""}
+                  name="website"
+                  value={formData.website || ""}
                   onChange={handleChange}
                   className="hidden"
                   tabIndex="-1"
                   autoComplete="off"
+                  aria-hidden="true"
                 />
                 {/* NAME */}
                 <div className="relative">
@@ -233,8 +259,12 @@ function ContactForm() {
                   disabled={isSubmitting}
                   className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? "Sending..." : "Submit Request"}
+                  {isSubmitting ? "Opening enquiry..." : "Submit Request"}
                 </button>
+                <p className="text-center text-xs leading-5 text-cyan-100">
+                  If email delivery is unavailable, your enquiry opens in
+                  WhatsApp so you can send it directly.
+                </p>
               </form>
             </div>
           </motion.div>

@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { faridabadAreas } from "../faridabad/faridabadAreas";
 import { localServicePages } from "../localSeo/localServicePages";
+import { priorityMetroSlugs } from "../localSeo/metroServicePages.js";
 
 const delhiPages = localServicePages.filter((page) => page.city === "Delhi");
+const gurgaonPages = localServicePages.filter((page) => page.city === "Gurgaon");
+const noidaPages = localServicePages.filter((page) => page.city === "Noida");
 const faridabadServicePages = localServicePages.filter(
-  (page) => page.city !== "Delhi",
+  (page) => !["Delhi", "Gurgaon", "Noida"].includes(page.city),
 );
 
 const priorityDelhiAreas = [
@@ -31,6 +34,20 @@ const priorityDelhiPages = delhiPages.filter((page) =>
 
 const otherDelhiPages = delhiPages.filter(
   (page) => !priorityDelhiPages.some((priority) => priority.slug === page.slug),
+);
+
+const priorityMetroSlugSet = new Set(priorityMetroSlugs);
+const priorityGurgaonPages = gurgaonPages.filter((page) =>
+  priorityMetroSlugSet.has(page.slug),
+);
+const otherGurgaonPages = gurgaonPages.filter(
+  (page) => !priorityMetroSlugSet.has(page.slug),
+);
+const priorityNoidaPages = noidaPages.filter((page) =>
+  priorityMetroSlugSet.has(page.slug),
+);
+const otherNoidaPages = noidaPages.filter(
+  (page) => !priorityMetroSlugSet.has(page.slug),
 );
 
 function LinkGrid({ items }) {
@@ -91,13 +108,37 @@ export default function Works() {
     description: "Delhi website design landing page",
   }));
 
+  const priorityGurgaonLinks = priorityGurgaonPages.map((page) => ({
+    name: page.h1,
+    path: page.routePath,
+    description: "Priority Gurgaon website design landing page",
+  }));
+
+  const otherGurgaonLinks = otherGurgaonPages.map((page) => ({
+    name: page.h1,
+    path: page.routePath,
+    description: "Gurgaon website design area page",
+  }));
+
+  const priorityNoidaLinks = priorityNoidaPages.map((page) => ({
+    name: page.h1,
+    path: page.routePath,
+    description: "Priority Noida website design landing page",
+  }));
+
+  const otherNoidaLinks = otherNoidaPages.map((page) => ({
+    name: page.h1,
+    path: page.routePath,
+    description: "Noida website design sector page",
+  }));
+
   return (
     <>
       <Helmet>
         <title>Works | Website Design Location Pages in Faridabad & Delhi</title>
         <meta
           name="description"
-          content="Explore Dreams4u website design, web development, SEO, Faridabad area pages, and Delhi landing pages for local business search visibility."
+          content="Explore Dreams4u website design location pages for Faridabad, Delhi, Gurgaon, and Noida service-area search visibility."
         />
         <link rel="canonical" href="https://dreams4u.in/works" />
       </Helmet>
@@ -114,9 +155,10 @@ export default function Works() {
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-200">
               Explore Dreams4u local website design pages for Faridabad,
-              Faridabad sectors, and Delhi commercial areas. These pages are
-              organized for customers and search engines, with unique local
-              content instead of repeated area-name copy.
+              Faridabad sectors, Delhi commercial areas, Gurgaon business
+              locations, and Noida sectors. These pages are organized for
+              customers and search engines, with unique local content instead of
+              repeated area-name copy.
             </p>
           </div>
         </div>
@@ -169,6 +211,54 @@ export default function Works() {
             </h2>
             <div className="mt-7">
               <LinkGrid items={otherDelhiLinks} />
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              Priority Gurgaon Pages
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900">
+              Gurgaon, Cyber City, Golf Course Road, Sohna Road, DLF, and Udyog Vihar
+            </h2>
+            <div className="mt-7">
+              <LinkGrid items={priorityGurgaonLinks} />
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              Gurgaon Area Pages
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900">
+              Gurugram sectors and neighbourhoods
+            </h2>
+            <div className="mt-7">
+              <LinkGrid items={otherGurgaonLinks} />
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              Priority Noida Pages
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900">
+              Sector 18, 62, 63, 125, 137, and 150
+            </h2>
+            <div className="mt-7">
+              <LinkGrid items={priorityNoidaLinks} />
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">
+              Noida Sector Pages
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900">
+              Noida business, residential, and expressway sectors
+            </h2>
+            <div className="mt-7">
+              <LinkGrid items={otherNoidaLinks} />
             </div>
           </div>
         </div>

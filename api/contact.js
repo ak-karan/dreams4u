@@ -37,6 +37,24 @@ function buildWhatsAppUrl({ name, phone, service, message }) {
   return `https://wa.me/919667316333?text=${encodeURIComponent(text)}`;
 }
 
+async function sendWithTimeout(transporter, mail, timeoutMs = 8000) {
+  let timeoutId;
+  const timeout = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => {
+      transporter.close();
+      const error = new Error("SMTP delivery timed out");
+      error.code = "ETIMEDOUT";
+      reject(error);
+    }, timeoutMs);
+  });
+
+  try {
+    return await Promise.race([transporter.sendMail(mail), timeout]);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
 
@@ -57,7 +75,7 @@ export default async function handler(req, res) {
   }
 
   // Silently accept bot submissions so the honeypot is not disclosed.
-  if (body.company) {
+  if (body.website || body.company) {
     return res.status(200).json({ success: true });
   }
 
@@ -71,23 +89,27 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "Missing required fields" });
   }
 
+  console.info("Contact request received", {
+    service,
+    hasMessage: Boolean(message),
+  });
+
   const {
     EMAIL_USER,
     EMAIL_PASS,
     EMAIL_TO,
     EMAIL_HOST = "smtp.hostinger.com",
+    EMAIL_PORT = "465",
     CONTACT_DELIVERY,
   } = process.env;
 
   if (
-    CONTACT_DELIVERY === "whatsapp" ||
+    CONTACT_DELIVERY !== "email" ||
     !EMAIL_USER ||
     !EMAIL_PASS ||
     !EMAIL_TO
   ) {
-    if (CONTACT_DELIVERY !== "whatsapp") {
-      console.error("Contact form email configuration is incomplete");
-    }
+    console.info("Contact request handed off", { delivery: "whatsapp" });
     return res.status(200).json({
       success: true,
       delivery: "whatsapp",
@@ -96,20 +118,22 @@ export default async function handler(req, res) {
   }
 
   try {
+    const port = Number.parseInt(EMAIL_PORT, 10) || 465;
     const transporter = nodemailer.createTransport({
       host: EMAIL_HOST,
-      port: 465,
-      secure: true,
+      port,
+      secure: port === 465,
       auth: {
         user: EMAIL_USER,
         pass: EMAIL_PASS,
       },
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 15000,
+      connectionTimeout: 5000,
+      greetingTimeout: 5000,
+      socketTimeout: 8000,
+      dnsTimeout: 3000,
     });
 
-    await transporter.sendMail({
+    await sendWithTimeout(transporter, {
       from: `"Dreams4U Website" <${EMAIL_USER}>`,
       to: EMAIL_TO,
       subject: `New Contact Request - ${service.replace(/[\r\n]/g, " ")}`,
@@ -129,12 +153,18 @@ export default async function handler(req, res) {
       ].join("\n"),
     });
 
+    transporter.close();
+    console.info("Contact request delivered", { delivery: "email" });
     return res.status(200).json({ success: true, delivery: "email" });
   } catch (error) {
     console.error("Contact email failed", {
       code: error.code,
       responseCode: error.responseCode,
       command: error.command,
+    });
+    console.info("Contact request handed off", {
+      delivery: "whatsapp",
+      reason: "email-failed",
     });
     return res.status(200).json({
       success: true,

@@ -32,7 +32,7 @@ const homeSchema = {
       },
       image: `${baseUrl}/images/dreams4u.webp`,
       description:
-        "Dreams4u is a website design, web development, SEO and digital marketing company in Faridabad serving Delhi NCR and India.",
+        "Dreams4u is a website design company in Faridabad creating responsive, SEO-ready websites, ecommerce stores, landing pages, and lead-generation websites.",
       email: "info@dreams4u.in",
       telephone: "+91-9667316333",
       address: postalAddress,
@@ -78,6 +78,7 @@ const homeSchema = {
       ],
       knowsAbout: [
         "Website design",
+        "Website design company in Faridabad",
         "Web development",
         "Search engine optimization",
         "Local SEO",
@@ -117,7 +118,7 @@ const homeSchema = {
       name: "Dreams4u",
       alternateName: "Dreams4U",
       description:
-        "Website design, development, SEO, and digital marketing services for businesses in Faridabad, Delhi NCR, and India.",
+        "Website design company in Faridabad offering responsive websites, ecommerce websites, landing pages, local SEO setup, and website maintenance.",
       inLanguage: "en-IN",
       publisher: {
         "@id": organizationId,

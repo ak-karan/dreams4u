@@ -269,7 +269,7 @@ export default function BlogDetail() {
                 height="576"
                 loading="eager"
                 decoding="async"
-                fetchPriority="high"
+                fetchpriority="high"
               />
             </div>
           )}

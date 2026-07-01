@@ -1,3 +1,5 @@
+import { createMetroServicePages } from "./metroServicePages.js";
+
 const baseUrl = "https://dreams4u.in";
 const phoneNumber = "+91-9667316333";
 const whatsappUrl = "https://wa.me/919667316333";
@@ -836,6 +838,7 @@ export const localServicePages = [
     ],
   },
   ...createDelhiLandingPages(),
+  ...createMetroServicePages(),
 ].map((page) => ({
   ...page,
   routePath: `/${page.slug}`,

@@ -12,6 +12,7 @@ import FAQSection from "../faq/FAQSection";
 import FAQSchema from "../faq/FAQSchema";
 import NotFound from "../pages/NotFound";
 import { localServicePageMap, localServicePages } from "./localServicePages";
+import { priorityMetroSlugs } from "./metroServicePages.js";
 
 const relatedLinks = [
   { name: "Website Design", path: "/website-design-company-in-faridabad" },
@@ -32,6 +33,7 @@ const guideLinks = [
   { name: "Website Speed Optimization", path: "/blog/website-speed-optimization-guide" },
   { name: "Local SEO for Faridabad", path: "/blog/local-seo-for-faridabad-businesses" },
   { name: "Lead Generation Website Features", path: "/blog/best-website-features-for-lead-generation" },
+  { name: "Why Every Business Needs a Website", path: "/blog/why-every-business-needs-a-website" },
 ];
 
 const featuredLocalSlugs = [
@@ -46,6 +48,7 @@ const featuredLocalSlugs = [
   "website-redesign-services-in-faridabad",
   "landing-page-design-services-in-faridabad",
   "website-maintenance-services-in-faridabad",
+  ...priorityMetroSlugs,
 ];
 
 function buildSchemas(page) {
@@ -184,7 +187,7 @@ export default function LocalServicePage() {
               width="900"
               height="620"
               className="h-full min-h-[320px] w-full object-cover"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </div>
         </div>
