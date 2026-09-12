@@ -5,6 +5,7 @@ import {
   Menu,
   X,
   ChevronDown,
+  ChevronRight,
   Mail,
   MapPin,
   Clock,
@@ -256,7 +257,7 @@ export default function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex  gap-2 lg:hidden p-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
           >
-            <menu className="text-lg uppercase font-bold">Menu</menu>
+            <span className="text-lg uppercase font-bold">Menu</span>
             {menuOpen ? (
               <X className="w-6 h-6" />
             ) : (
