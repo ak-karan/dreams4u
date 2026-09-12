@@ -147,8 +147,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-cyan-400" />
                 <span>
-                  1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad,
-                  Haryana 121004
+                  Hanuman Nagar, Mauja Baselwa 35 feet Road, Pani ka Plant, Faridabad, HR-121002, IND
                 </span>
               </div>
               <a
