@@ -283,7 +283,7 @@ function CustomWebsiteDesign() {
                 Get Free Consultation
               </a>
               <a
-                href="tel:+919667316333"
+                href="tel:+919717030244"
                 className="inline-flex items-center justify-center bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all"
               >
                 <PhoneIcon className="w-5 h-5 mr-2" />
@@ -498,7 +498,7 @@ function CustomWebsiteDesign() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+919667316333"
+                href="tel:+919717030244"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
               >
                 <PhoneIcon className="w-5 h-5 mr-2" />

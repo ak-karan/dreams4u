@@ -108,7 +108,7 @@ const pricingPlans = [
 
 export default function Home() {
   const websiteUrl = "https://dreams4u.in";
-  const phoneNumber = "+919667316333";
+  const phoneNumber = "+919717030244";
   const ogpost = "https://dreams4u.in/images/dreams4u.webp";
 
   const pageTitle = "Website Design Company in Faridabad | Dreams4U";

@@ -96,7 +96,7 @@ const aboutSchema = {
       logo: "https://dreams4u.in/images/Logo.webp",
       description:
         "Dreams4u is a website design, web development, SEO and digital marketing company in Faridabad serving Delhi NCR and India.",
-      telephone: "+91-9667316333",
+      telephone: "+91-9717030244",
       email: "info@dreams4u.in",
       address: {
         "@type": "PostalAddress",
@@ -186,11 +186,11 @@ export default function About() {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <a
-                href="tel:+919667316333"
+                href="tel:+919717030244"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10"
               >
                 <Phone className="h-5 w-5" />
-                +91 9667316333
+                +91 9717030244
               </a>
             </div>
           </div>
@@ -318,11 +318,11 @@ export default function About() {
             </p>
             <address className="mt-8 space-y-5 not-italic">
               <a
-                href="tel:+919667316333"
+                href="tel:+919717030244"
                 className="flex items-center gap-4 text-slate-200 hover:text-cyan-300"
               >
                 <Phone className="h-6 w-6 text-cyan-300" />
-                +91 9667316333
+                +91 9717030244
               </a>
               <a
                 href="mailto:info@dreams4u.in"

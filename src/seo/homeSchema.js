@@ -34,7 +34,7 @@ const homeSchema = {
       description:
         "Dreams4u is a website design company in Faridabad creating responsive, SEO-ready websites, ecommerce stores, landing pages, and lead-generation websites.",
       email: "info@dreams4u.in",
-      telephone: "+91-9667316333",
+      telephone: "+91-9717030244",
       address: postalAddress,
       areaServed: ["Faridabad", "Delhi NCR", "Haryana", "India"],
       sameAs: [
@@ -45,7 +45,7 @@ const homeSchema = {
       ],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+91-9667316333",
+        telephone: "+91-9717030244",
         contactType: "sales and customer service",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi"],
@@ -61,7 +61,7 @@ const homeSchema = {
       },
       image: `${baseUrl}/images/dreams4u.webp`,
       logo: `${baseUrl}/images/top-logo.webp`,
-      telephone: "+91-9667316333",
+      telephone: "+91-9717030244",
       email: "info@dreams4u.in",
       priceRange: "INR 8,000+",
       address: postalAddress,

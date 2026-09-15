@@ -1,8 +1,8 @@
 import { createMetroServicePages } from "./metroServicePages.js";
 
 const baseUrl = "https://dreams4u.in";
-const phoneNumber = "+91-9667316333";
-const whatsappUrl = "https://wa.me/919667316333";
+const phoneNumber = "+91-9717030244";
+const whatsappUrl = "https://wa.me/919717030244";
 const address = "1361, Bhagat Singh Colony, Sector 4, Ballabgarh, Faridabad";
 const image = `${baseUrl}/images/Website-Design-Comapany-in-Faridabad.webp`;
 

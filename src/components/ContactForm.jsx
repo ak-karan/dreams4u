@@ -28,7 +28,7 @@ function buildWhatsAppUrl({ name, phone, service, message }) {
     `Message: ${message.trim() || "N/A"}`,
   ].join("\n");
 
-  return `https://wa.me/919667316333?text=${encodeURIComponent(text)}`;
+  return `https://wa.me/919717030244?text=${encodeURIComponent(text)}`;
 }
 
 function ContactForm() {
@@ -245,10 +245,10 @@ function ContactForm() {
                   >
                     {submitError}{" "}
                     <a
-                      href="tel:+919667316333"
+                      href="tel:+919717030244"
                       className="font-semibold underline"
                     >
-                      Call +91 9667316333
+                      Call +91 9717030244
                     </a>
                   </div>
                 )}

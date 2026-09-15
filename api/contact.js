@@ -34,7 +34,7 @@ function buildWhatsAppUrl({ name, phone, service, message }) {
     `Message: ${message || "N/A"}`,
   ].join("\n");
 
-  return `https://wa.me/919667316333?text=${encodeURIComponent(text)}`;
+  return `https://wa.me/919717030244?text=${encodeURIComponent(text)}`;
 }
 
 async function sendWithTimeout(transporter, mail, timeoutMs = 8000) {
