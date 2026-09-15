@@ -114,6 +114,10 @@ export default function Home() {
   const pageTitle = "Website Design Company in Faridabad | Dreams4U";
   const pageDescription =
     "Dreams4U is a website design company in Faridabad creating responsive, SEO-ready websites, ecommerce stores, and landing pages for local business growth.";
+  const primaryButtonClass =
+    "inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-600 px-6 py-3 font-semibold text-white transition hover:bg-cyan-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50";
+  const secondaryButtonClass =
+    "inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-900 transition hover:border-cyan-500 hover:text-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50";
 
   return (
     <>
@@ -197,22 +201,22 @@ export default function Home() {
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
-                    <p className="text-sm uppercase font-semibold text-cyan-600 mb-2">Fast Delivery</p>
-                    <p className="text-gray-600">Ready website packages with quick turnaround for local businesses.</p>
+                    <p className="mb-2 text-sm font-semibold text-cyan-700">Fast delivery</p>
+                    <p className="text-slate-600">Ready website packages with quick turnaround for local businesses.</p>
                   </div>
                   <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
-                    <p className="text-sm uppercase font-semibold text-blue-600 mb-2">Transparent Pricing</p>
-                    <p className="text-gray-600">Written scope and planning estimates from Rs. 10,000 for focused small-business requirements.</p>
+                    <p className="mb-2 text-sm font-semibold text-cyan-700">Transparent pricing</p>
+                    <p className="text-slate-600">Written scope and planning estimates from Rs. 10,000 for focused small-business requirements.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-6 rounded-[1.5rem] bg-slate-50 p-6 md:p-8">
+              <div className="space-y-6 rounded-[1.5rem] bg-slate-50 p-6 md:p-8 md:pt-10">
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+                  <h3 className="mb-4 text-2xl font-semibold text-slate-900">
                     Local Expertise, Global Standards
                   </h3>
-                  <p className="text-slate-600 mb-4">
+                  <p className="mb-4 text-slate-600">
                     Based in Ballabgarh, we serve businesses across Faridabad, Ballabgarh, NIT, Badkhal, Sector 4, Sector 21, Sector 31, and surrounding NCR areas.
                   </p>
                   <p className="text-slate-600">
@@ -221,19 +225,19 @@ export default function Home() {
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-3xl bg-white p-5 shadow-sm">
-                    <h5 className="font-semibold text-slate-900 mb-2">Website Design</h5>
+                    <h4 className="mb-2 font-semibold text-slate-900">Website Design</h4>
                     <p className="text-sm text-slate-600">Custom, responsive websites that convert visitors into customers.</p>
                   </div>
                   <div className="rounded-3xl bg-white p-5 shadow-sm">
-                    <h5 className="font-semibold text-slate-900 mb-2">SEO Services</h5>
+                    <h4 className="mb-2 font-semibold text-slate-900">SEO Services</h4>
                     <p className="text-sm text-slate-600">Improve your Google rankings and get more organic traffic.</p>
                   </div>
                   <div className="rounded-3xl bg-white p-5 shadow-sm">
-                    <h5 className="font-semibold text-slate-900 mb-2">Digital Marketing</h5>
+                    <h4 className="mb-2 font-semibold text-slate-900">Digital Marketing</h4>
                     <p className="text-sm text-slate-600">Google Ads, social media marketing, and lead generation.</p>
                   </div>
                   <div className="rounded-3xl bg-white p-5 shadow-sm">
-                    <h5 className="font-semibold text-slate-900 mb-2">E-commerce</h5>
+                    <h4 className="mb-2 font-semibold text-slate-900">E-commerce</h4>
                     <p className="text-sm text-slate-600">Online stores with payment integration and inventory management.</p>
                   </div>
                 </div>
@@ -246,8 +250,8 @@ export default function Home() {
       {/* ================= FARIDABAD WEBSITE DESIGN GUIDE ================= */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-            <div>
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="lg:pr-4">
               <p className="text-sm font-semibold uppercase text-cyan-700">
                 Faridabad Website Design
               </p>
@@ -414,7 +418,7 @@ export default function Home() {
               </p>
               <Link
                 to="/contact"
-                className="mt-7 inline-flex items-center justify-center gap-2 bg-slate-950 px-6 py-3 font-semibold text-white transition hover:bg-slate-800"
+                className={`${primaryButtonClass} mt-7`}
               >
                 Request a written quote
                 <ArrowRight className="h-4 w-4" />
@@ -465,72 +469,83 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {[
               {
                 title: "Website Design Company in Faridabad",
                 path: "/website-design-company-in-faridabad",
+                tone: "border-cyan-200 bg-cyan-50/60",
               },
               {
                 title: "Website Development Company in Faridabad",
                 path: "/website-development-company-in-faridabad",
+                tone: "border-blue-200 bg-blue-50/60",
               },
               {
                 title: "SEO Services in Faridabad",
                 path: "/seo-services-in-faridabad",
+                tone: "border-emerald-200 bg-emerald-50/60",
               },
               {
                 title: "Digital Marketing Company in Faridabad",
                 path: "/digital-marketing-company-in-faridabad",
+                tone: "border-violet-200 bg-violet-50/60",
               },
               {
                 title: "Website Design Company in Delhi NCR",
                 path: "/website-design-company-in-delhi-ncr",
+                tone: "border-sky-200 bg-sky-50/60",
               },
               {
                 title: "Ecommerce Website Development",
                 path: "/ecommerce-website-development-in-faridabad",
+                tone: "border-amber-200 bg-amber-50/60",
               },
               {
                 title: "WordPress Website Development",
                 path: "/wordpress-development-in-faridabad",
+                tone: "border-rose-200 bg-rose-50/60",
               },
               {
                 title: "Custom Website Development",
                 path: "/custom-website-development-in-faridabad",
+                tone: "border-teal-200 bg-teal-50/60",
               },
               {
                 title: "Website Redesign Services",
                 path: "/website-redesign-services-in-faridabad",
+                tone: "border-indigo-200 bg-indigo-50/60",
               },
               {
                 title: "Landing Page Design Services",
                 path: "/landing-page-design-services-in-faridabad",
+                tone: "border-fuchsia-200 bg-fuchsia-50/60",
               },
               {
                 title: "Website Maintenance Services",
                 path: "/website-maintenance-services-in-faridabad",
+                tone: "border-orange-200 bg-orange-50/60",
               },
-            ].map((page) => (
+            ].map((page, index) => (
               <Link
                 key={page.path}
                 to={page.path}
-                className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className={`group rounded-[2rem] border p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${page.tone} ${index % 2 === 0 ? "bg-white/80" : "bg-slate-50/80"}`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-slate-900">
                     {page.title}
                   </h3>
-                  <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">
+                  <span className="rounded-full bg-cyan-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-700">
                     Faridabad
                   </span>
                 </div>
                 <p className="mt-4 text-sm text-slate-600">
                   Optimized local service page for better Google visibility and nearby customer trust.
                 </p>
-                <div className="mt-6 inline-flex items-center gap-2 text-cyan-600 font-semibold transition group-hover:translate-x-1">
+                <div className="mt-6 inline-flex items-center gap-2 font-semibold text-cyan-700 transition group-hover:translate-x-1">
                   Learn More
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </div>
               </Link>
             ))}
@@ -550,7 +565,7 @@ export default function Home() {
 
       {/* ================= CTA SECTION ================= */}
       <section className="bg-cyan-600 py-14 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-cyan-100">
               Free Consultation
@@ -564,7 +579,7 @@ export default function Home() {
               timeline, and budget direction before development starts.
             </p>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-start lg:justify-end">
             <Link
               to="/contact"
               className="inline-flex items-center justify-center bg-white px-6 py-3 font-semibold text-cyan-700 transition hover:bg-cyan-50"
